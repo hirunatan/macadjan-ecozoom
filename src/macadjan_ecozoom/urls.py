@@ -11,5 +11,6 @@ urlpatterns = patterns('',
     url(r'^entities-kml/$', EcozoomEntitiesKml.as_view(), name='entities-kml'),
     url(r'^entities-georss/$', EcozoomEntitiesGeoRSS.as_view(), name='entities-georss'),
     url(r'^entity/(?P<entity_slug>[a-zA-Z0-9_\-]+)/$', EcozoomEntity.as_view(), name='entity'),
+    url(r'^map-source/(?P<map_source_slug>[a-zA-Z0-9_\-]+)/$', MapSourceView.as_view(), name='map-source'),
 )
 

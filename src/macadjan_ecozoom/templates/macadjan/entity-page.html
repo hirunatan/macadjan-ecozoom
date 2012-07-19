@@ -1,0 +1,162 @@
+{% extends "macadjan/main-page.html" %}
+{% load i18n %}
+{% load macadjan_extras %}
+{% load url from future %}
+
+{% block title %}{{ entity.name }} - {{ current_site_info.website_name }}{% endblock %}
+
+            {% block content %}
+            <div id="map-page" class="map-page clearfix">
+
+                <h1>
+                    {{ entity.name }}
+                    {% if entity.alias %}({{ entity.alias }}){% endif %}
+                </h1>
+                <p>{{ entity.summary }}</p>
+
+                {% if entity.entity_type %}
+                <p><strong>{% trans "Tipo de entidad:" %} </strong>{{ entity.entity_type.name }}</p>
+                {% endif %}
+
+                {% if entity.contained_in %}
+                {% blocktrans with name=entity.contained_in.name %}<p>Es parte de {{ name }}</p>{% endblocktrans %}
+                {% endif %}
+
+                {% if entity.address_1 or entity_address_2 or entity.zipcode or entity.city or entity.province or entity.country %}
+                <p>
+                    <strong>{% trans "Dirección:" %}</strong>  
+                    {{ entity.address_1 }} {{ entity.address_2 }}
+                    {{ entity.zipcode }} {{ entity.city }} {{ entity.province }}
+                    {{ entity.country }}
+                </p>
+                {% endif %}
+                {% if entity.zone %}
+                <p><strong>{% trans "Zona de influencia:" %} </strong>{{ entity.zone }}</p>
+                {% endif %}
+
+                {% if entity.contact_phone_1 %}
+                <p><strong>{% trans "Teléfono de contacto:" %} </strong>{{ entity.contact_phone_1 }}</p>
+                {% endif %}
+                {% if entity.contact_phone_2 %}
+                <p><strong>{% trans "Teléfono de contacto 2:" %} </strong>{{ entity.contact_phone_2 }}</p>
+                {% endif %}
+                {% if entity.fax %}
+                <p><strong>{% trans "Fax:" %} </strong>{{ entity.fax }}</p>
+                {% endif %}
+
+                {% if entity.email %}
+                <p><strong>{% trans "Email:" %} </strong>{{ entity.email|obfuscate  }}</p>
+                {% endif %}
+                {% if entity.email_2 %}
+                <p><strong>{% trans "Email 2:" %} </strong>{{ entity.email_2|obfuscate  }}</p>
+                {% endif %}
+
+                {% if entity.web %}
+                <p><strong>{% trans "Web:" %} </strong><a href="{{ entity.web }}" target="_blank">{{ entity.web }}</a></p>
+                {% endif %}
+                {% if entity.web_2 %}
+                <p><strong>{% trans "Web 2:" %} </strong><a href="{{ entity.web_2 }}" target="_blank">{{ entity.web_2 }}</a></p>
+                {% endif %}
+
+                {% if entity.contact_person %}
+                <p><strong>{% trans "Persona de contacto:" %} </strong>{{ entity.contact_person }}</p>
+                {% endif %}
+
+                {% if entity.creation_year %}
+                <p><strong>{% trans "Año de creación:" %} </strong>{{ entity.creation_year }}</p>
+                {% endif %}
+
+                {% if entity.legal_form %}
+                <p><strong>{% trans "Forma jurídica:" %} </strong>{{ entity.legal_form }}</p>
+                {% endif %}
+
+                {% if entity.description %}
+                <h3>{% trans "Descripción:" %}</h3>
+                <p>{{ entity.description|safe|linebreaksbr }}</p>
+                {% endif %}
+
+                {% if entity.goals %}
+                <h3>{% trans "Objetivo como entidad:" %}</h3>
+                <p>{{ entity.goals|safe|linebreaksbr }}</p>
+                {% endif %}
+
+                {% if entity.finances %}
+                <h3>{% trans "Finanzas:" %}</h3>
+                <p>{{ entity.finances|safe|linebreaksbr }}</p>
+                {% endif %}
+
+                {% if entity.social_values %}
+                <h3>{% trans "Valores sociales y medioambientales:" %}</h3>
+                <p>{{ entity.social_values|safe|linebreaksbr }}</p>
+                {% endif %}
+
+                {% if entity.how_to_access %}
+                <h3>{% trans "Forma de acceso:" %}</h3>
+                <p>{{ entity.how_to_access|safe|linebreaksbr }}</p>
+                {% endif %}
+
+                {% if entity.networks_member %}
+                <h3>{% trans "Redes de las que forma parte:" %}</h3>
+                <p>{{ entity.networks_member|safe|linebreaksbr }}</p>
+                {% endif %}
+
+                {% if entity.networks_works_with %}
+                <h3>{% trans "Otras entidades con las que colabora:" %}</h3>
+                <p>{{ entity.networks_works_with|safe|linebreaksbr }}</p>
+                {% endif %}
+
+                {% if entity.ongoing_projects %}
+                <h3>{% trans "Proyectos en marcha:" %}</h3>
+                <p>{{ entity.ongoing_projects|safe|linebreaksbr }}</p>
+                {% endif %}
+
+                {% if entity.needs %}
+                <h3>{% trans "Necesidades:" %}</h3>
+                <p>{{ entity.needs|safe|linebreaksbr }}</p>
+                {% endif %}
+
+                {% if entity.offerings %}
+                <h3>{% trans "Ofrecimientos:" %}</h3>
+                <p>{{ entity.offerings|safe|linebreaksbr }}</p>
+                {% endif %}
+
+                {% if entity.additional_info %}
+                <h3>{% trans "Información adicional:" %}</h3>
+                <p>{{ entity.additional_info|safe|linebreaksbr }}</p>
+                {% endif %}
+
+                {% if entity.active_subcategories.all %}
+                <h3>{% trans "Categorías:" %}</h3>
+                <ul>
+                    {% for subcategory in entity.active_subcategories.all %}
+                    <li>
+                        {{ subcategory }}
+                        {% ifequal subcategory entity.main_subcategory %}
+                        <strong>(*)</strong>
+                        {% endifequal %}
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+                {% if entity.tags.all %}
+                    {% regroup entity.tags.all by collection as tag_groups %}
+                    {% for group in tag_groups %}
+                        <h3>{{ group.grouper.name }}:</h3>
+                        <ul>
+                            {% for tag in group.list %}
+                            <li>{{ tag.name }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endfor %}
+                {% endif %}
+
+                <h3>{% trans "Fuente de los datos:" %}</h3>
+                <p><a href="{% url 'map-source' map_source_slug=entity.map_source.slug %}">{{ entity.map_source.name }}</a></p>
+
+                <h3>{% trans "Última actualización de la ficha:" %}</h3>
+                <p>{{ entity.modification_date|date:"DATE_FORMAT" }}</p>
+
+            </div>
+            {% endblock %}
+
