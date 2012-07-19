@@ -40,6 +40,15 @@ LANGUAGES = (
     ('en', 'English'),
 )
 
+# Skin for demo site
+TEMPLATE_DIRS += (
+    os.path.join(PROJECT_ROOT, 'skins/demo/templates'),
+)
+
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'skins/demo/static'),
+)
+
 # Piwik settings
 # If you want web traffic tracking with Piwik, enter here the host and site id
 PIWIK_HOST = ''
