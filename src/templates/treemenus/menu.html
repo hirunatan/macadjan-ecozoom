@@ -1,0 +1,7 @@
+{% load tree_menu_tags %}
+<ul>
+    {% for menu_item in menu.root_item.children %}
+        {% show_menu_item menu_item %}
+    {% endfor %}
+</ul>
+

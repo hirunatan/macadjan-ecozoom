@@ -1,4 +1,5 @@
 *.log
+*.mo
 *.pot
 *.pyc
 *.swp

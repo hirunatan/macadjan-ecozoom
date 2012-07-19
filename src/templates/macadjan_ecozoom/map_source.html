@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ map_source.name }} - {{ current_site_info.website_name }}{% endblock %}
+
+{% block content %}
+<h1>
+    {{ map_source.name }}
+</h1>
+<p>{{ map_source.description|safe|linebreaksbr }}</p>
+{% if map_source.web %}
+    <h3>{% trans "Página web" %}</h3>
+    <p><a href="{{ map_source.web }}">{{ map_source.web }}</a></p>
+{% endif %}
+
+{% endblock %}
+

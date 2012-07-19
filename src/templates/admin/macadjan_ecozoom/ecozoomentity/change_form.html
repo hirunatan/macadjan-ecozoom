@@ -1,0 +1,173 @@
+{% extends "admin/change_form.html" %}
+{% load i18n %}
+{% load l10n %}
+{% block form_top %}
+    <div style="position: absolute; top: 100px; right: 0px; width: 430px;">
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false" />
+
+        <script type="text/javascript">
+            window._uds_msw_donotrepair = true;
+        </script>
+
+        <script type="text/javascript">
+
+            var map;
+            var marker;
+
+            var tool_address_input;
+            var tool_latitude_input;
+            var tool_longitude_input;
+
+            var address_1_input;
+            var zip_input;
+            var city_input;
+            var province_input;
+
+            var latitude_input;
+            var longitude_input;
+
+            function loadAddress() {
+                if(!tool_address_input)
+                    tool_address_input = document.getElementById("tool_address");
+                if(!address_1_input)
+                    address_1_input = document.getElementById("id_address_1");
+                if(!zip_input)
+                    zip_input = document.getElementById("id_zipcode");
+                if(!city_input)
+                    city_input = document.getElementById("id_city");
+                if(!province_input)
+                    province_input = document.getElementById("id_province");
+
+                var address = '';
+                if (address_1_input.value)
+                    address += address_1_input.value;
+                if (zip_input.value)
+                    address += " " + zip_input.value;
+                if (city_input.value)
+                    address += " " + city_input.value;
+                if (province_input.value)
+                    address += " (" + province_input.value + ")";
+                tool_address_input.value = address;
+            }
+
+            function showAddress() {  
+                if(!tool_address_input)
+                    tool_address_input = document.getElementById("tool_address");
+                var address = tool_address_input.value;
+
+                var geocoder = new google.maps.Geocoder();
+                geocoder.geocode({ 'address': address}, function(results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        var latlng = results[0].geometry.location;
+                        map.setCenter(latlng, 16);
+                        marker.setPosition(latlng); 
+                        if (! tool_latitude_input)
+                           tool_latitude_input = document.getElementById("tool_latitude");
+                        if (! tool_longitude_input)
+                            tool_longitude_input = document.getElementById("tool_longitude");
+                        tool_latitude_input.value = latlng.lat();
+                        tool_longitude_input.value = latlng.lng();
+                    } else {
+                      alert("{% trans 'No se ha podido calcular las coordenadas, código de error:' %} " + status);
+                    }
+                });
+            }
+
+            function update_point(){
+                if (! tool_latitude_input)
+                    tool_latitude_input = document.getElementById("tool_latitude");
+                if (! tool_longitude_input)
+                    tool_longitude_input = document.getElementById("tool_longitude");
+                tool_latitude_input.value = marker.getPosition().lat();
+                tool_longitude_input.value = marker.getPosition().lng();
+            }
+
+            function saveAddress(){
+                if (! tool_latitude_input)
+                    tool_latitude_input = document.getElementById("tool_latitude");
+                if (! tool_longitude_input)
+                    tool_longitude_input = document.getElementById("tool_longitude");
+                if (! latitude_input)
+                    latitude_input = document.getElementById("id_latitude");
+                if (! longitude_input)
+                    longitude_input = document.getElementById("id_longitude");
+                latitude_input.value = tool_latitude_input.value;
+                longitude_input.value = tool_longitude_input.value;
+            }
+
+            function LoadMapSearchControl() {
+
+                if (! tool_latitude_input)
+                    tool_latitude_input = document.getElementById("tool_latitude");
+                if (! tool_longitude_input)
+                    tool_longitude_input = document.getElementById("tool_longitude");
+                if (! latitude_input)
+                    latitude_input = document.getElementById("id_latitude");
+                if (! longitude_input)
+                    longitude_input = document.getElementById("id_longitude");
+                tool_latitude_input.value = latitude_input.value;
+                tool_longitude_input.value = longitude_input.value;
+                
+                var mapCenter, mapZoom;
+                if (tool_latitude_input.value && tool_longitude_input.value) {
+                    mapCenter = new google.maps.LatLng(tool_latitude_input.value, tool_longitude_input.value);
+                    mapZoom = 16;
+                } else {
+                    {% localize off %}
+                    mapCenter = new google.maps.LatLng({{ current_site_info.map_initial_lat }},
+                                                       {{ current_site_info.map_initial_lon }});
+                    mapZoom = {{ current_site_info.map_initial_zoom }};
+                    {% endlocalize %}
+                }
+
+                var options = {
+                  center: mapCenter,
+                  zoom: mapZoom,
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                map = new google.maps.Map(document.getElementById("map_latlon"), options);
+
+                marker = new google.maps.Marker({
+                    map: map,
+                    position: map.getCenter(), 
+                    draggable: true,
+                    bouncy: false,
+                });   
+                google.maps.event.addListener(marker, 'dragend', function() {
+                    update_point();
+                });
+
+                loadAddress();
+                update_point();
+            }
+
+            google.maps.event.addDomListener(window, 'load', LoadMapSearchControl);
+        </script>  
+
+        <div id="map_latlon" class="gmap" style="width: 410px; height: 350px"></div>
+        
+        <div>        
+             <br/>
+             <input type="button" value="{% trans 'Cargar' %}" onClick="loadAddress(); return false"/>
+             <br/>
+             <input type="text" size="45" name="tool_address" id="tool_address"
+                    value="{% trans '(Escribe o carga la dirección)' %}" onClick="if (this.value == '{% trans "(Escribe o carga la dirección)" %}') this.value=''" />
+             <input type="button" value="{% trans 'Buscar' %}" onClick="showAddress(); return false"/>
+             <br/>
+             <input type="text" size="20" name="tool_latitude" id="tool_latitude" value="" />
+             <input type="text" size="20" name="tool_longitude" id="tool_longitude" value="" />
+             <input type="button" value="{% trans 'Guardar' %}" onClick="saveAddress(); return false"/>
+             <br/>
+             <p><strong>{% trans "Instrucciones" %}</strong></p>
+             <ol style="margin-right: 10px;">
+                 <li>{% trans 'Rellenar las casillas calle, número, etc. del formulario.' %}</li>
+                 <li>{% trans 'Pulsar "Cargar" para copiar la dirección a la casilla de aquí encima. Se puede modificar a mano si es necesario.' %}</li>
+                 <li>{% trans 'Pulsar "Buscar" para localizar el punto en el mapa. Se puede mover el marcador a mano si es necesario.' %}</li>
+                 <li>{% trans 'Pulsar "Guardar" para copiar las coordenadas a las casillas del formulario.' %}</li>
+             </ol>
+        </div>
+
+    </div>
+{% endblock %}
+
