@@ -4,6 +4,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 from macadjan.models import Entity
+from macadjan.utils import slugify_uniquely
 
 
 class MapSource(models.Model):

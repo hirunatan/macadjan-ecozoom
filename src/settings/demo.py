@@ -57,5 +57,6 @@ PIWIK_SITE_ID = 0
 # Default marker image (used for categories or subcategories that not define their own marker).
 DEFAULT_MARKER_URL = 'img/markers/icons/cluster3.png'
 
+# Whoosh index directory
 HAYSTACK_CONNECTIONS['default']['PATH'] = os.path.join(PROJECT_ROOT, 'whoosh/index_demo')
 
