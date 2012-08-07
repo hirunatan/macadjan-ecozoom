@@ -1,0 +1,31 @@
+{% extends 'macadjan/base.html' %}
+{% load i18n l10n %}
+
+{% block title %}{% trans 'Error 500' %} - {{ current_site_info.website_name }}{% endblock %}
+
+{% block body %}
+<div class="main-container">
+    <div id="header-wrapper">
+        <div id="header-box">
+            {% include "macadjan/page-header.html" %}
+        </div>
+    </div>
+    <div id="menu-wrapper">
+        <div id="menu-box">
+            {% include "macadjan/page-menu.html" %}
+        </div>
+    </div>
+    <div id="content-wrapper">
+        <div id="content-box">
+            <h1>{% trans "Error 500" %}</h1>
+            <p>{% trans "Ha habido un error interno. Si se repite, ponte en contacto con los administradores del sitio." %}</p>
+        </div>
+    </div>
+    <div id="footer-wrapper">
+        <div id="footer-box">
+            {% include "macadjan/page-footer.html" %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+

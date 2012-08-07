@@ -1,0 +1,31 @@
+{% extends 'macadjan/base.html' %}
+{% load i18n l10n %}
+
+{% block title %}{% trans 'Error 403' %} - {{ current_site_info.website_name }}{% endblock %}
+
+{% block body %}
+<div class="main-container">
+    <div id="header-wrapper">
+        <div id="header-box">
+            {% include "macadjan/page-header.html" %}
+        </div>
+    </div>
+    <div id="menu-wrapper">
+        <div id="menu-box">
+            {% include "macadjan/page-menu.html" %}
+        </div>
+    </div>
+    <div id="content-wrapper">
+        <div id="content-box">
+            <h1>{% trans "Error 403" %}</h1>
+            <p>{% trans "Lo siento, no estás autorizado a entrar aquí." %}</p>
+        </div>
+    </div>
+    <div id="footer-wrapper">
+        <div id="footer-box">
+            {% include "macadjan/page-footer.html" %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+

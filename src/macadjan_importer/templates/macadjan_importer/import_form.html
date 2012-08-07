@@ -1,0 +1,35 @@
+{% extends "macadjan/main-page.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block title %}{% trans "Importación de datos" %} - {{ current_site_info.website_name }}{% endblock %}
+
+{% block content %}
+
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{message.tags}}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <h2>Importación de datos</h2>
+    {% if intro_text %}
+        <div>{{ intro_text|safe }}</div>
+    {% endif %}
+
+    <form enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+
+        {{ import_form.as_p }}
+
+        <div class="boton_principal">
+            <input type="submit" name="submit_form" value="Importar"/>
+        </div>
+    </form>
+
+    <p><a href="{% url 'import-select' %}">Volver atrás</a></p>
+
+{% endblock %}
+

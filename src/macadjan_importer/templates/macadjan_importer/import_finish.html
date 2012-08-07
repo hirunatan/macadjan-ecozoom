@@ -1,0 +1,41 @@
+{% extends "macadjan/main-page.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block title %}{% trans "Importación de datos" %} - {{ current_site_info.website_name }}{% endblock %}
+
+{% block content %}
+
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{message.tags}}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <h2>{% trans "Importación de datos" %}</h2>
+
+    {% if import_errors %}
+        {% for error_message in import_errors %}
+            <p>{{ error_message }}</p>
+        {% endfor %}
+        <p><a href="{% url "import" importer_name=importer_name %}">{% trans "Volver atrás" %}</a></p>
+    {% else %}
+        <h2>{% trans "Se han actualizado las siguientes entidades:" %}</h2>
+        <table width="100%">
+            {% for entity in import_result %}
+                <tr>
+                    <td>
+                        <a href="/admin/macadjan_ecozoom/ecozoomentity/{{ entity.id }}" target="_blank">
+                            {{ entity.name }}
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        <p><a href="{% url "import-select" %}">{% trans "Volver al principio" %}</a></p>
+    {% endif %}
+
+{% endblock %}
+

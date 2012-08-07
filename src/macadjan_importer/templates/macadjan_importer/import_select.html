@@ -1,0 +1,33 @@
+{% extends "macadjan/main-page.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block title %}{% trans "Importación de datos" %} - {{ current_site_info.website_name }}{% endblock %}
+
+{% block content %}
+    <h2>{% trans "Importación de datos" %}</h2>
+
+    {% if not importers %}
+        <h3>{% blocktrans %}No hay ningún tipo de importador registrado. Si quieres importar datos automáticamente desde
+        fichero, deberás instalar uno (consulta con el administrador del mapa).{% endblocktrans %}</h3>
+    {% else %}
+        <h3>{% trans "Selecciona el tipo de fichero que quieres importar:" %}</h3>
+        <ul>
+            {% for importer_name, importer in importers %}
+                <li>
+                    <a href="{% url "import" importer_name=importer_name %}">
+                        {{ importer.title }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+        <ul class="messages">
+            <li class="error">{% blocktrans %}ATENCIÓN: antes de proceder, se recomienta encarecidamente
+            hacer una copia de seguridad de la base de datos.{% endblocktrans %}</li>
+        </ul>
+    {% endif %}
+
+    <p><a href="{% url 'admin:index' %}">{% trans "Volver al panel de administración" %}</a></p>
+
+{% endblock %}
+
