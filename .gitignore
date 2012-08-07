@@ -14,6 +14,8 @@ src/activate_*.sh
 !src/activate_demo.sh
 
 src/settings/*.py
+!src/settings/__init__.py
+!src/settings/common.py
 !src/settings/demo.py
 !src/settings/demo_pro.py
 
