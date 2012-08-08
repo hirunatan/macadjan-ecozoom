@@ -1,0 +1,86 @@
+{% extends "macadjan/main-page.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block title %}{{ current_site_info.website_name }}{% endblock %}
+
+{% block content %}
+
+    <blockquote class="resaltado">
+        {% blocktrans with other_db_name=db_link.other_db_name %}
+            Esta entidad existe en {{ other_db_name }} y también en local.
+        {% endblocktrans %}
+        <a href="{% url "sync-db" id_link=db_link.id %}">{% trans "[Volver atrás]" %}</a>
+    </blockquote>
+
+    {% if msg_error %}
+        <ul class="messages">
+            <li class="error">{{ msg_error }}</li>
+        </ul>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+
+        <table width="100%" class="sync_table">
+            <colgroup>
+                <col width="20%"/>
+                <col width="30%"/>
+                <col width="50%"/>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>&nbsp;</th>
+                    <th>{% trans "En local" %}</th>
+                    <th>{% blocktrans with other_db_name=db_link.other_db_name %}En {{ db_link.other_db_name }}{% endblocktrans %}</th>
+                </tr>
+            <thead>
+            <tbody>
+                {% for field, reset_value, display_value, update_value in packed_fields %}
+                    <tr>
+                        {% if field.label %}
+                            <th>
+                                {% if update_value != None and reset_value != update_value %}
+                                    <a href="" name="reset_{{ field.name }}"
+                                       onclick="document.getElementById('id_{{ field.name }}').value = '{{ reset_value }}'; return false;">
+                                        {{ field.label_tag }}
+                                    </a>
+                                {% else %}
+                                    {{ field.label_tag }}
+                                {% endif %}
+                            </th>
+                        {% endif %}
+                        <td>
+                            {{ field }}
+                            {% if field.errors %}
+                                <ul class="errorlist">
+                                    {% for error in field.errors %}
+                                        <li>{{ error }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if update_value != None and reset_value != update_value %}
+                                <a href="" name="update_{{ field.name }}"
+                                   onclick="document.getElementById('id_{{ field.name }}').value = '{{ update_value }}'; return false;">
+                                   [Copiar] 
+                                </a>
+                            {% endif %}
+                            <span{% ifnotequal reset_value update_value %} class="sync_changed"{% endifnotequal %}>
+                                {{ display_value|safe }}
+                            </span>
+                        </td>
+                    </tr>
+                {% endfor %}
+            <tbody>
+        </table>
+
+        <div class="boton_principal">
+            <input type="submit" name="submit_form" value="{% trans 'Actualizar esta entidad en la base de datos local' %}"/>
+        </div>
+
+    </form>
+
+{% endblock %}
+

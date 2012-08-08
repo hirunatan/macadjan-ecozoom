@@ -23,6 +23,9 @@ DATABASES = {
     #},
 }
 
+# Uncomment if you want to sync this map with other ones
+#INSTALLED_APPS.append('macadjan_sync')
+
 # People that get error notification emails
 ADMINS = (
     ('Demo User', 'demo_user@demo.com'),

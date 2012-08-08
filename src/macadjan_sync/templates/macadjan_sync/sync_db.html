@@ -1,0 +1,120 @@
+{% extends "macadjan/main-page.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block title %}{{ current_site_info.website_name }}{% endblock %}
+
+{% block content %}
+
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{message.tags}}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <h1>{% blocktrans with other_db_name=db_link.other_db_name %}Sincronización con la base de datos {{ other_db_name }}{% endblocktrans %}</h1>
+
+    {% for name, new_entities, modified_entities, conflict_entities in grouped_list %}
+    
+        <h2>{{ name }}</h2>
+
+        {% if modified_entities %}
+            <h3>{% blocktrans with other_db_name=db_link.other_db_name %}Entidades modificadas en {{ other_db_name }}{% endblocktrans %}</h3>
+            <table width="100%">
+                {% for entity_local, entity_other in modified_entities %}
+                    <tr>
+                        <td width="50%">
+                            <a href="{% url "sync-db-update" id_link=db_link.id id_entity_other=entity_other.id id_entity_local=entity_local.id %}">
+                                {{ entity_local.name }}
+                            </a>
+                        </td>
+                        <td width="50%">{{ entity_other.name }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+
+        {% if conflict_entities %}
+            <h3>{% trans "Entidades modificadas en ambas bases" %}</h3>
+            <table width="100%">
+                {% for entity_local, entity_other in conflict_entities %}
+                    <tr>
+                        <td width="50%">
+                            <a href="{% url "sync-db-update" id_link=db_link.id id_entity_other=entity_other.id id_entity_local=entity_local.id %}">
+                                {{ entity_local.name }}
+                            </a>
+                        </td>
+                        <td width="50%">{{ entity_other.name }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+
+        {% if new_entities %}
+            <h3>{% blocktrans with other_db_name=db_link.other_db_name %}Entidades nuevas (sólo existen en {{ other_db_name }}){% endblocktrans %}</h3>
+            <table width="100%">
+                {% for entity in new_entities %}
+                    <tr>
+                        <td>
+                            <a href="{% url "sync-db-new" id_link=db_link.id id_entity=entity.id %}">
+                                {{ entity.name }}
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+
+    {% endfor %}
+
+    {% if synced_entities %}
+        <h2>{% trans "Entidades sincronizadas en esta sesión" %}</h2>
+        <table width="100%">
+            {% for entity in synced_entities %}
+                <tr>
+                    <td>
+                        <a href="/admin/macadjan_base/entity/{{ entity.id }}" target="_blank">
+                            {{ entity.name }}
+                        </a>
+                        {{ entity.name }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+
+    {% if discarded_entities %}
+        <h2>{% trans "Entidades descartadas en esta sesión" %}</h2>
+        <table width="100%">
+            {% for entity in discarded_entities %}
+                <tr>
+                    <td>
+                        <a href="{% url "sync-db-new" id_link=db_link.id id_entity=entity.id %}">
+                            {{ entity.name }}
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+
+    {% if not grouped_list and not synced_entities and not discarded_entities %}
+        <h2>{% trans "No hay ninguna modificación, las bases de datos están sincronizadas" %}</h2>
+    {% else %}
+        <h2>{% trans "Finalizar" %}</h2>
+        <ul class="messages">
+            <li class="success">
+                {% url "sync-db-finish" id_link=db_link.id as finish_url %}
+                {% blocktrans %}
+                    <a href="{{ finish_url }}">Pulsar aquí</a> para finalizar esta sincronización y fijar los cambios.
+                {% endblocktrans %}
+            </li>
+        </ul>
+    {% endif %}
+
+    <p><a href="{% url 'sync-db-select' %}">{% trans "Volver atrás" %}</a></p>
+
+{% endblock %}
+

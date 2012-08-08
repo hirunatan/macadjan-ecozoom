@@ -83,6 +83,7 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     'django.core.context_processors.tz',
     "django.contrib.messages.context_processors.messages",
     'macadjan_ecozoom.context_processors.current_site_info',
+    'macadjan_ecozoom.context_processors.is_sync_installed',
     'macadjan_ecozoom.context_processors.piwik_settings',
 ]
 
@@ -105,7 +106,6 @@ INSTALLED_APPS = [
     'captcha',
     'south',
     'macadjan_importer',
-    'macadjan_sync',
     'macadjan_ecozoom',
     'macadjan',
 ]

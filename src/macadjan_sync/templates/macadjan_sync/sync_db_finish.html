@@ -1,0 +1,106 @@
+{% extends "macadjan/main-page.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block title %}{{ current_site_info.website_name }}{% endblock %}
+
+{% block content %}
+
+    <h1>{% blocktrans with other_db_name=db_link.other_db_name %}Finalizar la sincronización con la base de datos {{ other_db_name }}{% endblocktrans %}</h1>
+
+    {% if not grouped_list and not synced_entities %}
+        <h2>{% trans "No hay ninguna modificación, las bases de datos están sincronizadas" %}</h2>
+    {% else %}
+        <form method="post">
+            {% csrf_token %}
+            <ul class="messages">
+                <li class="error">
+                    {% blocktrans %}
+                    ATENCIÓN: Pulsando este botón se dará por completada esta sincronización.<br/>
+                    - Se memorizará la fecha y hora actual.<br/>
+                    - Cualquier entidad no sincronizada será marcada para ignorar.<br/>
+                    - Sólo se podrán volver a sincronizar las entidades que se modifiquen a partir de ahora.<br/>
+                    {% endblocktrans %}
+                    <a href="{% url "sync-db" id_link=db_link.id %}">{% trans "[Volver atrás]" %}</a>
+                </li>
+            </ul>
+            <div class="boton_principal">
+                <input type="submit" name="submit_form" value="{% trans 'Finalizar esta sincronización' %}"/>
+            </div>
+        </form>
+    {% endif %}
+
+    {% if synced_entities %}
+        <h2>{% trans "Entidades sincronizadas en esta sesión" %}</h2>
+        <table width="100%">
+            {% for entity in synced_entities %}
+                <tr>
+                    <td>
+                        <a href="/admin/macadjan_base/entity/{{ entity.id }}" target="_blank">
+                            {{ entity.name }}
+                        </a>
+                        {{ entity.name }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+
+    {% if grouped_list %}
+
+        <h2>{% trans "Entidades ignoradas (no se copiarán a la base de datos local)" %}</h2>
+
+        {% for name, new_entities, modified_entities, conflict_entities in grouped_list %}
+        
+            <h3>{{ name }}</h3>
+
+            {% if modified_entities %}
+                <table width="100%">
+                    {% for entity_local, entity_other in modified_entities %}
+                        <tr>
+                            <td width="50%">
+                                <a href="{% url "sync-db-update" id_link=db_link.id id_entity_other=entity_other.id id_entity_local=entity_local.id %}">
+                                    {{ entity_local.name }}
+                                </a>
+                            </td>
+                            <td width="50%">{{ entity_other.name }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% endif %}
+
+            {% if conflict_entities %}
+                <table width="100%">
+                    {% for entity_local, entity_other in conflict_entities %}
+                        <tr>
+                            <td width="50%">
+                                <a href="{% url "sync-db-update" id_link=db_link.id id_entity_other=entity_other.id id_entity_local=entity_local.id %}">
+                                    {{ entity_local.name }}
+                                </a>
+                            </td>
+                            <td width="50%">{{ entity_other.name }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% endif %}
+
+            {% if new_entities %}
+                <table width="100%">
+                    {% for entity in new_entities %}
+                        <tr>
+                            <td>
+                                <a href="{% url "sync-db-new" id_link=db_link.id id_entity=entity.id %}">
+                                    {{ entity.name }}
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% endif %}
+
+        {% endfor %}
+
+    {% endif %}
+
+{% endblock %}
+

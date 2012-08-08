@@ -14,6 +14,13 @@ def current_site_info(request):
     except SiteInfo.DoesNotExist:
         return {'current_site_info': None}
 
+
+def is_sync_installed(request):
+    '''Checks if macadjan_sync application is installed.'''
+    is_sync = 'macadjan_sync' in settings.INSTALLED_APPS
+    return {'IS_SYNC_INSTALLED': is_sync}
+
+
 def piwik_settings(request):
     '''Adds piwik settings to all template contexts.'''
     host = getattr(settings, 'PIWIK_HOST', None)

@@ -1,0 +1,33 @@
+{% extends "macadjan/main-page.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block title %}{{ current_site_info.website_name }}{% endblock %}
+
+{% block content %}
+    <h1>{% trans "Sincronización de bases de datos" %}</h1>
+
+    {% if not db_links %}
+        <h3>{% trans "No hay ninguna b.d. registrada para sincronizar, por favor registra una desde el admin." %}</h3>
+    {% else %}
+        <h3>{% trans "Selecciona la b.d. con la que quieres sincronizar:" %}</h3>
+        <ul>
+            {% for db_link in db_links %}
+                <li>
+                    <a href="{% url "sync-db" id_link=db_link.id %}">
+                        {{ db_link.other_db_name }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+        <ul class="messages">
+            <li class="error">
+                {% trans "ATENCIÓN: antes de proceder, se recomienta encarecidamente hacer una copia de seguridad de la base de datos." %}
+            </li>
+        </ul>
+    {% endif %}
+
+    <p><a href="{% url 'admin:index' %}">{% trans "Volver al panel de administración" %}</a></p>
+
+{% endblock %}
+

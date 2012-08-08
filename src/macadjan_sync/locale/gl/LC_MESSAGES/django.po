@@ -1,0 +1,487 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-05-09 15:25+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: models.py:12 models.py:39 models.py:319
+msgid "Conexión BD"
+msgstr ""
+
+#: models.py:13 models.py:40
+msgid "A qué conexión BD pertenece este enlace"
+msgstr ""
+
+#: models.py:17
+msgid "Tipo de entidad local"
+msgstr ""
+
+#: models.py:18
+msgid "Tipo de entidad en la BD local"
+msgstr ""
+
+#: models.py:21
+msgid "Tipo de entidad otra BD"
+msgstr ""
+
+#: models.py:22
+msgid "Id del tipo de entidad de la otra BD"
+msgstr ""
+
+#: models.py:25
+#, python-format
+msgid "Sincr tipo de entidad %(local_cat)s <- %(other_cat)s"
+msgstr ""
+
+#: models.py:32
+msgid "vínculo tipo de entidad"
+msgstr ""
+
+#: models.py:33
+msgid "vínculos tipos de entidad"
+msgstr ""
+
+#: models.py:44
+msgid "Categoría local"
+msgstr ""
+
+#: models.py:45
+msgid "Categoría en la BD local"
+msgstr ""
+
+#: models.py:48
+msgid "Categoría otra BD"
+msgstr ""
+
+#: models.py:49
+msgid "Slug de la subcategoría de la otra BD"
+msgstr ""
+
+#: models.py:52
+#, python-format
+msgid "Sincr subcategoría %(local_cat)s <- %(other_cat)s"
+msgstr ""
+
+#: models.py:59
+msgid "vínculo subcategoría"
+msgstr ""
+
+#: models.py:60
+msgid "vínculos subcategorías"
+msgstr ""
+
+#: models.py:65
+msgid "Otra BD"
+msgstr ""
+
+#: models.py:66
+msgid "Nombre de la otra base de datos"
+msgstr ""
+
+#: models.py:68
+msgid "Fuente"
+msgstr ""
+
+#: models.py:69
+msgid "Fuente de mapeo vinculada a esta base de datos"
+msgstr ""
+
+#: models.py:72
+#, python-format
+msgid "Sincr default <-> %(other_db)s"
+msgstr ""
+
+#: models.py:77
+msgid "conexión otra BD"
+msgstr ""
+
+#: models.py:78
+msgid "conexiones otras BD"
+msgstr ""
+
+#: models.py:320
+msgid "A qué conexión BD pertenece esta sincronización"
+msgstr ""
+
+#: models.py:323
+msgid "fecha de fin de la sincronización"
+msgstr ""
+
+#: models.py:324
+msgid "Fecha y hora de finalización de esta sincronización"
+msgstr ""
+
+#: models.py:328
+msgid "Entidades sincronizadas"
+msgstr ""
+
+#: models.py:331
+#, python-format
+msgid "Sincr default <-> %(other_db)s [%(finished_date)s]"
+msgstr ""
+
+#: models.py:333 models.py:363
+msgid "Actual"
+msgstr ""
+
+#: models.py:345
+msgid "sincronización con otra BD"
+msgstr ""
+
+#: models.py:346
+msgid "sincronizaciones con otras BD"
+msgstr ""
+
+#: models.py:353
+msgid "sincronización"
+msgstr ""
+
+#: models.py:354
+msgid "A qué sincronización de una conexión BD pertenece esta sincronización"
+msgstr ""
+
+#: models.py:357
+msgid "entidad otra BD"
+msgstr ""
+
+#: models.py:358
+msgid "Id de la entidad descartada de la otra BD"
+msgstr ""
+
+#: models.py:361
+#, python-format
+msgid "Sincr default <-> %(other_db)s [%(finished_date)s] %(other_entity_id)d"
+msgstr ""
+
+#: models.py:370
+msgid "entidad descartada"
+msgstr ""
+
+#: models.py:371
+msgid "entidades descartadas"
+msgstr ""
+
+#: views.py:84
+msgid "Se ha completado la sincronización"
+msgstr ""
+
+#: views.py:144
+#, python-format
+msgid "Se ha añadido con éxito la entidad %(entidad)s"
+msgstr ""
+
+#: views.py:147
+msgid "No se puede crear la entidad, necesita tener al menos una categoría"
+msgstr ""
+
+#: views.py:149 views.py:233
+msgid "Check the errors in the fields"
+msgstr ""
+
+#: views.py:198 views.py:309 views.py:341
+#, python-format
+msgid "No Entity matches the given query in %(db_name)s database"
+msgstr ""
+
+#: views.py:229
+#, python-format
+msgid "Se ha actualizado con éxito la entidad %(entidad)s"
+msgstr ""
+
+#: views.py:273
+msgid "Sí"
+msgstr ""
+
+#: views.py:273
+msgid "No"
+msgstr ""
+
+#: views.py:314
+msgid "No Entity matches the given query in local database"
+msgstr ""
+
+#: views.py:325
+#, python-format
+msgid "Se ha descartado la entidad %(entidad)s"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db.html:17
+#, python-format
+msgid "Sincronización con la base de datos %(other_db_name)s"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db.html:24
+#, python-format
+msgid "Entidades modificadas en %(other_db_name)s"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db.html:40
+msgid "Entidades modificadas en ambas bases"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db.html:56
+#, python-format
+msgid "Entidades nuevas (sólo existen en %(other_db_name)s)"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db.html:73
+#: templates/macadjan_sync/sync_db_finish.html:34
+msgid "Entidades sincronizadas en esta sesión"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db.html:89
+msgid "Entidades descartadas en esta sesión"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db.html:104
+#: templates/macadjan_sync/sync_db_finish.html:12
+msgid "No hay ninguna modificación, las bases de datos están sincronizadas"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db.html:106
+msgid "Finalizar"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db.html:110
+#, python-format
+msgid ""
+"\n"
+"                    <a href=\"%(finish_url)s\">Pulsar aquí</a> para "
+"finalizar esta sincronización y fijar los cambios.\n"
+"                "
+msgstr ""
+
+#: templates/macadjan_sync/sync_db.html:117
+msgid "Volver atrás"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_finish.html:9
+#, python-format
+msgid "Finalizar la sincronización con la base de datos %(other_db_name)s"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_finish.html:18
+msgid ""
+"\n"
+"                    ATENCIÓN: Pulsando este botón se dará por completada "
+"esta sincronización.<br/>\n"
+"                    - Se memorizará la fecha y hora actual.<br/>\n"
+"                    - Cualquier entidad no sincronizada será marcada para "
+"ignorar.<br/>\n"
+"                    - Sólo se podrán volver a sincronizar las entidades que "
+"se modifiquen a partir de ahora.<br/>\n"
+"                    "
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_finish.html:24
+#: templates/macadjan_sync/sync_db_new.html:11
+#: templates/macadjan_sync/sync_db_update.html:13
+msgid "[Volver atrás]"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_finish.html:28
+msgid "Finalizar esta sincronización"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_finish.html:51
+msgid "Entidades ignoradas (no se copiarán a la base de datos local)"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:10
+#, python-format
+msgid "Esta entidad existe en %(other_db_name)s pero no en local."
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:30
+msgid "Tipo de entidad:"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:34
+#, python-format
+msgid "<p>Es parte de %(name)s</p>"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:39
+msgid "Dirección:"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:46
+msgid "Zona de influencia:"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:50
+msgid "Teléfono de contacto:"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:53
+msgid "Teléfono de contacto 2:"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:56
+msgid "Fax:"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:60
+msgid "Email:"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:63
+msgid "Email 2:"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:67
+msgid "Web:"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:70
+msgid "Web 2:"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:74
+msgid "Persona de contacto:"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:78
+msgid "Año de creación:"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:82
+msgid "Descripción:"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:86
+msgid "Objetivo como entidad:"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:90
+msgid "Finanzas:"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:94
+msgid "Valores sociales y medioambientales:"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:98
+msgid "Forma de acceso:"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:102
+msgid "Redes de las que forma parte:"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:106
+msgid "Otras entidades con las que colabora:"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:110
+msgid "Proyectos en marcha:"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:114
+msgid "Necesidades:"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:118
+msgid "Ofrecimientos:"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:122
+msgid "Información adicional:"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:125
+msgid "Última actualización de la ficha:"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:131
+#, python-format
+msgid "Tipo en %(other_db_name)s"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:132
+msgid "Tipos correspondientes en la bd local"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:144
+msgid "Tipo sin correspondencia, se pondrá el primero que haya"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:154
+#, python-format
+msgid "Categorías en %(other_db_name)s"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:155
+msgid "Categorías correspondientes en la bd local"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:171
+msgid "Categoría sin correspondencia, no se copiará"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:180
+msgid "Crear esta entidad en la base de datos local"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_new.html:183
+msgid "Descartar esta entidad"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_select.html:8
+msgid "Sincronización de bases de datos"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_select.html:11
+msgid ""
+"No hay ninguna b.d. registrada para sincronizar, por favor registra una "
+"desde el admin."
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_select.html:13
+msgid "Selecciona la b.d. con la que quieres sincronizar:"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_select.html:25
+msgid ""
+"ATENCIÓN: antes de proceder, se recomienta encarecidamente hacer una copia "
+"de seguridad de la base de datos."
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_select.html:30
+msgid "Volver al panel de administración"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_update.html:10
+#, python-format
+msgid ""
+"\n"
+"            Esta entidad existe en %(other_db_name)s y también en local.\n"
+"        "
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_update.html:34
+msgid "En local"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_update.html:35
+#, python-format
+msgid "En %(db_link.other_db_name)s"
+msgstr ""
+
+#: templates/macadjan_sync/sync_db_update.html:80
+msgid "Actualizar esta entidad en la base de datos local"
+msgstr ""

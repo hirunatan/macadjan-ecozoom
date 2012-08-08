@@ -18,7 +18,7 @@ def staff_required():
             if request.user.is_staff:
                 return view_func(self, request, *args, **kwargs)
             else:
-                return HttpResponseForbidden(render_to_string('403.html', 
+                return HttpResponseForbidden(render_to_string('403.html',
                     context_instance=RequestContext(request)))
 
         return _check_user

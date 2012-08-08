@@ -1,0 +1,188 @@
+{% extends "macadjan/main-page.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block title %}{{ current_site_info.website_name }}{% endblock %}
+
+{% block content %}
+
+    <blockquote class="resaltado">
+        {% blocktrans with other_db_name=db_link.other_db_name %}Esta entidad existe en {{ other_db_name }} pero no en local.{% endblocktrans %}
+        <a href="{% url "sync-db" id_link=db_link.id %}">{% trans "[Volver atrás]" %}</a>
+    </blockquote>
+
+    {% if msg_error %}
+        <ul class="messages">
+            <li class="error">{{ msg_error }}</li>
+        </ul>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+
+        <h1>
+            {{ entity.name }}
+            {% if entity.alias %}({{ entity.alias }}){% endif %}
+        </h1>
+        <p>{{ entity.summary }}</p>
+
+        {% if entity.entity_type %}
+            <p><strong>{% trans "Tipo de entidad:" %} </strong>{{ entity.entity_type.name }}</p>
+        {% endif %}
+
+        {% if entity.contained_in %}
+            {% blocktrans with name=entity.contained_in.name %}<p>Es parte de {{ name }}</p>{% endblocktrans %}
+        {% endif %}
+
+        {% if entity.address_1 or entity_address_2 or entity.zipcode or entity.city or entity.province or entity.country %}
+            <p>
+               <strong>{% trans "Dirección:" %}</strong>  
+               {{ entity.address_1 }} {{ entity.address_2 }}
+               {{ entity.zipcode }} {{ entity.city }} {{ entity.province }}
+               {{ entity.country }}
+            </p>
+        {% endif %}
+        {% if entity.zone %}
+            <p><strong>{% trans "Zona de influencia:" %} </strong>{{ entity.zone }}</p>
+        {% endif %}
+
+        {% if entity.contact_phone_1 %}
+            <p><strong>{% trans "Teléfono de contacto:" %} </strong>{{ entity.contact_phone_1 }}</p>
+        {% endif %}
+        {% if entity.contact_phone_2 %}
+            <p><strong>{% trans "Teléfono de contacto 2:" %} </strong>{{ entity.contact_phone_2 }}</p>
+        {% endif %}
+        {% if entity.fax %}
+            <p><strong>{% trans "Fax:" %} </strong>{{ entity.fax }}</p>
+        {% endif %}
+
+        {% if entity.email %}
+        <p><strong>{% trans "Email:" %} </strong>{{ entity.email }}</p>
+        {% endif %}
+        {% if entity.email_2 %}
+        <p><strong>{% trans "Email 2:" %} </strong>{{ entity.email_2 }}</p>
+        {% endif %}
+
+        {% if entity.web %}
+        <p><strong>{% trans "Web:" %} </strong><a href="{{ entity.web }}" target="_blank">{{ entity.web }}</a></p>
+        {% endif %}
+        {% if entity.web_2 %}
+        <p><strong>{% trans "Web 2:" %} </strong><a href="{{ entity.web_2 }}" target="_blank">{{ entity.web_2 }}</a></p>
+        {% endif %}
+
+        {% if entity.contact_person %}
+        <p><strong>{% trans "Persona de contacto:" %} </strong>{{ entity.contact_person }}</p>
+        {% endif %}
+
+        {% if entity.creation_year %}
+        <p><strong>{% trans "Año de creación:" %} </strong>{{ entity.creation_year }}</p>
+        {% endif %}
+
+        {% if entity.description %}
+        <h3>{% trans "Descripción:" %}</h3>
+        <p>{{ entity.description|safe|linebreaksbr }}</p>
+        {% endif %}
+        {% if entity.goals %}
+        <h3>{% trans "Objetivo como entidad:" %}</h3>
+        <p>{{ entity.goals|safe|linebreaksbr }}</p>
+        {% endif %}
+        {% if entity.finances %}
+        <h3>{% trans "Finanzas:" %}</h3>
+        <p>{{ entity.finances|safe|linebreaksbr }}</p>
+        {% endif %}
+        {% if entity.social_values %}
+        <h3>{% trans "Valores sociales y medioambientales:" %}</h3>
+        <p>{{ entity.social_values|safe|linebreaksbr }}</p>
+        {% endif %}
+        {% if entity.how_to_access %}
+        <h3>{% trans "Forma de acceso:" %}</h3>
+        <p>{{ entity.how_to_access|safe|linebreaksbr }}</p>
+        {% endif %}
+        {% if entity.networks_member %}
+        <h3>{% trans "Redes de las que forma parte:" %}</h3>
+        <p>{{ entity.networks_member|safe|linebreaksbr }}</p>
+        {% endif %}
+        {% if entity.networks_works_with %}
+        <h3>{% trans "Otras entidades con las que colabora:" %}</h3>
+        <p>{{ entity.networks_works_with|safe|linebreaksbr }}</p>
+        {% endif %}
+        {% if entity.ongoing_projects %}
+        <h3>{% trans "Proyectos en marcha:" %}</h3>
+        <p>{{ entity.ongoing_projects|safe|linebreaksbr }}</p>
+        {% endif %}
+        {% if entity.needs %}
+        <h3>{% trans "Necesidades:" %}</h3>
+        <p>{{ entity.needs|safe|linebreaksbr }}</p>
+        {% endif %}
+        {% if entity.offerings %}
+        <h3>{% trans "Ofrecimientos:" %}</h3>
+        <p>{{ entity.offerings|safe|linebreaksbr }}</p>
+        {% endif %}
+        {% if entity.additional_info %}
+        <h3>{% trans "Información adicional:" %}</h3>
+        <p>{{ entity.additional_info|safe|linebreaksbr }}</p>
+        {% endif %}
+        <h3>{% trans "Última actualización de la ficha:" %}</h3>
+        <p>{{ entity.modification_date|date:"DATE_FORMAT" }}</p>
+
+        {% if entity.entity_type %}
+            <table width="100%">
+                <tr>
+                    <th width="50%">{% blocktrans with other_db_name=db_link.other_db_name %}Tipo en {{ other_db_name }}{% endblocktrans %}</th>
+                    <th width="50%">{% trans "Tipos correspondientes en la bd local" %}</th>
+                </tr>
+                <tr>
+                    <td width="50%">
+                        {{ other_entity_type }}
+                    </td>
+                    <td width="50%">
+                        {% if matching_entity_types %}
+                            {{ entity_type_form.entity_type_id }}
+                            {{ entity_type_form.entity_type_id.errors }}
+                            {{ entity_type_form.non_field_errors }}
+                        {% else %}
+                            {% trans "Tipo sin correspondencia, se pondrá el primero que haya" %}
+                        {% endif %}
+                    </td>
+                </tr>
+            </table>
+        {% endif %}
+        {% if entity.subcategories.all %}
+            {{ subcategory_formset.management_form }}
+            <table width="100%">
+                <tr>
+                    <th width="50%">{% blocktrans with other_db_name=db_link.other_db_name %}Categorías en {{ other_db_name }}{% endblocktrans %}</th>
+                    <th width="50%">{% trans "Categorías correspondientes en la bd local" %}</th>
+                </tr>
+                {% for other_subcategory,matching_categories,subcategory_form in subcategory_pack %}
+                    <tr>
+                        <td width="50%">
+                            {{ other_subcategory }}
+                            {% ifequal other_subcategory entity.main_subcategory %}
+                            <strong>(*)</strong>
+                            {% endifequal %}
+                        </td>
+                        <td width="50%">
+                            {% if matching_categories %}
+                                {{ subcategory_form.subcategory_slug }}
+                                {{ subcategory_form.subcategory_slug.errors }}
+                                {{ subcategory_form.non_field_errors }}
+                            {% else %}
+                                {% trans "Categoría sin correspondencia, no se copiará" %}
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% endif %}
+
+        <div class="boton_principal">
+            <input type="submit" name="submit_form" value="{% trans 'Crear esta entidad en la base de datos local' %}"/>
+        </div>
+
+        <a href="{% url "sync-db-discard" id_link=db_link.id id_entity=entity.id %}">{% trans "Descartar esta entidad" %}</a>
+
+    </form>
+
+{% endblock %}
+
