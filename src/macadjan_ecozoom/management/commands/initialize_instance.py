@@ -57,7 +57,7 @@ class Command(BaseCommand):
         current_site_info.map_max_resolution = 156543
         current_site_info.map_units = 'meters'
         current_site_info.map_initial_lon = -3.86
-        current_site_info.map_initial_lat = 48.38
+        current_site_info.map_initial_lat = 40.38
         current_site_info.map_initial_zoom = 6
         current_site_info.new_entity_proposal_enabled = False
         current_site_info.entity_change_proposal_enabled = False

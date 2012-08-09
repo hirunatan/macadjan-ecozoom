@@ -7,6 +7,13 @@ from macadjan.admin import EntityAdmin
 
 from . import models
 
-admin.site.register(models.MapSource)
-admin.site.register(models.EcozoomEntity, EntityAdmin)
+class MapSourceAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('name',)}
+
+admin.site.register(models.MapSource, MapSourceAdmin)
+
+class EcozoomEntityAdmin(EntityAdmin):
+    list_filter = ('is_active', 'subcategories', 'map_source')
+
+admin.site.register(models.EcozoomEntity, EcozoomEntityAdmin)
 

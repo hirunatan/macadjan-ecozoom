@@ -84,7 +84,7 @@ class SyncDBFinishView(TemplateView):
         self.db_link.finish_sync()
         self.db_link.save()
         messages.success(request, _(u'Se ha completado la sincronización'))
-        return HttpResponseRedirect(reverse('sync:sync-db', kwargs={'id_link': self.db_link.id}))
+        return HttpResponseRedirect(reverse('sync-db', kwargs={'id_link': self.db_link.id}))
 
     def get_context_data(self, **kwargs):
         context = super(SyncDBFinishView, self).get_context_data(**kwargs)
@@ -122,7 +122,7 @@ class SyncDBNewView(TemplateView):
 
         msg_error = u''
         if entity_type_form.is_valid() and subcategory_formset.is_valid():
-            # Valid forms: get the selected type and categories
+           # Valid forms: get the selected type and categories
             new_entity_type_id = entity_type_form.cleaned_data['entity_type_id']
             new_entity_type = get_object_or_404(models.EntityType, id = new_entity_type_id)
 
@@ -144,7 +144,7 @@ class SyncDBNewView(TemplateView):
                 self.db_link.create_local_entity(self.entity, new_entity_type, new_main_subcategory, new_subcategories)
                 self.db_link.mark_synced_entity(self.entity)
                 messages.success(request, _(u'Se ha añadido con éxito la entidad %(entidad)s') % {'entidad': self.entity.name})
-                return HttpResponseRedirect(reverse('sync:sync-db', kwargs={'id_link': self.db_link.id}))
+                return HttpResponseRedirect(reverse('sync-db', kwargs={'id_link': self.db_link.id}))
             else:
                 msg_error = _(u'No se puede crear la entidad, necesita tener al menos una categoría')
         else:
@@ -232,7 +232,7 @@ class SyncDBUpdateView(TemplateView):
             updated_entity.save(update_dates = False)
             self.db_link.mark_synced_entity(self.entity_local)
             messages.success(request, _(u'Se ha actualizado con éxito la entidad %(entidad)s') % {'entidad': self.entity_local.name})
-            return HttpResponseRedirect(reverse('sync:sync-db', kwargs={'id_link': self.db_link.id}))
+            return HttpResponseRedirect(reverse('sync-db', kwargs={'id_link': self.db_link.id}))
 
         else:
             msg_error = _(u'Check the errors in the fields')
@@ -336,7 +336,7 @@ class SyncDBDiscardView(RedirectView):
         return super(SyncDBDiscardView, self).get(request, *args, **kwargs)
 
     def get_redirect_url(self, **kwargs):
-        return reverse('sync:sync-db', kwargs={'id_link': self.db_link.id})
+        return reverse('sync-db', kwargs={'id_link': self.db_link.id})
 
     @staff_required()
     def dispatch(self, *args, **kwargs):

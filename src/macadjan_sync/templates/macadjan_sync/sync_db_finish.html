@@ -24,7 +24,7 @@
                     <a href="{% url "sync-db" id_link=db_link.id %}">{% trans "[Volver atrás]" %}</a>
                 </li>
             </ul>
-            <div class="boton_principal">
+            <div class="main_button">
                 <input type="submit" name="submit_form" value="{% trans 'Finalizar esta sincronización' %}"/>
             </div>
         </form>
@@ -36,7 +36,7 @@
             {% for entity in synced_entities %}
                 <tr>
                     <td>
-                        <a href="/admin/macadjan_base/entity/{{ entity.id }}" target="_blank">
+                        <a href="/admin/macadjan_ecozoom/ecozoomentity/{{ entity.id }}" target="_blank">
                             {{ entity.name }}
                         </a>
                         {{ entity.name }}

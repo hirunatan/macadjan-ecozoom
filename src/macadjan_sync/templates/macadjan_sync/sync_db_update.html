@@ -6,7 +6,7 @@
 
 {% block content %}
 
-    <blockquote class="resaltado">
+    <blockquote class="highlight">
         {% blocktrans with other_db_name=db_link.other_db_name %}
             Esta entidad existe en {{ other_db_name }} y también en local.
         {% endblocktrans %}
@@ -76,7 +76,7 @@
             <tbody>
         </table>
 
-        <div class="boton_principal">
+        <div class="main_button">
             <input type="submit" name="submit_form" value="{% trans 'Actualizar esta entidad en la base de datos local' %}"/>
         </div>
 
