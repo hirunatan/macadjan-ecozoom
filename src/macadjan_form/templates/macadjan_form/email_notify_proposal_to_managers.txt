@@ -1,0 +1,10 @@
+{% load i18n %}{% blocktrans with action=action entity_name=entity_name %}Se ha recibido la solicitud para {{ action }} la entidad {{ entity_name }}.{% endblocktrans %}
+
+{{ sender }}
+
+{{ comment }}
+
+{% trans 'Para tramitar la propuesta, ir aquí:' %}
+
+{{ link }}
+

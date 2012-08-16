@@ -1,0 +1,15 @@
+{% load i18n %}{% blocktrans with action=action entity_name=entity_name website_name=website_name %}Hemos recibido tu solicitud para {{ action }} {{ entity_name }}
+en {{ website_name }}.{% endblocktrans %}
+
+{% blocktrans %}Nos pondremos con ella y la subiremos al mapa lo antes posible, si está todo
+correcto. Recibirás otro mensaje en el momento en que la subamos, o también
+si decidimos que no la podemos subir, por algún motivo.
+
+Si ves que tarda un poco, ten paciencia. ¡Esto es un servicio atendido por
+voluntarios! Considera la opción de echarnos una mano...
+
+En todo caso, no dudes en contactar con nosotros si lo crees necesario, para
+ello consulta la sección de contacto de la web.
+
+¡Un saludo!{% endblocktrans %}
+

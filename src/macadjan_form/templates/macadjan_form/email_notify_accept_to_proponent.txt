@@ -1,0 +1,14 @@
+{% load i18n %}{% blocktrans with action=action entity_name=entity_name website_name=website_name %}Hemos aceptado tu solicitud para {{ action }} {{ entity_name }}
+en {{ website_name }}.{% endblocktrans %}
+
+{% trans 'Puedes ver el resultado en' %}
+{{ entity_url }}
+{% if status_info %}
+{% trans 'Aquí puedes ver los comentarios de los administradores:' %}
+{{ status_info }}
+{% endif %}
+{% blocktrans %}Esperamos que esté todo correcto. Si tienes cualquier duda, o comentario,
+ponte en contacto con nosotros y te atenderemos con mucho gusto.
+
+¡Muchas gracias por tu aportación! Un saludo.{% endblocktrans %}
+

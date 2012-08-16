@@ -107,6 +107,7 @@ INSTALLED_APPS = [
     'south',
     'macadjan_importer',
     'macadjan_ecozoom',
+    'macadjan_form',
     'macadjan',
 ]
 

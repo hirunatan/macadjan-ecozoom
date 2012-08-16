@@ -1,0 +1,16 @@
+{% load i18n %}{% blocktrans with action=action entity_name=entity_name website_name=website_name %}No hemos aceptado tu solicitud para {{ action }} {{ entity_name }}
+en {{ website_name }}.{% endblocktrans %}
+
+{% blocktrans %}Lo sentimos, hemos decidido no incorporar tu propuesta en el mapa,
+al menos por ahora.{% endblocktrans %}
+{% if status_info %}
+{% trans 'Aquí puedes ver los comentarios de los administradores:' %}
+{{ status_info }}
+{% else %}
+{% trans 'Los administradores no han indicado más información.' %}
+{% endif %}
+{% blocktrans %}Si necesitas saber algo más o tienes cualquier duda, o comentario,
+ponte en contacto con nosotros y te atenderemos con mucho gusto.
+
+Gracias de todos modos por tu aportación. Un saludo.{% endblocktrans %}
+

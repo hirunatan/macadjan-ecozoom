@@ -1,0 +1,15 @@
+{% load url from future %}
+{% load i18n %}
+{% load l10n %}
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>{% trans 'Proponer nueva entidad' %} - {{ current_site_info.website_name }}</title>
+    <link type="text/css" rel="stylesheet" media="screen" href="{{ STATIC_URL }}{{ current_theme.styles_url }}/styles_iframe.css" />
+</head>
+<body>
+    <h1>{% trans 'Proponer una nueva entidad' %}</h1>
+    <p>{% trans 'Tu propuesta ha sido enviada, la revisaremos y la incluiremos en el mapa lo antes posible. Comprueba tu correo, te hemos enviado un mensaje de confirmación.' %}</p>
+</body>
+</html>
+
