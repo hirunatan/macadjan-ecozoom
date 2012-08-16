@@ -1,0 +1,416 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-16 17:48+0200\n"
+"PO-Revision-Date: 2012-05-10 22:39\n"
+"Last-Translator:   <hirunatan@hammo.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Translated-Using: django-rosetta 0.6.2\n"
+
+#: archive_csv.py:62
+msgid "Debes configurar el archivo antes de empezar a leer"
+msgstr ""
+
+#: converter_base.py:35
+msgid "Error general"
+msgstr ""
+
+#: converter_base.py:41
+#, python-format
+msgid "Error en elemento %(number)d"
+msgstr ""
+
+#: converter_base.py:46
+msgid "Error cerrando el archivo"
+msgstr ""
+
+#: converter_base.py:69
+msgid "No se pueden consultar los errores antes de importar."
+msgstr ""
+
+#: converter_default.py:20 converter_default.py:25 converter_default.py:69
+#: converter_default.py:81 converter_default.py:82
+msgid "Nombre"
+msgstr ""
+
+#: converter_default.py:20 converter_default.py:28 converter_default.py:159
+#: converter_default_gl.py:20 converter_default_gl.py:28
+#: converter_default_gl.py:159
+msgid "Categorías"
+msgstr ""
+
+#: converter_default.py:23 converter_default_gl.py:23
+msgid "El archivo no es un csv con el formato esperado"
+msgstr ""
+
+#: converter_default.py:26 converter_default.py:84
+msgid "Resumen"
+msgstr ""
+
+#: converter_default.py:27 converter_default.py:150
+msgid "Tipo de entidad"
+msgstr ""
+
+#: converter_default.py:29 converter_default.py:87
+msgid "Dirección (calle y nº)"
+msgstr ""
+
+#: converter_default.py:30 converter_default.py:88
+msgid "Dirección (resto)"
+msgstr ""
+
+#: converter_default.py:31 converter_default.py:89 converter_default_gl.py:31
+#: converter_default_gl.py:89
+msgid "C.P."
+msgstr ""
+
+#: converter_default.py:32 converter_default.py:90
+msgid "Población"
+msgstr ""
+
+#: converter_default.py:33 converter_default.py:91 converter_default_gl.py:33
+#: converter_default_gl.py:91
+msgid "Provincia"
+msgstr ""
+
+#: converter_default.py:34 converter_default.py:93 converter_default_gl.py:34
+#: converter_default_gl.py:93
+msgid "Zona"
+msgstr ""
+
+#: converter_default.py:35 converter_default.py:94
+msgid "Latitud"
+msgstr ""
+
+#: converter_default.py:36 converter_default.py:102
+msgid "Longitud"
+msgstr ""
+
+#: converter_default.py:37 converter_default.py:110 converter_default_gl.py:37
+#: converter_default_gl.py:110
+msgid "Teléfono 1"
+msgstr ""
+
+#: converter_default.py:38 converter_default.py:111 converter_default_gl.py:38
+#: converter_default_gl.py:111
+msgid "Teléfono 2"
+msgstr ""
+
+#: converter_default.py:39 converter_default.py:112 converter_default_gl.py:39
+#: converter_default_gl.py:112
+msgid "Fax"
+msgstr ""
+
+#: converter_default.py:40 converter_default.py:113 converter_default_gl.py:40
+#: converter_default_gl.py:113
+msgid "Correo electrónico 1"
+msgstr ""
+
+#: converter_default.py:41 converter_default.py:114 converter_default_gl.py:41
+#: converter_default_gl.py:114
+msgid "Correo electrónico 2"
+msgstr ""
+
+#: converter_default.py:42 converter_default.py:115 converter_default_gl.py:42
+#: converter_default_gl.py:115
+msgid "Web 1"
+msgstr ""
+
+#: converter_default.py:43 converter_default.py:116 converter_default_gl.py:43
+#: converter_default_gl.py:116
+msgid "Web 2"
+msgstr ""
+
+#: converter_default.py:44 converter_default.py:117
+msgid "Persona de contacto"
+msgstr ""
+
+#: converter_default.py:45 converter_default.py:118
+msgid "Año de creación"
+msgstr ""
+
+#: converter_default.py:46 converter_default.py:128
+msgid "Forma jurídica"
+msgstr ""
+
+#: converter_default.py:47 converter_default.py:129
+msgid "Descripción general"
+msgstr "Tokiaren deskribapena"
+
+#: converter_default.py:48 converter_default.py:130
+msgid "Objetivo como entidad"
+msgstr ""
+
+#: converter_default.py:49 converter_default.py:131 converter_default_gl.py:49
+#: converter_default_gl.py:131
+msgid "Finanzas"
+msgstr ""
+
+#: converter_default.py:50 converter_default.py:132
+msgid "Valores sociales y medioambientales"
+msgstr ""
+
+#: converter_default.py:51 converter_default.py:133
+msgid "Forma de acceso"
+msgstr ""
+
+#: converter_default.py:52 converter_default.py:134
+msgid "Redes de las que forma parte"
+msgstr ""
+
+#: converter_default.py:53 converter_default.py:135
+msgid "Otras entidades con las que colabora"
+msgstr ""
+
+#: converter_default.py:54 converter_default.py:136
+msgid "Proyectos en marcha"
+msgstr ""
+
+#: converter_default.py:55 converter_default.py:137 converter_default_gl.py:55
+#: converter_default_gl.py:137
+msgid "Necesidades"
+msgstr ""
+
+#: converter_default.py:56 converter_default.py:138
+msgid "Ofrecimientos"
+msgstr ""
+
+#: converter_default.py:57 converter_default.py:139 converter_default_gl.py:57
+#: converter_default_gl.py:139
+msgid "Información adicional"
+msgstr ""
+
+#: converter_default.py:58 converter_default.py:140
+msgid "Fecha última actualización"
+msgstr ""
+
+#: converter_default.py:61 converter_default_gl.py:61
+#, python-format
+msgid ""
+"El archivo no es un csv válido de Macadjan versión 03/04/2012, no se "
+"encuentran las siguientes columnas: %(missing_columns)s"
+msgstr ""
+
+#: converter_default.py:99 converter_default_gl.py:99
+#, python-format
+msgid "Valor de latitud incorrecto %(lat)s"
+msgstr ""
+
+#: converter_default.py:107 converter_default_gl.py:107
+#, python-format
+msgid "Valor de longitud incorrecto %(long)s"
+msgstr ""
+
+#: converter_default.py:125 converter_default_gl.py:125
+msgid "El año de creación debe ser un nº de cuatro dígitos"
+msgstr ""
+
+#: converter_default.py:145 converter_default_gl.py:145
+msgid ""
+"Fecha de última actualización incorrecta, el formato debe ser DD/MM/YYYY"
+msgstr ""
+
+#: converter_default.py:154 converter_default_gl.py:154
+#, python-format
+msgid "No se encuentra el tipo de entidad %(type)s"
+msgstr ""
+
+#: converter_default.py:162
+msgid "Las categorías deben ser dos frases separadas por un guión \"-\""
+msgstr ""
+
+#: converter_default.py:167 converter_default_gl.py:164
+#, python-format
+msgid "No se encuentra la categoría %(cat)s - %(subcat)s"
+msgstr ""
+
+#: converter_default_gl.py:20 converter_default_gl.py:25
+#: converter_default_gl.py:69 converter_default_gl.py:81
+#: converter_default_gl.py:82
+msgid "Nome / Nombre"
+msgstr ""
+
+#: converter_default_gl.py:26 converter_default_gl.py:84
+msgid "Resume / Resumen"
+msgstr ""
+
+#: converter_default_gl.py:27 converter_default_gl.py:150
+msgid "Tipo de entidade / entidad"
+msgstr ""
+
+#: converter_default_gl.py:29 converter_default_gl.py:87
+msgid "Enderezo (rúa e nº) / Dirección (calle y nº)"
+msgstr ""
+
+#: converter_default_gl.py:30 converter_default_gl.py:88
+msgid "Enderezo (resto) / Dirección (resto)"
+msgstr ""
+
+#: converter_default_gl.py:32 converter_default_gl.py:90
+msgid "Poboación / Población"
+msgstr ""
+
+#: converter_default_gl.py:35
+msgid "Latitude / Latitud"
+msgstr ""
+
+#: converter_default_gl.py:36 converter_default_gl.py:102
+msgid "Lonxitude / Longitud"
+msgstr ""
+
+#: converter_default_gl.py:44 converter_default_gl.py:117
+msgid "Persoa / Persona de contacto"
+msgstr ""
+
+#: converter_default_gl.py:45 converter_default_gl.py:118
+msgid "Ano / Año de creación"
+msgstr ""
+
+#: converter_default_gl.py:46 converter_default_gl.py:128
+msgid "Forma xurídica / jurídica"
+msgstr ""
+
+#: converter_default_gl.py:47 converter_default_gl.py:129
+msgid "Descrición xeral / Descripción general"
+msgstr ""
+
+#: converter_default_gl.py:48 converter_default_gl.py:130
+msgid "Obxetivo como entidade / Objetivo como entidad"
+msgstr ""
+
+#: converter_default_gl.py:50 converter_default_gl.py:132
+msgid "Valores sociais e medioambientais / Valores sociales y medioambientales"
+msgstr ""
+
+#: converter_default_gl.py:51 converter_default_gl.py:133
+msgid "Forma de aceso / acceso"
+msgstr ""
+
+#: converter_default_gl.py:52 converter_default_gl.py:134
+msgid "Redes das que forma parte / Redes de las que forma parte"
+msgstr ""
+
+#: converter_default_gl.py:53 converter_default_gl.py:135
+msgid ""
+"Outras entidades coas que colabora / Otras entidades con las que colabora"
+msgstr ""
+
+#: converter_default_gl.py:54 converter_default_gl.py:136
+msgid "Proxectos en marcha / Proyectos en marcha"
+msgstr ""
+
+#: converter_default_gl.py:56 converter_default_gl.py:138
+msgid "Ofrecemientos / Ofrecimientos"
+msgstr ""
+
+#: converter_default_gl.py:58 converter_default_gl.py:140
+msgid "Data da última actualización / Fecha de la última actualización"
+msgstr ""
+
+#: converter_default_gl.py:94
+msgid "Latitude / Latitud "
+msgstr ""
+
+#: import_page_base.py:36
+#, python-format
+msgid "Error importando módulo %(module)s: \"%(error_msg)s\")"
+msgstr ""
+
+#: import_page_base.py:41
+#, python-format
+msgid "El módulo \"%(module)s\" no contiene una clase \"%(class_name)s\"."
+msgstr ""
+
+#: import_page_base.py:44
+#, python-format
+msgid "La clase \"%(class_name)s\" no es una subclase de \"ImporPage\""
+msgstr ""
+
+#: import_page_default.py:23
+msgid "Importar desde un fichero csv"
+msgstr ""
+
+#: import_page_default.py:30 import_page_default_gl.py:30
+msgid ""
+"<p>Necesitas un fichero creado a partir de la hoja de cálculo de carga de "
+"ficheros, y guardada en formato csv.</p>"
+msgstr ""
+
+#: import_page_default.py:66 import_page_default_gl.py:66
+msgid "Selecciona un fichero csv"
+msgstr ""
+
+#: import_page_default.py:68 import_page_default_gl.py:68
+msgid "Indica la fuente de datos"
+msgstr ""
+
+#: import_page_default_gl.py:23
+msgid "Importar desde un fichero csv (galego)"
+msgstr ""
+
+#: views.py:54
+msgid "Ha habido errores en la importación"
+msgstr ""
+
+#: views.py:56
+msgid "Se ha completado la importación sin errores"
+msgstr ""
+
+#: views.py:61
+msgid "No se han podido importar los datos"
+msgstr ""
+
+#: templates/macadjan_importer/import_finish.html:5
+#: templates/macadjan_importer/import_finish.html:17
+#: templates/macadjan_importer/import_form.html:5
+#: templates/macadjan_importer/import_select.html:5
+#: templates/macadjan_importer/import_select.html:8
+msgid "Importación de datos"
+msgstr ""
+
+#: templates/macadjan_importer/import_finish.html:23
+msgid "Volver atrás"
+msgstr ""
+
+#: templates/macadjan_importer/import_finish.html:25
+msgid "Se han actualizado las siguientes entidades:"
+msgstr ""
+
+#: templates/macadjan_importer/import_finish.html:37
+msgid "Volver al principio"
+msgstr ""
+
+#: templates/macadjan_importer/import_select.html:11
+msgid ""
+"No hay ningún tipo de importador registrado. Si quieres importar datos "
+"automáticamente desde\n"
+"        fichero, deberás instalar uno (consulta con el administrador del "
+"mapa)."
+msgstr ""
+
+#: templates/macadjan_importer/import_select.html:14
+msgid "Selecciona el tipo de fichero que quieres importar:"
+msgstr ""
+
+#: templates/macadjan_importer/import_select.html:25
+msgid ""
+"ATENCIÓN: antes de proceder, se recomienta encarecidamente\n"
+"            hacer una copia de seguridad de la base de datos."
+msgstr ""
+
+#: templates/macadjan_importer/import_select.html:30
+msgid "Volver al panel de administración"
+msgstr ""
+

@@ -1,0 +1,679 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-16 17:48+0200\n"
+"PO-Revision-Date: 2012-08-16 17:39\n"
+"Last-Translator:   <tio@feo.es>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Translated-Using: django-rosetta 0.6.2\n"
+
+#: forms.py:14
+msgid "Clave de seguridad"
+msgstr ""
+
+#: forms.py:15
+msgid "Introduce el texto que ves en la imagen (esto es para evitar spam)."
+msgstr ""
+
+#: models.py:26
+msgid "Pendiente"
+msgstr ""
+
+#: models.py:27
+msgid "Aceptada"
+msgstr ""
+
+#: models.py:28
+msgid "Rechazada"
+msgstr ""
+
+#: models.py:33
+msgid "Entidad existente"
+msgstr ""
+
+#: models.py:34
+msgid ""
+"Indica si esta propuesta es para cambiar los datos de una entidad existente "
+"(nulo si es para crear una entidad nueva)."
+msgstr ""
+
+#: models.py:36
+msgid "Nombre"
+msgstr ""
+
+#: models.py:37
+msgid "Nombre de la entidad (para salir en el globo)."
+msgstr ""
+
+#: models.py:42
+msgid "Tipo de entidad"
+msgstr ""
+
+#: models.py:43
+msgid "De qué tipo organizativo es la entidad, estructuralmente hablando."
+msgstr ""
+
+#: models.py:49
+msgid "Categoría principal"
+msgstr ""
+
+#: models.py:50
+msgid "Determinará el tipo de icono en el mapa."
+msgstr ""
+
+#: models.py:54
+msgid "Email de quien hace la propuesta"
+msgstr ""
+
+#: models.py:55
+msgid ""
+"Si nos indicas tu email, te notificaremos cuando la procesemos y te podremos "
+"contactar para resolver dudas."
+msgstr ""
+
+#: models.py:57
+msgid "Comentarios de la propuesta"
+msgstr ""
+
+#: models.py:58
+msgid "Cualquier cosa que nos quieras comentar acerca de la propuesta."
+msgstr ""
+
+#: models.py:64
+msgid "Estado de la propuesta"
+msgstr ""
+
+#: models.py:66
+msgid "Respuesta a la propuesta (OJO, SE LE ENVIARÁ POR EMAIL AL PROPONENTE)"
+msgstr ""
+
+#: models.py:67
+msgid ""
+"Comentarios sobre la propuesta o información de por qué se ha aceptado o "
+"rechazado."
+msgstr ""
+
+#: models.py:69
+msgid "Comentarios internos (ESTO NO SALDRÁ DE AQUÍ)"
+msgstr ""
+
+#: models.py:70
+msgid "Notas internas de los administradores sobre la propuesta."
+msgstr ""
+
+#: models.py:73
+msgid "Fuente"
+msgstr ""
+
+#: models.py:74
+msgid "Colectivo encargado de crear y mantener los datos de esta entidad."
+msgstr ""
+
+#: models.py:76
+msgid "Fecha de alta"
+msgstr ""
+
+#: models.py:77
+msgid "Fecha y hora de envío de esta propuesta."
+msgstr ""
+
+#: models.py:79
+msgid "Fecha de última modificación"
+msgstr ""
+
+#: models.py:80
+msgid "Fecha y hora de última modificación de esta propuesta."
+msgstr ""
+
+#: models.py:84
+msgid "Alias"
+msgstr ""
+
+#: models.py:85
+msgid "Un posible nombre alternativo para la entidad."
+msgstr ""
+
+#: models.py:87
+msgid "Resumen"
+msgstr ""
+
+#: models.py:88
+msgid "Descríbela en una frase."
+msgstr ""
+
+#: models.py:92
+msgid "Categorías"
+msgstr ""
+
+#: models.py:94
+msgid ""
+"Puedes indicar otras categorías para clasificar mejor la entidad, y que "
+"aparezca en distintas opciones de búsqueda."
+msgstr ""
+
+#: models.py:98
+msgid "Dirección (calle y nº)"
+msgstr ""
+
+#: models.py:99
+msgid ""
+"Tipo y nombre de vía y número. Ejemplos: C/ del Pez, 21; Av. de la "
+"ilustración, 145"
+msgstr ""
+
+#: models.py:101
+msgid "Dirección (resto)"
+msgstr ""
+
+#: models.py:102
+msgid ""
+"Portal, piso y otros datos. Ejemplos: Escalera A, 3º izq.; Local 4 entrada "
+"posterior"
+msgstr ""
+
+#: models.py:104
+msgid "Cód. postal"
+msgstr ""
+
+#: models.py:105
+msgid "Cinco dígitos. Ej. 28038"
+msgstr ""
+
+#: models.py:107
+msgid "Población"
+msgstr ""
+
+#: models.py:108
+msgid ""
+"Nombre de la población tal como se usa en la dirección postal. Ej. Madrid, "
+"Alcorcón."
+msgstr ""
+
+#: models.py:110
+msgid "Provincia"
+msgstr ""
+
+#: models.py:111
+msgid ""
+"Nombre de la provincia, no es necesario si se llama igual que la ciudad."
+msgstr ""
+
+#: models.py:113
+msgid "País"
+msgstr ""
+
+#: models.py:114
+msgid ""
+"Nombre del país, tal como se usa en la dirección postal, si es necesario."
+msgstr ""
+
+#: models.py:116
+msgid "Zona"
+msgstr ""
+
+#: models.py:117
+msgid ""
+"Zona de influencia de la entidad. Puede ser barrio, pueblo, ciudad, comarca, "
+"pedanía... Ej. Barrio de Lavapiés, Sierra Norte de Madrid."
+msgstr ""
+
+#: models.py:119
+msgid "Latitud"
+msgstr ""
+
+#: models.py:120
+msgid ""
+"Puedes introducir directamente las coordenadas (latitud) si las conoces. Ej. "
+"41.058244"
+msgstr ""
+
+#: models.py:122
+msgid "Longitud"
+msgstr ""
+
+#: models.py:123
+msgid ""
+"Puedes introducir directamente las coordenadas (longitud) si las conoces. "
+"Ej. -3.533563"
+msgstr ""
+
+#: models.py:127
+msgid "Teléfono contacto 1"
+msgstr ""
+
+#: models.py:128
+msgid "Un número de teléfono a quien llamar."
+msgstr ""
+
+#: models.py:130
+msgid "Teléfono contacto 2"
+msgstr ""
+
+#: models.py:131
+msgid "Se pueden poner dos teléfonos, ejemplo un fijo y un móvil."
+msgstr ""
+
+#: models.py:133
+msgid "Fax"
+msgstr ""
+
+#: models.py:134
+msgid "También se puede poner un número de fax."
+msgstr ""
+
+#: models.py:136
+msgid "Email 1"
+msgstr ""
+
+#: models.py:137
+msgid ""
+"Email de contacto. Ojo: poner la dirección correcta y sin añadir espacios a "
+"izquierda ni derecha. Ej. colectivo@gmail.com"
+msgstr ""
+
+#: models.py:139
+msgid "Email 2"
+msgstr ""
+
+#: models.py:140
+msgid "Se puede poner un segundo email de contacto."
+msgstr ""
+
+#: models.py:142
+msgid "Web 1"
+msgstr ""
+
+#: models.py:143
+msgid ""
+"Página web informativa. Ojo: hay que poner la dirección completa, incluyendo "
+"http://. La dirección será validada automáticamente para comprobar que "
+"existe."
+msgstr ""
+
+#: models.py:145
+msgid "Web 2"
+msgstr ""
+
+#: models.py:146
+msgid "Se puede poner una segunda página web."
+msgstr ""
+
+#: models.py:148
+msgid "Persona contacto"
+msgstr ""
+
+#: models.py:149
+msgid "Nombre de al menos una persona por quien preguntar."
+msgstr ""
+
+#: models.py:153
+msgid "Año creación"
+msgstr ""
+
+#: models.py:154
+msgid ""
+"Año en que el colectivo u organización comenzó su actividad (introducir un "
+"nº con las cuatro cifras)."
+msgstr ""
+
+#: models.py:156
+msgid "Forma jurídica"
+msgstr ""
+
+#: models.py:157
+msgid "Con qué forma jurídica concreta está registrada la entidad, si lo está."
+msgstr ""
+
+#: models.py:159
+msgid "Descripción"
+msgstr ""
+
+#: models.py:160
+msgid ""
+"Aquí se puede poner una descripción general, o cualquier cosa que no entre "
+"en las casillas siguientes. Si hay poca información, puede ser suficiente "
+"con rellenar esta casilla. Alternativamente, puede no ser necesaria si se "
+"han rellenado las otras con mucha información."
+msgstr ""
+
+#: models.py:162
+msgid "Objetivo como entidad"
+msgstr ""
+
+#: models.py:163
+msgid ""
+"Objetivos principales de la entidad, cuál es su razón de ser; qué ofrece a "
+"sus socios, usuarios, clientes o público en general."
+msgstr ""
+
+#: models.py:165
+msgid "Finanzas"
+msgstr ""
+
+#: models.py:166
+msgid ""
+"Indicar cómo gestiona el dinero (con/sin ánimo de lucro, precios de los "
+"productos si vende algo, fuentes de ingresos, modo de financiación...)."
+msgstr ""
+
+#: models.py:168
+msgid "Valores sociales y medioambientales"
+msgstr ""
+
+#: models.py:169
+msgid ""
+"Justificación de por qué merece estar en este directorio, valores que aporta "
+"en función de nuestros criterios de selección, en tanto que relaciones "
+"humanas y cuidado del medio ambiente."
+msgstr ""
+
+#: models.py:171
+msgid "Forma de acceso"
+msgstr ""
+
+#: models.py:172
+msgid ""
+"Cómo acceder a los servicios o funciones de la entidad, horarios y lugar de "
+"contacto, condiciones de participación, venta o ditribución."
+msgstr ""
+
+#: models.py:174
+msgid "Redes de las que forma parte"
+msgstr ""
+
+#: models.py:175
+msgid ""
+"Indicar si esta entidad está integrada en algún tipo de redes, grupo o "
+"plataforma, junto con otras entidades."
+msgstr ""
+
+#: models.py:177
+msgid "Otras entidades con las que colabora"
+msgstr ""
+
+#: models.py:178
+msgid ""
+"Indicar si esta entidad trabaja en colaboración con otras entidades o redes, "
+"aún sin formar parte de ellas."
+msgstr ""
+
+#: models.py:180
+msgid "Proyectos en marcha"
+msgstr ""
+
+#: models.py:181
+msgid ""
+"Indicar, si se desea, los proyectos importantes que la entidad lleva a cabo "
+"o en los que está involucrada."
+msgstr ""
+
+#: models.py:183
+msgid "Necesidades"
+msgstr ""
+
+#: models.py:184
+msgid ""
+"Indicar si la entidad tiene actualmente alguna necesidad importante que "
+"pudiera ser cubierta por otras entidades o personas externas."
+msgstr ""
+
+#: models.py:186
+msgid "Qué ofrece"
+msgstr ""
+
+#: models.py:187
+msgid ""
+"Indicar si esta entidad está en disposición de ofrecer recursos u otros "
+"elementos que puedan ser útiles a otras entidades relacionadas o personas "
+"externas; posibilidades de colaboración."
+msgstr ""
+
+#: models.py:189
+msgid "Información adicional"
+msgstr ""
+
+#: models.py:190
+msgid "Cualquier otra información no clasificable en las casillas anteriores."
+msgstr ""
+
+#: models.py:194
+msgid "propuesta de entidad"
+msgstr ""
+
+#: models.py:195
+msgid "propuestas de entidades"
+msgstr ""
+
+#: models.py:198
+#, python-format
+msgid "Propuesta: %s"
+msgstr ""
+
+#: models.py:404 views.py:57
+msgid "actualizar"
+msgstr ""
+
+#: models.py:406 views.py:59
+msgid "dar de alta"
+msgstr ""
+
+#: models.py:409
+#, python-format
+msgid ""
+"Hemos aceptado tu solicitud para %(action)s %(entity_name)s en "
+"%(website_name)s"
+msgstr ""
+
+#: models.py:415
+#, python-format
+msgid ""
+"Hemos rechazado tu solicitud para %(action)s %(entity_name)s en "
+"%(website_name)s"
+msgstr ""
+
+#: views.py:65
+msgid "Ha habido algún error, comprueba los mensajes más abajo."
+msgstr ""
+
+#: views.py:72
+#, python-format
+msgid "[%(website_name)s] Se ha recibido una solicitud de %(action)s entidad"
+msgstr ""
+
+#: views.py:82
+#, python-format
+msgid "Dirección del remitente: %s"
+msgstr ""
+
+#: views.py:83
+msgid "Sin dirección de remitente."
+msgstr ""
+
+#: views.py:85
+msgid "Sin comentarios del remitente."
+msgstr ""
+
+#: views.py:105
+#, python-format
+msgid ""
+"Hemos recibido tu solicitud para %(action)s %(entity_name)s en "
+"%(website_name)s"
+msgstr ""
+
+#: templates/macadjan_form/email_notify_accept_to_proponent.txt:1
+#, python-format
+msgid ""
+"Hemos aceptado tu solicitud para %(action)s %(entity_name)s\n"
+"en %(website_name)s."
+msgstr ""
+
+#: templates/macadjan_form/email_notify_accept_to_proponent.txt:4
+msgid "Puedes ver el resultado en"
+msgstr ""
+
+#: templates/macadjan_form/email_notify_accept_to_proponent.txt:7
+#: templates/macadjan_form/email_notify_reject_to_proponent.txt:7
+msgid "Aquí puedes ver los comentarios de los administradores:"
+msgstr ""
+
+#: templates/macadjan_form/email_notify_accept_to_proponent.txt:10
+msgid ""
+"Esperamos que esté todo correcto. Si tienes cualquier duda, o comentario,\n"
+"ponte en contacto con nosotros y te atenderemos con mucho gusto.\n"
+"\n"
+"¡Muchas gracias por tu aportación! Un saludo."
+msgstr ""
+
+#: templates/macadjan_form/email_notify_proposal_to_managers.txt:1
+#, python-format
+msgid "Se ha recibido la solicitud para %(action)s la entidad %(entity_name)s."
+msgstr ""
+
+#: templates/macadjan_form/email_notify_proposal_to_managers.txt:7
+msgid "Para tramitar la propuesta, ir aquí:"
+msgstr ""
+
+#: templates/macadjan_form/email_notify_proposal_to_proponent.txt:1
+#, python-format
+msgid ""
+"Hemos recibido tu solicitud para %(action)s %(entity_name)s\n"
+"en %(website_name)s."
+msgstr ""
+
+#: templates/macadjan_form/email_notify_proposal_to_proponent.txt:4
+msgid ""
+"Nos pondremos con ella y la subiremos al mapa lo antes posible, si está "
+"todo\n"
+"correcto. Recibirás otro mensaje en el momento en que la subamos, o también\n"
+"si decidimos que no la podemos subir, por algún motivo.\n"
+"\n"
+"Si ves que tarda un poco, ten paciencia. ¡Esto es un servicio atendido por\n"
+"voluntarios! Considera la opción de echarnos una mano...\n"
+"\n"
+"En todo caso, no dudes en contactar con nosotros si lo crees necesario, "
+"para\n"
+"ello consulta la sección de contacto de la web.\n"
+"\n"
+"¡Un saludo!"
+msgstr ""
+
+#: templates/macadjan_form/email_notify_reject_to_proponent.txt:1
+#, python-format
+msgid ""
+"No hemos aceptado tu solicitud para %(action)s %(entity_name)s\n"
+"en %(website_name)s."
+msgstr ""
+
+#: templates/macadjan_form/email_notify_reject_to_proponent.txt:4
+msgid ""
+"Lo sentimos, hemos decidido no incorporar tu propuesta en el mapa,\n"
+"al menos por ahora."
+msgstr ""
+
+#: templates/macadjan_form/email_notify_reject_to_proponent.txt:10
+msgid "Los administradores no han indicado más información."
+msgstr ""
+
+#: templates/macadjan_form/email_notify_reject_to_proponent.txt:12
+msgid ""
+"Si necesitas saber algo más o tienes cualquier duda, o comentario,\n"
+"ponte en contacto con nosotros y te atenderemos con mucho gusto.\n"
+"\n"
+"Gracias de todos modos por tu aportación. Un saludo."
+msgstr ""
+
+#: templates/macadjan_form/entity_proposal.html:5
+#: templates/macadjan_form/entity_proposal_ok.html:7
+msgid "Proponer nueva entidad"
+msgstr ""
+
+#: templates/macadjan_form/entity_proposal.html:9
+#: templates/macadjan_form/entity_proposal_ok.html:11
+msgid "Proponer una nueva entidad"
+msgstr ""
+
+#: templates/macadjan_form/entity_proposal.html:10
+msgid ""
+"¿Quieres aparecer en el mapa? Rellena este formulario y te daremos de alta."
+msgstr ""
+
+#: templates/macadjan_form/entity_proposal.html:12
+#, python-format
+msgid "Modificar datos de %(entity_name)s"
+msgstr ""
+
+#: templates/macadjan_form/entity_proposal.html:13
+msgid ""
+"¿Quieres modificar los datos que salen en el mapa? Rellena este formulario y "
+"los cambiaremos."
+msgstr ""
+
+#: templates/macadjan_form/entity_proposal.html:15
+msgid ""
+"\n"
+"        <p>Asegúrate de ser la persona titular de esta información, o de "
+"contar con su autorización.</p>\n"
+"        <p>Las casillas con (*) son obligatorias, el resto son opcionales, "
+"pero cuanto más información nos des,\n"
+"        más útil será la ficha para los visitantes del mapa. Como mínimo "
+"procura rellenar la casilla Descripción\n"
+"        y algún dato de contacto (teléfono, web, email, etc.). Además "
+"deberás rellenar la dirección o bien las\n"
+"        casillas Latitud/Longitud si quieres salir en el mapa; de lo "
+"contrario la entidad aparecerá listada en\n"
+"        la pestaña \"Entidades sin ubicación geográfica\".</p>\n"
+"    "
+msgstr ""
+
+#: templates/macadjan_form/entity_proposal.html:57
+msgid "Más ayuda"
+msgstr ""
+
+#: templates/macadjan_form/entity_proposal.html:58
+msgid "Cerrar"
+msgstr ""
+
+#: templates/macadjan_form/entity_proposal.html:83
+msgid "Enviar"
+msgstr ""
+
+#: templates/macadjan_form/entity_proposal.html:86
+msgid ""
+"\n"
+"            <p>La información aquí enviada, en caso de ser aprobada, pasará "
+"a formar parte de la base de datos de\n"
+"            este mapa con el fin de ser mostrada públicamente en el mismo, o "
+"también posiblemente en otro de los\n"
+"            mapas de la red de mapeo de alternativas en la que este mapa "
+"está integrado.</p>\n"
+"            <p>Una excepción son las casillas \"Email de quien hace la "
+"propuesta\" y \"Comentarios de la propuesta\",\n"
+"            que no se mostrarán nunca al público, y serán usadas "
+"exclusivamente para ponernos en contacto con esa\n"
+"            persona y notificar el estado de la propuesta, si es o no "
+"aceptada, y por qué.</p>\n"
+"            <p>En cualquier caso, quien hace la propuesta o la entidad en sí "
+"puede contactar con nosotros para\n"
+"            consultar, modificar o borrar cualquiera de los datos, "
+"consultando la sección de contacto de esta web.</p>\n"
+"            "
+msgstr ""
+
+#: templates/macadjan_form/entity_proposal_ok.html:12
+msgid ""
+"Tu propuesta ha sido enviada, la revisaremos y la incluiremos en el mapa lo "
+"antes posible. Comprueba tu correo, te hemos enviado un mensaje de "
+"confirmación."
+msgstr ""

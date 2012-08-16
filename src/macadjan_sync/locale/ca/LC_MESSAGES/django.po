@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-09 15:25+0200\n"
+"POT-Creation-Date: 2012-08-16 17:57+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,89 +18,89 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
-#: models.py:12 models.py:39 models.py:319
+#: models.py:15 models.py:41 models.py:361
 msgid "Conexión BD"
 msgstr ""
 
-#: models.py:13 models.py:40
+#: models.py:16 models.py:42
 msgid "A qué conexión BD pertenece este enlace"
 msgstr ""
 
-#: models.py:17
+#: models.py:20
 msgid "Tipo de entidad local"
 msgstr ""
 
-#: models.py:18
+#: models.py:21
 msgid "Tipo de entidad en la BD local"
 msgstr ""
 
-#: models.py:21
+#: models.py:24
 msgid "Tipo de entidad otra BD"
 msgstr ""
 
-#: models.py:22
+#: models.py:25
 msgid "Id del tipo de entidad de la otra BD"
 msgstr ""
 
-#: models.py:25
+#: models.py:28
 #, python-format
 msgid "Sincr tipo de entidad %(local_cat)s <- %(other_cat)s"
 msgstr ""
 
-#: models.py:32
+#: models.py:34
 msgid "vínculo tipo de entidad"
 msgstr ""
 
-#: models.py:33
+#: models.py:35
 msgid "vínculos tipos de entidad"
 msgstr ""
 
-#: models.py:44
+#: models.py:46
 msgid "Categoría local"
 msgstr ""
 
-#: models.py:45
+#: models.py:47
 msgid "Categoría en la BD local"
 msgstr ""
 
-#: models.py:48
+#: models.py:50
 msgid "Categoría otra BD"
 msgstr ""
 
-#: models.py:49
+#: models.py:51
 msgid "Slug de la subcategoría de la otra BD"
 msgstr ""
 
-#: models.py:52
+#: models.py:54
 #, python-format
 msgid "Sincr subcategoría %(local_cat)s <- %(other_cat)s"
 msgstr ""
 
-#: models.py:59
+#: models.py:60
 msgid "vínculo subcategoría"
 msgstr ""
 
-#: models.py:60
+#: models.py:61
 msgid "vínculos subcategorías"
 msgstr ""
 
-#: models.py:65
+#: models.py:66
 msgid "Otra BD"
 msgstr ""
 
-#: models.py:66
+#: models.py:67
 msgid "Nombre de la otra base de datos"
 msgstr ""
 
-#: models.py:68
+#: models.py:69
 msgid "Fuente"
 msgstr ""
 
-#: models.py:69
+#: models.py:70
 msgid "Fuente de mapeo vinculada a esta base de datos"
 msgstr ""
 
-#: models.py:72
+#: models.py:73
 #, python-format
 msgid "Sincr default <-> %(other_db)s"
 msgstr ""
@@ -113,108 +113,108 @@ msgstr ""
 msgid "conexiones otras BD"
 msgstr ""
 
-#: models.py:320
+#: models.py:362
 msgid "A qué conexión BD pertenece esta sincronización"
 msgstr ""
 
-#: models.py:323
+#: models.py:365
 msgid "fecha de fin de la sincronización"
 msgstr ""
 
-#: models.py:324
+#: models.py:366
 msgid "Fecha y hora de finalización de esta sincronización"
 msgstr ""
 
-#: models.py:328
+#: models.py:370
 msgid "Entidades sincronizadas"
 msgstr ""
 
-#: models.py:331
+#: models.py:373
 #, python-format
 msgid "Sincr default <-> %(other_db)s [%(finished_date)s]"
 msgstr ""
 
-#: models.py:333 models.py:363
+#: models.py:375 models.py:404
 msgid "Actual"
 msgstr ""
 
-#: models.py:345
+#: models.py:386
 msgid "sincronización con otra BD"
 msgstr ""
 
-#: models.py:346
+#: models.py:387
 msgid "sincronizaciones con otras BD"
 msgstr ""
 
-#: models.py:353
+#: models.py:394
 msgid "sincronización"
 msgstr ""
 
-#: models.py:354
+#: models.py:395
 msgid "A qué sincronización de una conexión BD pertenece esta sincronización"
 msgstr ""
 
-#: models.py:357
+#: models.py:398
 msgid "entidad otra BD"
 msgstr ""
 
-#: models.py:358
+#: models.py:399
 msgid "Id de la entidad descartada de la otra BD"
 msgstr ""
 
-#: models.py:361
+#: models.py:402
 #, python-format
 msgid "Sincr default <-> %(other_db)s [%(finished_date)s] %(other_entity_id)d"
 msgstr ""
 
-#: models.py:370
+#: models.py:410
 msgid "entidad descartada"
 msgstr ""
 
-#: models.py:371
+#: models.py:411
 msgid "entidades descartadas"
 msgstr ""
 
-#: views.py:84
+#: views.py:86
 msgid "Se ha completado la sincronización"
 msgstr ""
 
-#: views.py:144
+#: views.py:146
 #, python-format
 msgid "Se ha añadido con éxito la entidad %(entidad)s"
 msgstr ""
 
-#: views.py:147
+#: views.py:149
 msgid "No se puede crear la entidad, necesita tener al menos una categoría"
 msgstr ""
 
-#: views.py:149 views.py:233
+#: views.py:151 views.py:238
 msgid "Check the errors in the fields"
 msgstr ""
 
-#: views.py:198 views.py:309 views.py:341
+#: views.py:200 views.py:319 views.py:351
 #, python-format
 msgid "No Entity matches the given query in %(db_name)s database"
 msgstr ""
 
-#: views.py:229
+#: views.py:234
 #, python-format
 msgid "Se ha actualizado con éxito la entidad %(entidad)s"
 msgstr ""
 
-#: views.py:273
+#: views.py:280
 msgid "Sí"
 msgstr ""
 
-#: views.py:273
+#: views.py:280
 msgid "No"
 msgstr ""
 
-#: views.py:314
+#: views.py:324
 msgid "No Entity matches the given query in local database"
 msgstr ""
 
-#: views.py:325
+#: views.py:335
 #, python-format
 msgid "Se ha descartado la entidad %(entidad)s"
 msgstr ""
