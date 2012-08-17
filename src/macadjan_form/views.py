@@ -11,6 +11,7 @@ from django.core.mail import EmailMessage
 from django.views.generic import RedirectView, TemplateView, FormView, View
 from django.contrib.sites.models import Site
 
+from macadjan_ecozoom import models as models_ecozoom
 from . import models
 from . import forms
 
@@ -26,7 +27,7 @@ class EntityProposal(FormView):
         else:
             if not Site.objects.get_current().site_info.entity_change_proposal_enabled:
                 raise Http404('Entry change form is disabled')
-        self.entity = get_object_or_404(models.Entity, slug = entity_slug) if entity_slug else None
+        self.entity = get_object_or_404(models_ecozoom.EcozoomEntity, slug = entity_slug) if entity_slug else None
         return super(EntityProposal, self).dispatch(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
@@ -136,7 +137,7 @@ class EntityProposalOk(TemplateView):
         else:
             if not Site.objects.get_current().site_info.entity_change_proposal_enabled:
                 raise Http404('Entry change form is disabled')
-        self.entity = get_object_or_404(models.Entity, slug = entity_slug) if entity_slug else None
+        self.entity = get_object_or_404(models_ecozoom.EcozoomEntity, slug = entity_slug) if entity_slug else None
         return super(EntityProposalOk, self).dispatch(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
