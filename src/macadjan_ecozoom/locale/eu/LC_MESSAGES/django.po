@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-16 17:48+0200\n"
+"POT-Creation-Date: 2012-08-17 17:05+0200\n"
 "PO-Revision-Date: 2012-05-10 22:39\n"
 "Last-Translator:   <hirunatan@hammo.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -376,7 +376,10 @@ msgstr ""
 msgid "Última actualización de la ficha:"
 msgstr ""
 
+#: templates/macadjan/page-menu.html:17
+msgid "Cambiar"
+msgstr ""
+
 #: templates/macadjan_ecozoom/map_source.html:12
 msgid "Página web"
 msgstr ""
-

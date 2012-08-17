@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-16 17:48+0200\n"
+"POT-Creation-Date: 2012-08-17 17:05+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -372,6 +372,10 @@ msgstr ""
 
 #: templates/macadjan/entity-page.html:157
 msgid "Última actualización de la ficha:"
+msgstr ""
+
+#: templates/macadjan/page-menu.html:17
+msgid "Cambiar"
 msgstr ""
 
 #: templates/macadjan_ecozoom/map_source.html:12
