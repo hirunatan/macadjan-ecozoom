@@ -1,1 +1,21 @@
+{% load i18n %}
+{% load tree_menu_tags %}
+
+    <div id="menu-line">
+        {% show_menu "main_menu" %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% if languages|length > 1 %}
+            <form action="/i18n/setlang/" method="post">
+                {% csrf_token %}
+                <select name="language">
+                    {% for language in languages %}
+                        <option value="{{ language.code }}" {% if LANGUAGE_CODE = language.code %}selected=""{% endif %}>
+                            {{ language.name_local }} ({{ language.code }})
+                        </option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="{% trans 'Cambiar' %}" />
+            </form>
+        {% endif %}
+    </div>
 
