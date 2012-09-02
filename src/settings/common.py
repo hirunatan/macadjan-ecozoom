@@ -188,6 +188,11 @@ HAYSTACK_CONNECTIONS = {
 }
 HAYSTACK_DEFAULT_OPERATOR = 'AND'
 
+# Piwik settings
+# If you want web traffic tracking with Piwik, redefine these settings in your specific file
+PIWIK_HOST = ''
+PIWIK_SITE_ID = 0
+
 # Django debug toolbar config
 if DEBUG:
     try:

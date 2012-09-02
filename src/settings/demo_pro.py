@@ -11,3 +11,6 @@ TEMPLATE_DEBUG = DEBUG
 MIDDLEWARE_CLASSES.append('django.middleware.gzip.GZipMiddleware')
 MIDDLEWARE_CLASSES.append('django.middleware.http.ConditionalGetMiddleware')
 
+PIWIK_HOST = ''
+PIWIK_SITE_ID = 0
+
