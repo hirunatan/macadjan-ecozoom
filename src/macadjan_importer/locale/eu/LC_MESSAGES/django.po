@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-16 17:48+0200\n"
+"POT-Creation-Date: 2012-09-17 07:51+0200\n"
 "PO-Revision-Date: 2012-05-10 22:39\n"
 "Last-Translator:   <hirunatan@hammo.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -413,4 +413,3 @@ msgstr ""
 #: templates/macadjan_importer/import_select.html:30
 msgid "Volver al panel de administración"
 msgstr ""
-

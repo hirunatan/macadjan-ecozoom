@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-17 17:05+0200\n"
+"POT-Creation-Date: 2012-09-17 07:50+0200\n"
 "PO-Revision-Date: 2012-06-22 21:38\n"
 "Last-Translator:   <hirunatan@hammo.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -374,6 +374,13 @@ msgstr ""
 
 #: templates/macadjan/entity-page.html:157
 msgid "Última actualización de la ficha:"
+msgstr ""
+
+#: templates/macadjan/entity-page.html:162
+#, python-format
+msgid ""
+"¿Quieres modificar los datos de esta ficha? Usa el <a href=\"%(modify_url)s"
+"\" target=\"_blank\"> formulario de solicitud</a>"
 msgstr ""
 
 #: templates/macadjan/page-menu.html:17

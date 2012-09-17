@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-16 17:48+0200\n"
+"POT-Creation-Date: 2012-09-17 07:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -459,11 +459,11 @@ msgstr ""
 msgid "Propuesta: %s"
 msgstr ""
 
-#: models.py:404 views.py:57
+#: models.py:404 views.py:58
 msgid "actualizar"
 msgstr ""
 
-#: models.py:406 views.py:59
+#: models.py:406 views.py:60
 msgid "dar de alta"
 msgstr ""
 
@@ -481,29 +481,29 @@ msgid ""
 "%(website_name)s"
 msgstr ""
 
-#: views.py:65
+#: views.py:66
 msgid "Ha habido algún error, comprueba los mensajes más abajo."
 msgstr ""
 
-#: views.py:72
+#: views.py:73
 #, python-format
 msgid "[%(website_name)s] Se ha recibido una solicitud de %(action)s entidad"
 msgstr ""
 
-#: views.py:82
+#: views.py:83
 #, python-format
 msgid "Dirección del remitente: %s"
 msgstr ""
 
-#: views.py:83
+#: views.py:84
 msgid "Sin dirección de remitente."
 msgstr ""
 
-#: views.py:85
+#: views.py:86
 msgid "Sin comentarios del remitente."
 msgstr ""
 
-#: views.py:105
+#: views.py:106
 #, python-format
 msgid ""
 "Hemos recibido tu solicitud para %(action)s %(entity_name)s en "
