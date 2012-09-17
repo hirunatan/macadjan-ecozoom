@@ -237,7 +237,7 @@ msgstr ""
 #: converter_default.py:167 converter_default_gl.py:164
 #, python-format
 msgid "No se encuentra la categoría %(cat)s - %(subcat)s"
-msgstr "Non se atopa a categoría %(cat)s - %(subcat)"
+msgstr "Non se atopa a categoría %(cat)s - %(subcat)s"
 
 #: converter_default_gl.py:20 converter_default_gl.py:25
 #: converter_default_gl.py:69 converter_default_gl.py:81
