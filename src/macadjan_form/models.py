@@ -430,7 +430,7 @@ class EntityProposal(models.Model):
                 from django.core.urlresolvers import reverse
                 email_context.update({
                     'entity_url': 'http://' + current_site.domain +
-                                  reverse('base:entity', kwargs={'entity_slug': self.existing_entity.slug})
+                                  reverse('entity', kwargs={'entity_slug': self.existing_entity.slug})
                 })
                 email_template = loader.get_template('macadjan_form/email_notify_accept_to_proponent.txt')
             else:
