@@ -5,6 +5,7 @@ from django.contrib.sites.models import Site
 from django.utils.translation import ugettext_lazy as _
 from django.core.mail import EmailMessage
 from django.template import RequestContext, Context, loader
+from django.conf import settings
 
 from datetime import datetime
 
