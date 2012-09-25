@@ -151,15 +151,17 @@
                     {% endfor %}
                 {% endif %}
 
-                <h3>{% trans "Fuente de los datos:" %}</h3>
-                <p><a href="{% url 'map-source' map_source_slug=entity.map_source.slug %}">{{ entity.map_source.name }}</a></p>
+                {% if entity.map_source %}
+                    <h3>{% trans "Fuente de los datos:" %}</h3>
+                    <p><a href="{% url 'map-source' map_source_slug=entity.map_source.slug %}">{{ entity.map_source.name }}</a></p>
+                {% endif %}
 
                 <h3>{% trans "Última actualización de la ficha:" %}</h3>
                 <p>{{ entity.modification_date|date:"DATE_FORMAT" }}</p>
 
                 {% if current_site_info.entity_change_proposal_enabled %}
-                {% url 'entity-proposal' entity_slug=entity.slug as modify_url %}
-                <p>{% blocktrans with modify_url=modify_url %}¿Quieres modificar los datos de esta ficha? Usa el <a href="{{ modify_url }}" target="_blank"> formulario de solicitud</a>{% endblocktrans %}
+                    {% url 'entity-proposal' entity_slug=entity.slug as modify_url %}
+                    <p>{% blocktrans with modify_url=modify_url %}¿Quieres modificar los datos de esta ficha? Usa el <a href="{{ modify_url }}" target="_blank"> formulario de solicitud</a>{% endblocktrans %}
                 {% endif %}
 
             </div>
