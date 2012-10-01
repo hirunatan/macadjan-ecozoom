@@ -2,20 +2,20 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-17 07:50+0200\n"
-"PO-Revision-Date: 2012-05-10 21:54\n"
-"Last-Translator:   <hirunatan@hammo.org>\n"
+"POT-Creation-Date: 2012-09-18 08:20+0200\n"
+"PO-Revision-Date: 2012-10-01 07:49\n"
+"Last-Translator:   <tio@feo.es>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "X-Translated-Using: django-rosetta 0.6.2\n"
 
@@ -201,7 +201,7 @@ msgstr ""
 #: views.py:234
 #, python-format
 msgid "Se ha actualizado con éxito la entidad %(entidad)s"
-msgstr "Erakundea arrakastaz eguneratu da"
+msgstr "Erakundea arrakastaz eguneratu da %(entidad)s"
 
 #: views.py:280
 msgid "Sí"
@@ -218,12 +218,12 @@ msgstr ""
 #: views.py:335
 #, python-format
 msgid "Se ha descartado la entidad %(entidad)s"
-msgstr "Erakundea baztertu egin da"
+msgstr "Erakundea baztertu egin da %(entidad)s"
 
 #: templates/macadjan_sync/sync_db.html:17
 #, python-format
 msgid "Sincronización con la base de datos %(other_db_name)s"
-msgstr "Datu basearekiko sinkronizazioa"
+msgstr "Datu basearekiko sinkronizazioa %(other_db_name)s"
 
 #: templates/macadjan_sync/sync_db.html:24
 #, python-format
@@ -261,8 +261,7 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"                    <a href=\"%(finish_url)s\">Pulsar aquí</a> para "
-"finalizar esta sincronización y fijar los cambios.\n"
+"                    <a href=\"%(finish_url)s\">Pulsar aquí</a> para finalizar esta sincronización y fijar los cambios.\n"
 "                "
 msgstr ""
 
@@ -278,13 +277,10 @@ msgstr ""
 #: templates/macadjan_sync/sync_db_finish.html:18
 msgid ""
 "\n"
-"                    ATENCIÓN: Pulsando este botón se dará por completada "
-"esta sincronización.<br/>\n"
+"                    ATENCIÓN: Pulsando este botón se dará por completada esta sincronización.<br/>\n"
 "                    - Se memorizará la fecha y hora actual.<br/>\n"
-"                    - Cualquier entidad no sincronizada será marcada para "
-"ignorar.<br/>\n"
-"                    - Sólo se podrán volver a sincronizar las entidades que "
-"se modifiquen a partir de ahora.<br/>\n"
+"                    - Cualquier entidad no sincronizada será marcada para ignorar.<br/>\n"
+"                    - Sólo se podrán volver a sincronizar las entidades que se modifiquen a partir de ahora.<br/>\n"
 "                    "
 msgstr ""
 
@@ -448,8 +444,8 @@ msgstr ""
 
 #: templates/macadjan_sync/sync_db_select.html:11
 msgid ""
-"No hay ninguna b.d. registrada para sincronizar, por favor registra una "
-"desde el admin."
+"No hay ninguna b.d. registrada para sincronizar, por favor registra una"
+" desde el admin."
 msgstr ""
 
 #: templates/macadjan_sync/sync_db_select.html:13
@@ -458,8 +454,8 @@ msgstr ""
 
 #: templates/macadjan_sync/sync_db_select.html:25
 msgid ""
-"ATENCIÓN: antes de proceder, se recomienta encarecidamente hacer una copia "
-"de seguridad de la base de datos."
+"ATENCIÓN: antes de proceder, se recomienta encarecidamente hacer una "
+"copia de seguridad de la base de datos."
 msgstr ""
 
 #: templates/macadjan_sync/sync_db_select.html:30

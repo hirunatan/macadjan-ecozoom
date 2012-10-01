@@ -2,20 +2,21 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-17 07:50+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2012-09-18 08:20+0200\n"
+"PO-Revision-Date: 2012-10-01 07:55\n"
+"Last-Translator:   <tio@feo.es>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"X-Translated-Using: django-rosetta 0.6.2\n"
 
 #: models.py:15 models.py:41 models.py:361
 msgid "Conexión BD"
@@ -259,8 +260,7 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"                    <a href=\"%(finish_url)s\">Pulsar aquí</a> para "
-"finalizar esta sincronización y fijar los cambios.\n"
+"                    <a href=\"%(finish_url)s\">Pulsar aquí</a> para finalizar esta sincronización y fijar los cambios.\n"
 "                "
 msgstr ""
 
@@ -276,13 +276,10 @@ msgstr ""
 #: templates/macadjan_sync/sync_db_finish.html:18
 msgid ""
 "\n"
-"                    ATENCIÓN: Pulsando este botón se dará por completada "
-"esta sincronización.<br/>\n"
+"                    ATENCIÓN: Pulsando este botón se dará por completada esta sincronización.<br/>\n"
 "                    - Se memorizará la fecha y hora actual.<br/>\n"
-"                    - Cualquier entidad no sincronizada será marcada para "
-"ignorar.<br/>\n"
-"                    - Sólo se podrán volver a sincronizar las entidades que "
-"se modifiquen a partir de ahora.<br/>\n"
+"                    - Cualquier entidad no sincronizada será marcada para ignorar.<br/>\n"
+"                    - Sólo se podrán volver a sincronizar las entidades que se modifiquen a partir de ahora.<br/>\n"
 "                    "
 msgstr ""
 
@@ -446,8 +443,8 @@ msgstr ""
 
 #: templates/macadjan_sync/sync_db_select.html:11
 msgid ""
-"No hay ninguna b.d. registrada para sincronizar, por favor registra una "
-"desde el admin."
+"No hay ninguna b.d. registrada para sincronizar, por favor registra una"
+" desde el admin."
 msgstr ""
 
 #: templates/macadjan_sync/sync_db_select.html:13
@@ -456,8 +453,8 @@ msgstr ""
 
 #: templates/macadjan_sync/sync_db_select.html:25
 msgid ""
-"ATENCIÓN: antes de proceder, se recomienta encarecidamente hacer una copia "
-"de seguridad de la base de datos."
+"ATENCIÓN: antes de proceder, se recomienta encarecidamente hacer una "
+"copia de seguridad de la base de datos."
 msgstr ""
 
 #: templates/macadjan_sync/sync_db_select.html:30

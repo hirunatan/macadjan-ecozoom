@@ -2,20 +2,21 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-17 07:50+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2012-09-18 08:20+0200\n"
+"PO-Revision-Date: 2012-10-01 07:56\n"
+"Last-Translator:   <tio@feo.es>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"X-Translated-Using: django-rosetta 0.6.2\n"
 
 #: models.py:15
 msgid "Nombre"
@@ -35,9 +36,9 @@ msgstr ""
 
 #: models.py:22
 msgid ""
-"Página web informativa. Ojo: hay que poner la dirección completa, incluyendo "
-"http://. La dirección será validada automáticamente para comprobar que "
-"existe."
+"Página web informativa. Ojo: hay que poner la dirección completa, "
+"incluyendo http://. La dirección será validada automáticamente para "
+"comprobar que existe."
 msgstr ""
 
 #: models.py:34
@@ -54,8 +55,8 @@ msgstr ""
 
 #: models.py:43
 msgid ""
-"Año en que el colectivo u organización comenzó su actividad (introducir un "
-"nº con las cuatro cifras)."
+"Año en que el colectivo u organización comenzó su actividad (introducir"
+" un nº con las cuatro cifras)."
 msgstr ""
 
 #: models.py:45
@@ -68,10 +69,10 @@ msgstr ""
 
 #: models.py:49
 msgid ""
-"Aquí se puede poner una descripción general, o cualquier cosa que no entre "
-"en las casillas siguientes. Si hay poca información, puede ser suficiente "
-"con rellenar esta casilla. Alternativamente, puede no ser necesaria si se "
-"han rellenado las otras con mucha información."
+"Aquí se puede poner una descripción general, o cualquier cosa que no "
+"entre en las casillas siguientes. Si hay poca información, puede ser "
+"suficiente con rellenar esta casilla. Alternativamente, puede no ser "
+"necesaria si se han rellenado las otras con mucha información."
 msgstr ""
 
 #: models.py:51
@@ -80,8 +81,8 @@ msgstr ""
 
 #: models.py:52
 msgid ""
-"Objetivos principales de la entidad, cuál es su razón de ser; qué ofrece a "
-"sus socios, usuarios, clientes o público en general."
+"Objetivos principales de la entidad, cuál es su razón de ser; qué "
+"ofrece a sus socios, usuarios, clientes o público en general."
 msgstr ""
 
 #: models.py:54
@@ -90,8 +91,9 @@ msgstr ""
 
 #: models.py:55
 msgid ""
-"Indicar cómo gestiona el dinero (con/sin ánimo de lucro, precios de los "
-"productos si vende algo, fuentes de ingresos, modo de financiación...)."
+"Indicar cómo gestiona el dinero (con/sin ánimo de lucro, precios de los"
+" productos si vende algo, fuentes de ingresos, modo de "
+"financiación...)."
 msgstr ""
 
 #: models.py:57
@@ -100,9 +102,9 @@ msgstr ""
 
 #: models.py:58
 msgid ""
-"Justificación de por qué merece estar en este directorio, valores que aporta "
-"en función de nuestros criterios de selección, en tanto que relaciones "
-"humanas y cuidado del medio ambiente."
+"Justificación de por qué merece estar en este directorio, valores que "
+"aporta en función de nuestros criterios de selección, en tanto que "
+"relaciones humanas y cuidado del medio ambiente."
 msgstr ""
 
 #: models.py:60
@@ -111,8 +113,8 @@ msgstr ""
 
 #: models.py:61
 msgid ""
-"Cómo acceder a los servicios o funciones de la entidad, horarios y lugar de "
-"contacto, condiciones de participación, venta o ditribución."
+"Cómo acceder a los servicios o funciones de la entidad, horarios y "
+"lugar de contacto, condiciones de participación, venta o ditribución."
 msgstr ""
 
 #: models.py:63
@@ -131,8 +133,8 @@ msgstr ""
 
 #: models.py:67
 msgid ""
-"Indicar si esta entidad trabaja en colaboración con otras entidades o redes, "
-"aún sin formar parte de ellas."
+"Indicar si esta entidad trabaja en colaboración con otras entidades o "
+"redes, aún sin formar parte de ellas."
 msgstr ""
 
 #: models.py:69
@@ -141,8 +143,8 @@ msgstr ""
 
 #: models.py:70
 msgid ""
-"Indicar, si se desea, los proyectos importantes que la entidad lleva a cabo "
-"o en los que está involucrada."
+"Indicar, si se desea, los proyectos importantes que la entidad lleva a "
+"cabo o en los que está involucrada."
 msgstr ""
 
 #: models.py:72
@@ -151,8 +153,8 @@ msgstr ""
 
 #: models.py:73
 msgid ""
-"Indicar si la entidad tiene actualmente alguna necesidad importante que "
-"pudiera ser cubierta por otras entidades o personas externas."
+"Indicar si la entidad tiene actualmente alguna necesidad importante que"
+" pudiera ser cubierta por otras entidades o personas externas."
 msgstr ""
 
 #: models.py:75
@@ -161,9 +163,9 @@ msgstr ""
 
 #: models.py:76
 msgid ""
-"Indicar si esta entidad está en disposición de ofrecer recursos u otros "
-"elementos que puedan ser útiles a otras entidades relacionadas o personas "
-"externas; posibilidades de colaboración."
+"Indicar si esta entidad está en disposición de ofrecer recursos u otros"
+" elementos que puedan ser útiles a otras entidades relacionadas o "
+"personas externas; posibilidades de colaboración."
 msgstr ""
 
 #: models.py:78
@@ -246,8 +248,8 @@ msgstr ""
 
 #: templates/admin/macadjan_ecozoom/ecozoomentity/change_form.html:165
 msgid ""
-"Pulsar \"Cargar\" para copiar la dirección a la casilla de aquí encima. Se "
-"puede modificar a mano si es necesario."
+"Pulsar \"Cargar\" para copiar la dirección a la casilla de aquí encima. "
+"Se puede modificar a mano si es necesario."
 msgstr ""
 
 #: templates/admin/macadjan_ecozoom/ecozoomentity/change_form.html:166
@@ -258,7 +260,8 @@ msgstr ""
 
 #: templates/admin/macadjan_ecozoom/ecozoomentity/change_form.html:167
 msgid ""
-"Pulsar \"Guardar\" para copiar las coordenadas a las casillas del formulario."
+"Pulsar \"Guardar\" para copiar las coordenadas a las casillas del "
+"formulario."
 msgstr ""
 
 #: templates/macadjan/entity-page.html:18
@@ -377,8 +380,8 @@ msgstr ""
 #: templates/macadjan/entity-page.html:162
 #, python-format
 msgid ""
-"¿Quieres modificar los datos de esta ficha? Usa el <a href=\"%(modify_url)s"
-"\" target=\"_blank\"> formulario de solicitud</a>"
+"¿Quieres modificar los datos de esta ficha? Usa el <a "
+"href=\"%(modify_url)s\" target=\"_blank\"> formulario de solicitud</a>"
 msgstr ""
 
 #: templates/macadjan/page-menu.html:17

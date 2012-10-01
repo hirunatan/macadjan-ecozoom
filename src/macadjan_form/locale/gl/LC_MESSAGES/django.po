@@ -2,22 +2,22 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-17 07:49+0200\n"
-"PO-Revision-Date: 2012-05-27 22:52\n"
-"Last-Translator:   <desatonao@riseup.net>\n"
+"POT-Creation-Date: 2012-09-18 08:20+0200\n"
+"PO-Revision-Date: 2012-10-01 07:48\n"
+"Last-Translator:   <tio@feo.es>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Translated-Using: django-rosetta 0.6.5\n"
+"X-Translated-Using: django-rosetta 0.6.2\n"
 
 #: forms.py:14
 msgid "Clave de seguridad"
@@ -45,11 +45,11 @@ msgstr "Entidade existente"
 
 #: models.py:34
 msgid ""
-"Indica si esta propuesta es para cambiar los datos de una entidad existente "
-"(nulo si es para crear una entidad nueva)."
+"Indica si esta propuesta es para cambiar los datos de una entidad "
+"existente (nulo si es para crear una entidad nueva)."
 msgstr ""
-"Indica se esta proposta é para cambialos datos dunha entidade existente "
-"(nulo se é para crear unha entidade nova)."
+"Indica se esta proposta é para cambialos datos dunha entidade "
+"existente (nulo se é para crear unha entidade nova)."
 
 #: models.py:36
 msgid "Nombre"
@@ -81,11 +81,11 @@ msgstr "Email de quen fai a proposta."
 
 #: models.py:55
 msgid ""
-"Si nos indicas tu email, te notificaremos cuando la procesemos y te podremos "
-"contactar para resolver dudas."
+"Si nos indicas tu email, te notificaremos cuando la procesemos y te "
+"podremos contactar para resolver dudas."
 msgstr ""
-"Se nos indicas o teu mail, notificarémoste cando a procesemos e poderémoste "
-"contactar para resolver dúbidas."
+"Se nos indicas o teu mail, notificarémoste cando a procesemos e "
+"poderémoste contactar para resolver dúbidas."
 
 #: models.py:57
 msgid "Comentarios de la propuesta"
@@ -105,10 +105,11 @@ msgstr ""
 
 #: models.py:67
 msgid ""
-"Comentarios sobre la propuesta o información de por qué se ha aceptado o "
-"rechazado."
+"Comentarios sobre la propuesta o información de por qué se ha aceptado "
+"o rechazado."
 msgstr ""
-"Notas sobre a proposta ou información de por qué aceptouse ou rexeitouse."
+"Notas sobre a proposta ou información de por qué aceptouse ou "
+"rexeitouse."
 
 #: models.py:69
 msgid "Comentarios internos (ESTO NO SALDRÁ DE AQUÍ)"
@@ -164,11 +165,11 @@ msgstr "Categorías"
 
 #: models.py:94
 msgid ""
-"Puedes indicar otras categorías para clasificar mejor la entidad, y que "
-"aparezca en distintas opciones de búsqueda."
+"Puedes indicar otras categorías para clasificar mejor la entidad, y que"
+" aparezca en distintas opciones de búsqueda."
 msgstr ""
-"Podes indicar outras categorías, para clasificar mellor a entidade, e que "
-"apareza en distintas opcións de búsqueda."
+"Podes indicar outras categorías, para clasificar mellor a entidade, e "
+"que apareza en distintas opcións de búsqueda."
 
 #: models.py:98
 msgid "Dirección (calle y nº)"
@@ -180,8 +181,7 @@ msgid ""
 "ilustración, 145"
 msgstr ""
 "Tipo e nome de vía e número.\n"
-"Exemplos: C/ do Peixe, 21; Av. da ilustración, 145 (nome do tipo de vía en "
-"castelán)"
+"Exemplos: C/ do Peixe, 21; Av. da ilustración, 145 (nome do tipo de vía en castelán)"
 
 #: models.py:101
 msgid "Dirección (resto)"
@@ -189,8 +189,8 @@ msgstr "Enderezo (resto)"
 
 #: models.py:102
 msgid ""
-"Portal, piso y otros datos. Ejemplos: Escalera A, 3º izq.; Local 4 entrada "
-"posterior"
+"Portal, piso y otros datos. Ejemplos: Escalera A, 3º izq.; Local 4 "
+"entrada posterior"
 msgstr ""
 "Portal, piso e outros datos.\n"
 "Exemplos: Escaleira A, 3º Esq; Local 4 entrada posterior"
@@ -209,8 +209,8 @@ msgstr "Poboación"
 
 #: models.py:108
 msgid ""
-"Nombre de la población tal como se usa en la dirección postal. Ej. Madrid, "
-"Alcorcón."
+"Nombre de la población tal como se usa en la dirección postal. Ej. "
+"Madrid, Alcorcón."
 msgstr ""
 "Nome da poboación tal como se usa na direción postal.\n"
 "Ex: Pontevedra, Gondomar."
@@ -221,7 +221,8 @@ msgstr "Provincia"
 
 #: models.py:111
 msgid ""
-"Nombre de la provincia, no es necesario si se llama igual que la ciudad."
+"Nombre de la provincia, no es necesario si se llama igual que la "
+"ciudad."
 msgstr "Nome da provincia. Non é necesario se se chama igual ca cidade."
 
 #: models.py:113
@@ -230,7 +231,8 @@ msgstr "País"
 
 #: models.py:114
 msgid ""
-"Nombre del país, tal como se usa en la dirección postal, si es necesario."
+"Nombre del país, tal como se usa en la dirección postal, si es "
+"necesario."
 msgstr "Nome do país, tal como se usa na direción postal, se é necesario."
 
 #: models.py:116
@@ -239,11 +241,12 @@ msgstr "Zona"
 
 #: models.py:117
 msgid ""
-"Zona de influencia de la entidad. Puede ser barrio, pueblo, ciudad, comarca, "
-"pedanía... Ej. Barrio de Lavapiés, Sierra Norte de Madrid."
+"Zona de influencia de la entidad. Puede ser barrio, pueblo, ciudad, "
+"comarca, pedanía... Ej. Barrio de Lavapiés, Sierra Norte de Madrid."
 msgstr ""
-"Zona de influencia da entidade. Pode ser barrio, pobo, cidade, comarca, "
-"pedanía... Ex. San Pedro da Ramallosa, Serra do Galiñeiro, Val Miñor."
+"Zona de influencia da entidade. Pode ser barrio, pobo, cidade, "
+"comarca, pedanía... Ex. San Pedro da Ramallosa, Serra do Galiñeiro, "
+"Val Miñor."
 
 #: models.py:119
 msgid "Latitud"
@@ -251,11 +254,11 @@ msgstr "Latitude"
 
 #: models.py:120
 msgid ""
-"Puedes introducir directamente las coordenadas (latitud) si las conoces. Ej. "
-"41.058244"
+"Puedes introducir directamente las coordenadas (latitud) si las "
+"conoces. Ej. 41.058244"
 msgstr ""
-"Podes introducir diretamente as coordenadas (latitude) se as coñeces. Ex: "
-"42.3405469"
+"Podes introducir diretamente as coordenadas (latitude) se as coñeces. "
+"Ex: 42.3405469"
 
 #: models.py:122
 msgid "Longitud"
@@ -263,11 +266,11 @@ msgstr "Lonxitude"
 
 #: models.py:123
 msgid ""
-"Puedes introducir directamente las coordenadas (longitud) si las conoces. "
-"Ej. -3.533563"
+"Puedes introducir directamente las coordenadas (longitud) si las "
+"conoces. Ej. -3.533563"
 msgstr ""
-"Podes introducir diretamente as coordenadas (lonxitude) se as coñeces. Ex: "
-"-8.4531659"
+"Podes introducir diretamente as coordenadas (lonxitude) se as coñeces."
+" Ex: -8.4531659"
 
 #: models.py:127
 msgid "Teléfono contacto 1"
@@ -299,11 +302,11 @@ msgstr "Email 1"
 
 #: models.py:137
 msgid ""
-"Email de contacto. Ojo: poner la dirección correcta y sin añadir espacios a "
-"izquierda ni derecha. Ej. colectivo@gmail.com"
+"Email de contacto. Ojo: poner la dirección correcta y sin añadir "
+"espacios a izquierda ni derecha. Ej. colectivo@gmail.com"
 msgstr ""
-"Email de contacto. Ollo: poñela direción correcta e sen engadir espazos á "
-"esquerda ou á dereita. Ex.  colectivo@gmail.com"
+"Email de contacto. Ollo: poñela direción correcta e sen engadir "
+"espazos á esquerda ou á dereita. Ex.  colectivo@gmail.com"
 
 #: models.py:139
 msgid "Email 2"
@@ -319,13 +322,12 @@ msgstr "Web 1"
 
 #: models.py:143
 msgid ""
-"Página web informativa. Ojo: hay que poner la dirección completa, incluyendo "
-"http://. La dirección será validada automáticamente para comprobar que "
-"existe."
+"Página web informativa. Ojo: hay que poner la dirección completa, "
+"incluyendo http://. La dirección será validada automáticamente para "
+"comprobar que existe."
 msgstr ""
 "Páxina web informativa. Ollo: hai que poñela direción completa,\n"
-"incluindo http://. A dirección será validada automáticamente para comprobar "
-"que existe."
+"incluindo http://. A dirección será validada automáticamente para comprobar que existe."
 
 #: models.py:145
 msgid "Web 2"
@@ -349,8 +351,8 @@ msgstr "Ano de creación"
 
 #: models.py:154
 msgid ""
-"Año en que el colectivo u organización comenzó su actividad (introducir un "
-"nº con las cuatro cifras)."
+"Año en que el colectivo u organización comenzó su actividad (introducir"
+" un nº con las cuatro cifras)."
 msgstr "Ano en que o colectivo ou organización comenzou a súa actividade."
 
 #: models.py:156
@@ -367,15 +369,15 @@ msgstr "Descrición"
 
 #: models.py:160
 msgid ""
-"Aquí se puede poner una descripción general, o cualquier cosa que no entre "
-"en las casillas siguientes. Si hay poca información, puede ser suficiente "
-"con rellenar esta casilla. Alternativamente, puede no ser necesaria si se "
-"han rellenado las otras con mucha información."
+"Aquí se puede poner una descripción general, o cualquier cosa que no "
+"entre en las casillas siguientes. Si hay poca información, puede ser "
+"suficiente con rellenar esta casilla. Alternativamente, puede no ser "
+"necesaria si se han rellenado las otras con mucha información."
 msgstr ""
-"Aquí pódese poñer unha descrición xeral, ou calquera cousa que non entre nas "
-"celas seguintes. Se hai pouca información, pode abondar con encher esta "
-"cela. Alternativamente, pode non ser necesaria se se encheron as outras con "
-"moita información."
+"Aquí pódese poñer unha descrición xeral, ou calquera cousa que non "
+"entre nas celas seguintes. Se hai pouca información, pode abondar con "
+"encher esta cela. Alternativamente, pode non ser necesaria se se "
+"encheron as outras con moita información."
 
 #: models.py:162
 msgid "Objetivo como entidad"
@@ -383,11 +385,11 @@ msgstr "Obxetivo como entidade"
 
 #: models.py:163
 msgid ""
-"Objetivos principales de la entidad, cuál es su razón de ser; qué ofrece a "
-"sus socios, usuarios, clientes o público en general."
+"Objetivos principales de la entidad, cuál es su razón de ser; qué "
+"ofrece a sus socios, usuarios, clientes o público en general."
 msgstr ""
-"Obxetivos principais da entidade, cal é a súa razón de ser; qué ofrece ós "
-"seus socios, usuarios, clientes o público en xeral."
+"Obxetivos principais da entidade, cal é a súa razón de ser; qué ofrece"
+" ós seus socios, usuarios, clientes o público en xeral."
 
 #: models.py:165
 msgid "Finanzas"
@@ -395,11 +397,12 @@ msgstr "Finanzas"
 
 #: models.py:166
 msgid ""
-"Indicar cómo gestiona el dinero (con/sin ánimo de lucro, precios de los "
-"productos si vende algo, fuentes de ingresos, modo de financiación...)."
+"Indicar cómo gestiona el dinero (con/sin ánimo de lucro, precios de los"
+" productos si vende algo, fuentes de ingresos, modo de "
+"financiación...)."
 msgstr ""
-"Indicar cómo xestiona o diñero (con/sen ánimo de lucro, prezos dos productos "
-"se vende algo, fontes de ingresos, modo de financiación...)."
+"Indicar cómo xestiona o diñero (con/sen ánimo de lucro, prezos dos "
+"productos se vende algo, fontes de ingresos, modo de financiación...)."
 
 #: models.py:168
 msgid "Valores sociales y medioambientales"
@@ -407,13 +410,13 @@ msgstr "Valores sociais e medioambientais"
 
 #: models.py:169
 msgid ""
-"Justificación de por qué merece estar en este directorio, valores que aporta "
-"en función de nuestros criterios de selección, en tanto que relaciones "
-"humanas y cuidado del medio ambiente."
+"Justificación de por qué merece estar en este directorio, valores que "
+"aporta en función de nuestros criterios de selección, en tanto que "
+"relaciones humanas y cuidado del medio ambiente."
 msgstr ""
-"Xustificación de por qué merece estar neste diretorio, valores que aporta en "
-"función dos nosos criterios de seleción, en tanto que relacións humanas e "
-"coidado do medio ambiente."
+"Xustificación de por qué merece estar neste diretorio, valores que "
+"aporta en función dos nosos criterios de seleción, en tanto que "
+"relacións humanas e coidado do medio ambiente."
 
 #: models.py:171
 msgid "Forma de acceso"
@@ -421,8 +424,8 @@ msgstr "Forma de aceso"
 
 #: models.py:172
 msgid ""
-"Cómo acceder a los servicios o funciones de la entidad, horarios y lugar de "
-"contacto, condiciones de participación, venta o ditribución."
+"Cómo acceder a los servicios o funciones de la entidad, horarios y "
+"lugar de contacto, condiciones de participación, venta o ditribución."
 msgstr ""
 "Cómo aceder ós servizos oo funcións da entidade, horarios e lugar de "
 "contacto, condicións de participación, venda ou distribución."
@@ -445,11 +448,11 @@ msgstr "Outras entidades coas que colabora"
 
 #: models.py:178
 msgid ""
-"Indicar si esta entidad trabaja en colaboración con otras entidades o redes, "
-"aún sin formar parte de ellas."
+"Indicar si esta entidad trabaja en colaboración con otras entidades o "
+"redes, aún sin formar parte de ellas."
 msgstr ""
-"Indicar se esta entidade traballa en colaboración con outras entidades ou "
-"redes, ainda sen formar parte delas."
+"Indicar se esta entidade traballa en colaboración con outras entidades"
+" ou redes, ainda sen formar parte delas."
 
 #: models.py:180
 msgid "Proyectos en marcha"
@@ -457,11 +460,11 @@ msgstr "Proxectos en marcha"
 
 #: models.py:181
 msgid ""
-"Indicar, si se desea, los proyectos importantes que la entidad lleva a cabo "
-"o en los que está involucrada."
+"Indicar, si se desea, los proyectos importantes que la entidad lleva a "
+"cabo o en los que está involucrada."
 msgstr ""
-"Indicar, se se desexa, os proxectos importantes que a entidade leva a cabo "
-"ou nos que está involucrada."
+"Indicar, se se desexa, os proxectos importantes que a entidade leva a "
+"cabo ou nos que está involucrada."
 
 #: models.py:183
 msgid "Necesidades"
@@ -469,11 +472,11 @@ msgstr "Necesidades"
 
 #: models.py:184
 msgid ""
-"Indicar si la entidad tiene actualmente alguna necesidad importante que "
-"pudiera ser cubierta por otras entidades o personas externas."
+"Indicar si la entidad tiene actualmente alguna necesidad importante que"
+" pudiera ser cubierta por otras entidades o personas externas."
 msgstr ""
-"Indicar se esta entidade traballa en colaboración con outras entidades ou "
-"redes, ainda que non forme parte delas."
+"Indicar se esta entidade traballa en colaboración con outras entidades"
+" ou redes, ainda que non forme parte delas."
 
 #: models.py:186
 msgid "Qué ofrece"
@@ -481,13 +484,13 @@ msgstr "Qué ofrece"
 
 #: models.py:187
 msgid ""
-"Indicar si esta entidad está en disposición de ofrecer recursos u otros "
-"elementos que puedan ser útiles a otras entidades relacionadas o personas "
-"externas; posibilidades de colaboración."
+"Indicar si esta entidad está en disposición de ofrecer recursos u otros"
+" elementos que puedan ser útiles a otras entidades relacionadas o "
+"personas externas; posibilidades de colaboración."
 msgstr ""
-"Indicar se esta entidade está en disposición de ofrecer recursos ou outros "
-"elementos que poidan ser útiles a outras entidades relacionadas ou personas "
-"externas; posibilidades de colaboración."
+"Indicar se esta entidade está en disposición de ofrecer recursos ou "
+"outros elementos que poidan ser útiles a outras entidades relacionadas"
+" ou personas externas; posibilidades de colaboración."
 
 #: models.py:189
 msgid "Información adicional"
@@ -605,16 +608,14 @@ msgstr ""
 
 #: templates/macadjan_form/email_notify_proposal_to_proponent.txt:4
 msgid ""
-"Nos pondremos con ella y la subiremos al mapa lo antes posible, si está "
-"todo\n"
+"Nos pondremos con ella y la subiremos al mapa lo antes posible, si está todo\n"
 "correcto. Recibirás otro mensaje en el momento en que la subamos, o también\n"
 "si decidimos que no la podemos subir, por algún motivo.\n"
 "\n"
 "Si ves que tarda un poco, ten paciencia. ¡Esto es un servicio atendido por\n"
 "voluntarios! Considera la opción de echarnos una mano...\n"
 "\n"
-"En todo caso, no dudes en contactar con nosotros si lo crees necesario, "
-"para\n"
+"En todo caso, no dudes en contactar con nosotros si lo crees necesario, para\n"
 "ello consulta la sección de contacto de la web.\n"
 "\n"
 "¡Un saludo!"
@@ -657,7 +658,8 @@ msgstr "Propoñer unha nova entidade"
 
 #: templates/macadjan_form/entity_proposal.html:10
 msgid ""
-"¿Quieres aparecer en el mapa? Rellena este formulario y te daremos de alta."
+"¿Quieres aparecer en el mapa? Rellena este formulario y te daremos de "
+"alta."
 msgstr ""
 
 #: templates/macadjan_form/entity_proposal.html:12
@@ -667,23 +669,18 @@ msgstr ""
 
 #: templates/macadjan_form/entity_proposal.html:13
 msgid ""
-"¿Quieres modificar los datos que salen en el mapa? Rellena este formulario y "
-"los cambiaremos."
+"¿Quieres modificar los datos que salen en el mapa? Rellena este "
+"formulario y los cambiaremos."
 msgstr ""
 
 #: templates/macadjan_form/entity_proposal.html:15
 msgid ""
 "\n"
-"        <p>Asegúrate de ser la persona titular de esta información, o de "
-"contar con su autorización.</p>\n"
-"        <p>Las casillas con (*) son obligatorias, el resto son opcionales, "
-"pero cuanto más información nos des,\n"
-"        más útil será la ficha para los visitantes del mapa. Como mínimo "
-"procura rellenar la casilla Descripción\n"
-"        y algún dato de contacto (teléfono, web, email, etc.). Además "
-"deberás rellenar la dirección o bien las\n"
-"        casillas Latitud/Longitud si quieres salir en el mapa; de lo "
-"contrario la entidad aparecerá listada en\n"
+"        <p>Asegúrate de ser la persona titular de esta información, o de contar con su autorización.</p>\n"
+"        <p>Las casillas con (*) son obligatorias, el resto son opcionales, pero cuanto más información nos des,\n"
+"        más útil será la ficha para los visitantes del mapa. Como mínimo procura rellenar la casilla Descripción\n"
+"        y algún dato de contacto (teléfono, web, email, etc.). Además deberás rellenar la dirección o bien las\n"
+"        casillas Latitud/Longitud si quieres salir en el mapa; de lo contrario la entidad aparecerá listada en\n"
 "        la pestaña \"Entidades sin ubicación geográfica\".</p>\n"
 "    "
 msgstr ""
@@ -703,42 +700,27 @@ msgstr "Enviar"
 #: templates/macadjan_form/entity_proposal.html:86
 msgid ""
 "\n"
-"            <p>La información aquí enviada, en caso de ser aprobada, pasará "
-"a formar parte de la base de datos de\n"
-"            este mapa con el fin de ser mostrada públicamente en el mismo, o "
-"también posiblemente en otro de los\n"
-"            mapas de la red de mapeo de alternativas en la que este mapa "
-"está integrado.</p>\n"
-"            <p>Una excepción son las casillas \"Email de quien hace la "
-"propuesta\" y \"Comentarios de la propuesta\",\n"
-"            que no se mostrarán nunca al público, y serán usadas "
-"exclusivamente para ponernos en contacto con esa\n"
-"            persona y notificar el estado de la propuesta, si es o no "
-"aceptada, y por qué.</p>\n"
-"            <p>En cualquier caso, quien hace la propuesta o la entidad en sí "
-"puede contactar con nosotros para\n"
-"            consultar, modificar o borrar cualquiera de los datos, "
-"consultando la sección de contacto de esta web.</p>\n"
+"            <p>La información aquí enviada, en caso de ser aprobada, pasará a formar parte de la base de datos de\n"
+"            este mapa con el fin de ser mostrada públicamente en el mismo, o también posiblemente en otro de los\n"
+"            mapas de la red de mapeo de alternativas en la que este mapa está integrado.</p>\n"
+"            <p>Una excepción son las casillas \"Email de quien hace la propuesta\" y \"Comentarios de la propuesta\",\n"
+"            que no se mostrarán nunca al público, y serán usadas exclusivamente para ponernos en contacto con esa\n"
+"            persona y notificar el estado de la propuesta, si es o no aceptada, y por qué.</p>\n"
+"            <p>En cualquier caso, quien hace la propuesta o la entidad en sí puede contactar con nosotros para\n"
+"            consultar, modificar o borrar cualquiera de los datos, consultando la sección de contacto de esta web.</p>\n"
 "            "
 msgstr ""
 "\n"
-"<p> A información aquí enviada, en caso de ser aprobada, pasará a formar "
-"parte da base de datos de este mapa co fin de ser amosada públicamente no "
-"mesmo, ou tamén posiblemente noutro dos mapas da rede de mapeo de "
-"alternativas na que este mapa está integrado.</p>\n"
-"<p>Unha excepción son as celas \"Email de quen fai a proposta\" e "
-"\"Comentarios da proposta\", que non se amosarán nunca o público, e serán "
-"usadas únicamente para poñernos en contacto con esa persoa e notificarlle o "
-"estado da proposta, se é aceptada ou non, e por qué.</p>\n"
-"<p>En calquera caso, quen fai a proposta ou a entidade en sí pode contactar "
-"connosco para consultar, modificar ou borrar calquera dato, consultando a "
-"sección de contacto de esta web.</p>"
+"<p> A información aquí enviada, en caso de ser aprobada, pasará a formar parte da base de datos de este mapa co fin de ser amosada públicamente no mesmo, ou tamén posiblemente noutro dos mapas da rede de mapeo de alternativas na que este mapa está integrado.</p>\n"
+"<p>Unha excepción son as celas \"Email de quen fai a proposta\" e \"Comentarios da proposta\", que non se amosarán nunca o público, e serán usadas únicamente para poñernos en contacto con esa persoa e notificarlle o estado da proposta, se é aceptada ou non, e por qué.</p>\n"
+"<p>En calquera caso, quen fai a proposta ou a entidade en sí pode contactar connosco para consultar, modificar ou borrar calquera dato, consultando a sección de contacto de esta web.</p>"
 
 #: templates/macadjan_form/entity_proposal_ok.html:12
 msgid ""
-"Tu propuesta ha sido enviada, la revisaremos y la incluiremos en el mapa lo "
-"antes posible. Comprueba tu correo, te hemos enviado un mensaje de "
-"confirmación."
+"Tu propuesta ha sido enviada, la revisaremos y la incluiremos en el "
+"mapa lo antes posible. Comprueba tu correo, te hemos enviado un mensaje"
+" de confirmación."
 msgstr ""
-"A túa proposta foi enviada, revisarémola e incluirémola no mapa o antes "
-"posible. Comproba o teu correo, enviámoste unha mensaxe de confirmación."
+"A túa proposta foi enviada, revisarémola e incluirémola no mapa o "
+"antes posible. Comproba o teu correo, enviámoste unha mensaxe de "
+"confirmación."
