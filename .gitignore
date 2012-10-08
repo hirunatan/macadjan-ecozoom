@@ -6,6 +6,7 @@
 *~
 tags
 src/secret.txt
+
 src/whoosh/index_*
 !src/whoosh/index_demo
 
@@ -17,4 +18,7 @@ src/settings/*.py
 !src/settings/common.py
 !src/settings/demo.py
 !src/settings/demo_pro.py
+
+src/skins/*
+!src/skins/demo/*
 
