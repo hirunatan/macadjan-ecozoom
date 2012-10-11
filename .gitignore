@@ -6,6 +6,7 @@
 *~
 tags
 src/secret.txt
+tools/fabfile.py
 
 src/whoosh/index_*
 !src/whoosh/index_demo

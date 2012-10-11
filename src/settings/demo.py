@@ -55,6 +55,11 @@ STATICFILES_DIRS = (
 # Default marker image (used for categories or subcategories that not define their own marker).
 DEFAULT_MARKER_URL = 'img/markers/icons/cluster3.png'
 
+# Entity importers for this map
+MACADJAN_ENTITY_IMPORTER_PAGES = [
+    ('default_csv', 'macadjan_importer.import_page_default.ImportPageDefault'),
+]
+
 # Whoosh index directory
 HAYSTACK_CONNECTIONS['default']['PATH'] = os.path.join(PROJECT_ROOT, 'whoosh/index_demo')
 

@@ -1,0 +1,26 @@
+#
+## %(instance_domain)s
+#
+# admin:        %(admin_email)s
+# type:         django
+# backend:      app1.app.vz.lan:%(uwsgi_port)s
+#
+server {
+        listen          80;
+        server_name     %(instance_domain)s;
+        root            %(static_dir)s/%(instance_domain)s;
+        index           index.html;
+
+        access_log      %(log_dir)s/%(instance_domain)s_access.log;
+        error_log       %(log_dir)s/%(instance_domain)s_error.log;
+
+        location / {
+                try_files       /system/maintenance.html $uri @django;
+        }
+ 
+        location @django {
+                include                         uwsgi_params;
+                uwsgi_pass                      10.12.44.7:%(uwsgi_port)s;
+        }
+}
+

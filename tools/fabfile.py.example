@@ -1,0 +1,115 @@
+# -*- coding: utf-8 -*-
+
+from fabric.api import local, settings, abort, run, cd, env, put, prefix
+from fabric.decorators import task
+from fabric.contrib.files import upload_template
+
+import os.path
+
+env.hosts = ['<your remote host, or user@localhost:port if ssh tunnel>']
+
+# Uncomment to use ssh tunnel
+#try:
+#    from kfabric.decorators import ssh_tunel
+#except ImportError:
+#    print ("Go to: https://github.com/kaleidos/kfabric-tools and install this.\n"
+#           "Or directly: pip install -e \"git://github.com/kaleidos/kfabric-tools.git#egg=kfabric\"\n")
+#    import sys; sys.exit(-1)
+#
+#tunel_kwargs = {
+#    'remote_host': '<your remote proxy>',
+#    'host': '<your remote host as seen from the proxy>',
+#    'local_port': 4444,
+#}
+
+site_config = {
+    'django_project_root': '<path of django app (where manage.py is)>',
+    'admin_name': '<your admin name>',
+    'admin_email': '<your admin email>',
+    'default_timezone': 'Europe/Madrid',
+    'default_language_code': 'es',
+    'default_language_name': 'Spanish',
+    'nginx_conf_dir': '<full path of nginx config files>',
+    'supervisor_uwsgi_conf_dir': '<full path of supervisor config files>',
+    'static_dir': '<full path where collectstatic will copy files>',
+    'log_dir': '<full path of nginx log files>',
+    'db_user': '<your database user in development machine>',
+    'db_passwd': '<your database password in development machine>',
+    'db_host': '<your database host in development machine>',
+    'db_user_pro': '<your database user in remote host>',
+    'db_passwd_pro': '<your database password in remote host>',
+    'db_host_pro': '<your database host in remote host>',
+}
+
+@task
+#@ssh_tunel(**tunel_kwargs)  uncomment to use ssh tunnel
+def new_instance(instance_slug, instance_domain, uwsgi_port, piwik_site_id,
+                 email_host = '', email_user = '', email_pwd = '', email_port = 23, email_use_tls = False,
+                 **kwargs):
+
+    context = {
+        'instance_slug': instance_slug,
+        'instance_domain': instance_domain,
+        'uwsgi_port': uwsgi_port,
+        'piwik_site_id': piwik_site_id,
+        'email_host': email_host,
+        'email_user': email_user,
+        'email_pwd': email_pwd,
+        'email_port': email_port,
+        'email_use_tls': email_use_tls,
+    }
+    context.update(site_config)
+
+    upload_template(
+        'fab_templates/activate_INSTANCE_SLUG.sh',
+        os.path.join(site_config['django_project_root'], 'activate_%s.sh' % instance_slug),
+        context,
+        use_sudo = True,
+    )
+
+    upload_template(
+        'fab_templates/activate_INSTANCE_SLUG_pro.sh',
+        os.path.join(site_config['django_project_root'], 'activate_%s_pro.sh' % instance_slug),
+        context,
+        use_sudo = True,
+    )
+
+    upload_template('fab_templates/settings/INSTANCE_SLUG.py',
+                    os.path.join(site_config['django_project_root'], 'settings/%s.py' % instance_slug),
+                    context,
+                    use_sudo = True,)
+
+    upload_template('fab_templates/settings/INSTANCE_SLUG_pro.py',
+                    os.path.join(site_config['django_project_root'], 'settings/%s_pro.py' % instance_slug),
+                    context,
+                    use_sudo = True,)
+
+    with cd(site_config['django_project_root']):
+        with prefix('workon macadjan && source activate_%(slug)s.sh' %
+                    {'slug': instance_slug}):
+
+            run('./manage.py syncdb --migrate')
+
+            run('./manage.py initialize_instance %(slug)s %(domain)s' %
+                {'slug': instance_slug, 'domain': instance_domain})
+
+            sudo('cp -R skins/demo/ skins/%(slug)s' %
+                {'slug': instance_slug})
+
+    upload_template('fab_templates/uwsgi_INSTANCE_SLUG.py',
+                    os.path.join(site_config['django_project_root'], 'uwsgi_%s.py' % instance_slug),
+                    context,
+                    use_sudo = True,)
+
+    upload_template('fab_templates/nginx_conf/INSTANCE_DOMAIN',
+                    os.path.join(site_config['nginx_conf_dir'], '%s' % instance_domain),
+                    context,
+                    use_sudo = True,)
+
+    upload_template('fab_templates/supervisor_uwsgi_conf/macadjan_INSTANCE_SLUG.conf',
+                    os.path.join(site_config['supervisor_uwsgi_conf_dir'], 'macadjan_%s.conf' % instance_slug),
+                    context,
+                    use_sudo = True,)
+
+    print "OJO: Ahora tienes que actualizar collectstatic.sh, southmigrate.sh y tools/backup_all.sh"
+
