@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-09-17 07:51+0200\n"
-"PO-Revision-Date: 2012-10-01 07:45\n"
-"Last-Translator:   <tio@feo.es>\n"
+"PO-Revision-Date: 2012-10-01 08:40\n"
+"Last-Translator:   <hirunatan@hammo.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: \n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Translated-Using: django-rosetta 0.6.2\n"
+"X-Translated-Using: django-rosetta 0.6.8\n"
 
 #: archive_csv.py:62
 msgid "Debes configurar el archivo antes de empezar a leer"
@@ -219,8 +219,7 @@ msgstr ""
 
 #: converter_default.py:145 converter_default_gl.py:145
 msgid ""
-"Fecha de última actualización incorrecta, el formato debe ser "
-"DD/MM/YYYY"
+"Fecha de última actualización incorrecta, el formato debe ser DD/MM/YYYY"
 msgstr ""
 
 #: converter_default.py:154 converter_default_gl.py:154
@@ -292,7 +291,8 @@ msgid "Obxetivo como entidade / Objetivo como entidad"
 msgstr ""
 
 #: converter_default_gl.py:50 converter_default_gl.py:132
-msgid "Valores sociais e medioambientais / Valores sociales y medioambientales"
+msgid ""
+"Valores sociais e medioambientais / Valores sociales y medioambientales"
 msgstr ""
 
 #: converter_default_gl.py:51 converter_default_gl.py:133
@@ -305,8 +305,7 @@ msgstr ""
 
 #: converter_default_gl.py:53 converter_default_gl.py:135
 msgid ""
-"Outras entidades coas que colabora / Otras entidades con las que "
-"colabora"
+"Outras entidades coas que colabora / Otras entidades con las que colabora"
 msgstr ""
 
 #: converter_default_gl.py:54 converter_default_gl.py:136
@@ -346,8 +345,8 @@ msgstr ""
 
 #: import_page_default.py:30 import_page_default_gl.py:30
 msgid ""
-"<p>Necesitas un fichero creado a partir de la hoja de cálculo de carga "
-"de ficheros, y guardada en formato csv.</p>"
+"<p>Necesitas un fichero creado a partir de la hoja de cálculo de carga de "
+"ficheros, y guardada en formato csv.</p>"
 msgstr ""
 
 #: import_page_default.py:66 import_page_default_gl.py:66
