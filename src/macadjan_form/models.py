@@ -345,7 +345,7 @@ class EntityProposal(models.Model):
     def update_entity(self):
         if self.existing_entity.name != self.name:
             self.existing_entity.name = self.name
-            self.existing_entity.slug = slugify_uniquely(self.existing_entity.name, self.existing_entity.__class__)
+            self.existing_entity.slug = None
         self.existing_entity.alias = self.alias
         self.existing_entity.summary = self.summary
         self.existing_entity.is_container = False
