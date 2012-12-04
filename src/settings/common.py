@@ -46,8 +46,6 @@ MEDIA_URL = '/media/'
 STATIC_ROOT = join(PROJECT_ROOT, 'static')
 STATIC_URL = '/static/'
 
-ADMIN_MEDIA_PREFIX = '/static/admin/'
-
 TEMPLATE_DIRS = (
     join(PROJECT_ROOT, 'templates'),
 )
