@@ -419,6 +419,10 @@ class EntityProposal(models.Model):
                     'website_name': site_info.website_name
                 }
             email_from = settings.DEFAULT_FROM_EMAIL
+            email_headers = {}
+            email_reply_to = getattr(settings, 'DEFAULT_REPLY_TO_EMAIL', '')
+            if email_reply_to:
+                email_headers['Reply-To'] = email_reply_to
             email_to = (self.proponent_email,)
             email_context = Context({
                 'entity_name': self.name,
@@ -441,6 +445,7 @@ class EntityProposal(models.Model):
                 subject=email_subject,
                 body=email_body,
                 to=email_to,
+                headers=email_headers,
             )
             email_obj.content_subtype = 'plain'
             email_obj.send()

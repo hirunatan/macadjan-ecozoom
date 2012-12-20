@@ -75,6 +75,10 @@ class EntityProposal(FormView):
                 'action': action
         }
         email_from = settings.DEFAULT_FROM_EMAIL
+        email_reply_to = getattr(settings, 'DEFAULT_REPLY_TO_EMAIL', '')
+        email_headers = {}
+        if email_reply_to:
+            email_headers['Reply-To'] = email_reply_to
         email_to = [tuple[1] for tuple in settings.MANAGERS]
         email_template = loader.get_template('macadjan_form/email_notify_proposal_to_managers.txt')
         email_context = Context({
@@ -93,6 +97,7 @@ class EntityProposal(FormView):
             subject=email_subject,
             body=email_body,
             to=email_to,
+            headers=email_headers,
         )
         email_obj.content_subtype = 'plain'
         email_obj.send()
@@ -109,6 +114,10 @@ class EntityProposal(FormView):
                 'website_name': site_info.website_name
             }
             email_from = settings.DEFAULT_FROM_EMAIL
+            email_headers = {}
+            email_reply_to = getattr(settings, 'DEFAULT_REPLY_TO_EMAIL', '')
+            if email_reply_to:
+                email_headers['Reply-To'] = email_reply_to
             email_to = (proposal.proponent_email,)
             email_template = loader.get_template('macadjan_form/email_notify_proposal_to_proponent.txt')
             email_context = Context({
@@ -122,6 +131,7 @@ class EntityProposal(FormView):
                 subject=email_subject,
                 body=email_body,
                 to=email_to,
+                headers=email_headers,
             )
             email_obj.content_subtype = 'plain'
             email_obj.send()
