@@ -8,6 +8,8 @@ tags
 src/secret.txt
 tools/fabfile.py
 tools/sites.txt
+tools/backups/*
+!tools/backups/README.txt
 
 src/whoosh/index_*
 !src/whoosh/index_demo
@@ -23,4 +25,7 @@ src/settings/*.py
 
 src/skins/*
 !src/skins/demo/*
+
+src/uwsgi_*.py
+!src/uswgi_demo.py
 
