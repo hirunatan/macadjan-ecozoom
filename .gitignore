@@ -7,6 +7,7 @@
 tags
 src/secret.txt
 tools/fabfile.py
+tools/sites.txt
 
 src/whoosh/index_*
 !src/whoosh/index_demo
