@@ -159,7 +159,7 @@ class EntityConverterDefault(EntityConverter):
         for cat_string in item[_(u'Categorías')]:
             cat_pieces = cat_string.replace(u'\u2013', '-').split(' - ')  # Sometimes Excel replaces ascii '-' with unicode '-'
             if len(cat_pieces) != 2:
-                raise ValueEror(_(u'Las categorías deben ser dos frases separadas por un guión "-"'))
+                raise ValueError(_(u'Las categorías deben ser dos frases separadas por un guión "-"'))
             cat_name, subcat_name = cat_pieces
             try:
                 subcat = models.SubCategory.objects.get(name = subcat_name, category__name = cat_name)
