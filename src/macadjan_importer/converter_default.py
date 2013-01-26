@@ -148,6 +148,8 @@ class EntityConverterDefault(EntityConverter):
         if not entity.creation_date:
             entity.creation_date = entity.modification_date
         type_name = item[_(u'Tipo de entidad')]
+        if len(type_name.strip()) == 0:
+            raise ValueError(_(u'El tipo de entidad es obligatorio'))
         try:
             entity.entity_type = models.EntityType.objects.get(name = type_name)
         except models.EntityType.DoesNotExist:
@@ -157,6 +159,8 @@ class EntityConverterDefault(EntityConverter):
 
         subcategories = []
         for cat_string in item[_(u'Categorías')]:
+            if len(cat_string.strip()) == 0:
+                raise ValueError(_(u'Las categorías son obligatorias'))
             cat_pieces = cat_string.replace(u'\u2013', '-').split(' - ')  # Sometimes Excel replaces ascii '-' with unicode '-'
             if len(cat_pieces) != 2:
                 raise ValueError(_(u'Las categorías deben ser dos frases separadas por un guión "-"'))

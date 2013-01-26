@@ -19,6 +19,12 @@ class EntityArchive:
         '''
         raise NotImplementedError()
 
+    def current_pos(self):
+        '''
+        Return the current position in the archive, in a format suitable for
+        showing it to the user.
+        '''
+
     def __iter__(self):
         '''
         Implement the iterator protocol.

@@ -32,6 +32,7 @@ class EntityArchiveCSV(EntityArchive):
         self.filename = filename
         self.csv_file = open(filename, 'rb')
         self.reader = csv.DictReader(self.csv_file, delimiter=',')
+        self._index = 1 # skip initial header line
         self._read_line()
 
     def configure(self, name_column_name, category_column_name):
@@ -82,9 +83,13 @@ class EntityArchiveCSV(EntityArchive):
 
         return item
 
+    def current_pos(self):
+        return self._index - 1
+
     def _read_line(self):
         try:
             self._current_item = self.reader.next()
+            self._index += 1
             for key in self._current_item.keys():
                 value = self._current_item[key]
                 if type(key) == type(''):  # detect an ASCII key and convert to unicode

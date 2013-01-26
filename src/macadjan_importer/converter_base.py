@@ -34,11 +34,12 @@ class EntityImporter:
         except Exception as ex:
             self.process_exception(_(u'Error general'), ex)
         else:
-            for (i, item) in enumerate(self.archive):
+            for item in self.archive:
                 try:
                     self.process_item(item)
                 except Exception as ex:
-                    self.process_exception(_(u'Error en elemento %(number)d') % {'number': i+1}, ex)
+                    self.process_exception(_(u'Error en posición %(position)d') %
+                            {'position': self.archive.current_pos()}, ex)
         finally:
             try:
                 self.converter.finish(self.archive)
