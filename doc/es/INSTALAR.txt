@@ -1,0 +1,75 @@
+INSTALACIÓN DE MACADJAN-ECOZOOM EN LINUX
+========================================
+
+Puedes instalar MySQL si necesitas esa base de datos. Si es sólo para
+usar el mapa de demo, puedes ignorar todas las líneas donde se menciona
+mysql, usarás sqlite3 que viene incluido.
+
+
+* Instalar dependencias
+  ---------------------
+
+- Python == 2.6 / 2.7
+- Pip
+- Virtualenvwrapper
+- Git
+- MySQL >= 5.1
+
+En un sistema tipo ubuntu/debian:
+
+sudo apt-get install libmysqlclient-dev mysql-client mysql-server 
+sudo apt-get install python2.7 python2.7-dev 
+sudo apt-get install python-pip
+sudo apt-get install git
+
+sudo pip install virtualenvwrapper
+
+Añadir la siguiente línea al .bashrc o fichero equivalente de la shell:
+
+  source /usr/local/bin/virtualenvwrapper.sh
+
+
+* Crear el virtualenv
+  -------------------
+
+mkvirtualenv macadjan
+
+- (opcional) Puedes editar ~/.virtualenvs/macadjan/bin/postactivate y añadir un comando
+    cd <dir-de-trabajo>/macadjan-ecozoom/src/
+
+  y luego ejecutar
+    workon macadjan
+  
+  cada vez que quieras trabajar en macadjan.
+
+- (opcional) O puedes añadir al .bashrc la línea workon macadjan si quieres que se active
+  automáticamente el virtualenv nada más hacer login con el usuario.
+
+
+* Instalar macadjan y macadjan-ecozoom
+  ------------------------------------
+
+  cd <dir-de-trabajo>
+  git clone git://github.com/hirunatan/macadjan.git
+  git clone git://github.com/hirunatan/macadjan-ecozoom.git
+
+  cd <dir-de-trabajo>/macadjan
+  pip install -r requirements.txt
+  python setup.py develop
+
+  cd <dir-de-trabajo>/macadjan-ecozoom
+  pip install -r tools/requirements.txt
+  pip install -r tools/requirements-mysql.txt
+
+
+* Lanzar macadjan
+  ---------------
+
+  cd <dir-de-trabajo>/macadjan-ecozoom/src
+  source activate_demo.sh
+  python manage.py runserver
+
+Abrir un navegador y entrar en
+
+  http://localhost:8000
+

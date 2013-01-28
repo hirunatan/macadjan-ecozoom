@@ -1,0 +1,48 @@
+INSTALACIÓN DE MACADJAN-ECOZOOM EN WINDOWS
+==========================================
+
+* Instalar dependencias
+  ---------------------
+
+Descargar e instalar Python (se recomienda la distribución de ActivePython)
+
+  http://downloads.activestate.com/ActivePython/releases/2.7.2.5/ActivePython-2.7.2.5-win32-x86.msi
+
+Descargar e instalar Git
+
+  http://git-scm.com/download/win
+
+  Al instalar hay que elegir las opciones
+    "Run Git from the Windows Command Prompt"
+    "Checkout as-is, commit as-is"
+
+Descargar e instalar PIL
+
+  http://www.lfd.uci.edu/~gohlke/pythonlibs/zpgkb86p/PIL-fork-1.1.7.win32-py2.7.exe
+
+
+* Instalar las aplicaciones
+  -------------------------
+
+Descargar estos dos ficheros zip y descomprimir en alguna carpeta
+
+  https://github.com/hirunatan/macadjan/zipball/master
+  https://github.com/hirunatan/macadjan-ecozoom/zipball/master
+
+Obtendremos en ese lugar las dos subcarpetas
+
+  hirunatan-macadjan-xxxxxx
+  hirunatan-macadjan-ecozoom-xxxx
+
+Entrar en ambas (en ese orden) y ejecutar install.bat
+
+
+* Lanzar macadjan
+  ---------------
+
+Entrar en hirunatan-macadjan-ecozoom-xxx y ejecutar runserver.bat
+
+Abrir un navegador y entrar en
+
+  http://localhost:8000
+
