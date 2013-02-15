@@ -14,7 +14,8 @@ class MapSource(models.Model):
     name = models.CharField(max_length = 100, null = False, blank = False,
             verbose_name = _(u'Nombre'))
     slug = models.SlugField(max_length = 100, null = False, blank = True, unique = True,
-            verbose_name = _(u'Slug'))
+            verbose_name = _(u'Slug'),
+            help_text = _(u'Podrás consultar la fuente en la dirección /map-source/&lt;slug&gt;/'))
     description = models.TextField(null = False, blank = True,
             verbose_name = _(u'Descripción'))
     web = models.URLField(null = False, blank = True, default = '',
