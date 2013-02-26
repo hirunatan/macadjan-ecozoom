@@ -6,12 +6,26 @@
 
 {% block content %}
     {% if not form.instance.existing_entity %}
-    <h1>{% trans 'Proponer una nueva entidad' %}</h1>
-    <p>{% trans '¿Quieres aparecer en el mapa? Rellena este formulario y te daremos de alta.' %}</p>
+       {% if not site_info.new_entity_proposal_title %}
+         <h1>{% trans 'Proponer una nueva entidad' %}</h1>
+       {% else %} <h1> {{site_info.new_entity_proposal_title}}</h1>{% endif %}
+       {% if not site_info.new_entity_proposal_text %}
+        <p>{% trans '¿Quieres aparecer en el mapa? Rellena este formulario y te daremos de alta.' %}</p>
+       {% endif %}
     {% else %}
-    <h1>{% blocktrans with entity_name=form.instance.existing_entity.name %}Modificar datos de {{ entity_name }}{% endblocktrans %}</h1>
+       {% if not site_info.change_proposal_title %}
+       <h1>{% blocktrans with entity_name=form.instance.existing_entity.name %}Modificar datos de {{ entity_name }}{% endblocktrans %}</h1>
+       {% else %} <h1> {{site_info.change_proposal_title}}</h1> {% endif %}
+       {% if not site_info.change_proposal_text %}
     <p>{% trans '¿Quieres modificar los datos que salen en el mapa? Rellena este formulario y los cambiaremos.' %}</p>
+       {% endif %}
     {% endif %}
+
+    {% if site_info.change_proposal_text and form.instance.existing_entity %}
+       <p>{{site_info.change_proposal_text}}</p>
+    {% elif site_info.new_entity_proposal_text and not form.instance.existing_entity %}
+       <p>{{site_info.new_entity_proposal_text}}</p>
+    {% else %} 
     {% blocktrans %}
         <p>Asegúrate de ser la persona titular de esta información, o de contar con su autorización.</p>
         <p>Las casillas con (*) son obligatorias, el resto son opcionales, pero cuanto más información nos des,
@@ -19,8 +33,9 @@
         y algún dato de contacto (teléfono, web, email, etc.). Además deberás rellenar la dirección o bien las
         casillas Latitud/Longitud si quieres salir en el mapa; de lo contrario la entidad aparecerá listada en
         la pestaña "Entidades sin ubicación geográfica".</p>
-    {% endblocktrans %}
-
+	{% endblocktrans %} 
+    {% endif %}
+	
     {% if messages %}
         <ul class="messages">
             {% for message in messages %}
@@ -83,6 +98,8 @@
             <input type="submit" name="submit_form" value="{% trans 'Enviar' %}"/>
         </div>
         <div>
+	   {% if site_info.proposal_bottom_text %} <p>{{site_info.proposal_bottom_text}}</p>
+	   {% else %}
             {% blocktrans %}
             <p>La información aquí enviada, en caso de ser aprobada, pasará a formar parte de la base de datos de
             este mapa con el fin de ser mostrada públicamente en el mismo, o también posiblemente en otro de los
@@ -93,6 +110,7 @@
             <p>En cualquier caso, quien hace la propuesta o la entidad en sí puede contactar con nosotros para
             consultar, modificar o borrar cualquiera de los datos, consultando la sección de contacto de esta web.</p>
             {% endblocktrans %}
+	   {% endif%}
         </div>
     </form>
 
