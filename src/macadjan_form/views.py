@@ -34,6 +34,7 @@ class EntityProposal(FormView):
         context = super(EntityProposal, self).get_context_data(**kwargs)
         context.update({
                 'entity': self.entity,
+                'site_info': Site.objects.get_current().site_info,
             })
         return context
 
