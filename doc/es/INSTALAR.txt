@@ -73,3 +73,10 @@ Abrir un navegador y entrar en
 
   http://localhost:8000
 
+Para probar el panel de administación, entrar en
+
+  http://localhost:8000/admin
+
+  Usuario admin
+  Contraseña 12345
+
