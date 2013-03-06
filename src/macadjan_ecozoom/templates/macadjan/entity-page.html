@@ -38,7 +38,10 @@
                 {% if entity.zone %}
                 <p><strong>{% trans "Zona de influencia:" %} </strong>{{ entity.zone }}</p>
                 {% endif %}
-
+		{% if entity.latitude %}
+		<p><strong>{% trans "Coordenadas (Lat,Lon):" %} </strong> {{ entity.latitude }}, </i> {{ entity.longitude }} </p>
+                {% endif %}
+				    
                 {% if entity.contact_phone_1 %}
                 <p><strong>{% trans "Teléfono de contacto:" %} </strong>{{ entity.contact_phone_1 }}</p>
                 {% endif %}
