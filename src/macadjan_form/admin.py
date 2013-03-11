@@ -17,15 +17,15 @@ class EntityProposalAdmin(admin.ModelAdmin):
         for field_name,field in form.base_fields.items():
             original_value = getattr(obj.existing_entity, field_name, None) if obj.existing_entity else None
             if original_value and original_value != getattr(obj, field_name, None):
-                field.help_text += '<br><div style="color:#FF0000"> ' 
+                field.help_text += '<br><div style="color:#FF0000"> '
                 if field_name == 'subcategories':
                     field.help_text += '<br><b>Valor original:</b> '
-                    for categorie in original_value.all():
-                        field.help_text += unicode(categorie) + '<br>'
+                    for category in original_value.all():
+                        field.help_text += unicode(category) + '<br>'
                 else:
                     field.help_text += '<b>Valor original:</b> ' + unicode(original_value)
                 field.help_text += '</div>'
-        return form 
+        return form
 
 admin.site.register(models.EntityProposal, EntityProposalAdmin)
 
