@@ -14,17 +14,27 @@ class EntityProposalAdmin(admin.ModelAdmin):
 
     def get_form(self, request, obj=None, **kwargs):
         form = super(EntityProposalAdmin, self).get_form(request, obj, **kwargs)
-        for field_name,field in form.base_fields.items():
-            original_value = getattr(obj.existing_entity, field_name, None) if obj.existing_entity else None
-            if original_value and original_value != getattr(obj, field_name, None):
-                field.help_text += '<br><div style="color:#FF0000"> '
-                if field_name == 'subcategories':
-                    field.help_text += '<br><b>Valor original:</b> '
-                    for category in original_value.all():
-                        field.help_text += unicode(category) + '<br>'
-                else:
-                    field.help_text += '<b>Valor original:</b> ' + unicode(original_value)
-                field.help_text += '</div>'
+        if obj.existing_entity:
+            for field_name,field in form.base_fields.items():
+                original_value = getattr(obj.existing_entity, field_name, None)
+                if original_value!=None and original_value!=getattr(obj, field_name, None):
+                    field.help_text += '<br><div style="color:#FF0000"> '
+                    if field_name == 'subcategories':
+                        subcategories_changed = False
+                        actual_subcategories = getattr(obj,'subcategories',None).all()
+                        if actual_subcategories:
+                            for sub in actual_subcategories:
+                                if not sub in original_value.all():
+                                    subcategories_changed = True
+                        elif original_value.all():
+                            subcategories_changed = True 
+                        if subcategories_changed:
+                            field.help_text += '<br><b>Valor original:</b> '
+                            for category in original_value.all():
+                                field.help_text += unicode(category) + '<br>'
+                    else:
+                        field.help_text += '<b>Valor original:</b> ' + unicode(original_value)
+                    field.help_text += '</div>'
         return form
 
 admin.site.register(models.EntityProposal, EntityProposalAdmin)
