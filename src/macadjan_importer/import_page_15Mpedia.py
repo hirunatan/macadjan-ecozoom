@@ -11,7 +11,7 @@ from .archive_csv import EntityArchiveCSV
 from .converter_15Mpedia import EntityConverter15MpediaAsambleas
 
 
-class ImportPage15MPediaAsambleas(ImportPage):
+class ImportPage15MpediaAsambleas(ImportPage):
     '''
     Subclass of ImportPage that use EntityArchiveCSV and Converter15MPediaAsambleas to submit
     a csv file exported from http://wiki.15m.cc/wiki/Lista_de_asambleas and load into the database.

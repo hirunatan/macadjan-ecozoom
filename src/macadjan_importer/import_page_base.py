@@ -7,6 +7,7 @@ Module with utilities to make web pages that allow users to execute data importe
 from django.conf import settings
 from django.utils.importlib import import_module
 from django.utils.translation import ugettext as _
+from django.core.exceptions import ImproperlyConfigured
 
 def registered_importers():
     '''
