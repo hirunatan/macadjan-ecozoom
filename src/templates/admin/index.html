@@ -1,5 +1,6 @@
 {% extends "admin/base_site.html" %}
 {% load i18n admin_static %}
+{% load url from future %}
 
 <!-- Macadjan -->
 {% block title %}{{ title }} | {% trans 'Panel de administración de' %} {{ current_site_info.website_name }}{% endblock %}
