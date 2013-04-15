@@ -52,7 +52,7 @@
         </div>
     {% endfor %}
     <!-- Macadjan -->
-    <p><a href="{% url import-select %}">{% trans 'Carga automática de datos' %}</a></p>
+    <p><a href="{% url 'import-select' %}">{% trans 'Carga automática de datos' %}</a></p>
     {% if IS_SYNC_INSTALLED %}
         <p><a href="/sync_db/">{% trans 'Sincronización con la base de datos de otro mapa' %}</a></p>
     {% endif %}
