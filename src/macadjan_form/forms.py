@@ -28,7 +28,7 @@ class EntityProposalForm(forms.ModelForm):
         hints = self.get_current_hints()
         for name, field in self.fields.items():
             field.hints = hints.get(name, u'')
-       
+
     def get_current_hints(self):
         current_site = Site.objects.get_current()
         try:
@@ -59,7 +59,7 @@ class EntityProposalForm(forms.ModelForm):
             if not site_info.alias_field_enabled: excluded_fields.append('alias')
             if not site_info.summary_field_enabled: excluded_fields.append('summary')
             if not site_info.subcategories_field_enabled: excluded_fields.append('subcategories')
-            if not site_info.address_1_field_enabled: excluded_fields.append('.address_1')
+            if not site_info.address_1_field_enabled: excluded_fields.append('address_1')
             if not site_info.address_2_field_enabled: excluded_fields.append('address_2')
             if not site_info.zipcode_field_enabled: excluded_fields.append('zipcode')
             if not site_info.city_field_enabled: excluded_fields.append('city')
