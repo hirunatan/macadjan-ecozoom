@@ -14,7 +14,7 @@ class EntityProposalAdmin(admin.ModelAdmin):
 
     def get_form(self, request, obj=None, **kwargs):
         form = super(EntityProposalAdmin, self).get_form(request, obj, **kwargs)
-        if obj.existing_entity:
+        if obj and obj.existing_entity:
             for field_name,field in form.base_fields.items():
                 original_value = getattr(obj.existing_entity, field_name, None)
                 if original_value!=None and original_value!=getattr(obj, field_name, None):
