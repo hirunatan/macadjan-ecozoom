@@ -5,7 +5,7 @@ import os, tempfile
 from django import forms
 from django.utils.translation import ugettext as _
 
-from macadjan_ecozoom.models import MapSource
+from macadjan.models import MapSource
 from .import_page_base import ImportPage
 from .archive_csv import EntityArchiveCSV
 from .converter_default import EntityConverterDefault
