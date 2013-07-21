@@ -7,35 +7,6 @@ from macadjan.models import Entity
 from macadjan.utils import slugify_uniquely
 
 
-class MapSource(models.Model):
-    '''
-    A people group in charge of collecting and processing entities.
-    '''
-    name = models.CharField(max_length = 100, null = False, blank = False,
-            verbose_name = _(u'Nombre'))
-    slug = models.SlugField(max_length = 100, null = False, blank = True, unique = True,
-            verbose_name = _(u'Slug'),
-            help_text = _(u'Podrás consultar la fuente en la dirección /map-source/&lt;slug&gt;/'))
-    description = models.TextField(null = False, blank = True,
-            verbose_name = _(u'Descripción'))
-    web = models.URLField(null = False, blank = True, default = '',
-            verbose_name = _(u'Web'),
-            help_text = _(u'Página web informativa. Ojo: hay que poner la dirección completa, incluyendo http://. La dirección será validada automáticamente para comprobar que existe.'))
-
-    def __unicode__(self):
-        return self.name
-
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify_uniquely(self.name, self.__class__)
-        super(self.__class__, self).save(*args, **kwargs)
-
-    class Meta:
-        ordering = ['name']
-        verbose_name = _(u'fuente de mapeo')
-        verbose_name_plural = _(u'fuentes de mapeo')
-
-
 class EcozoomEntity(Entity):
 
     # Detailed descriptive info
@@ -78,11 +49,6 @@ class EcozoomEntity(Entity):
     additional_info = models.TextField(null = False, blank = True, default = '',
             verbose_name = _(u'Información adicional'),
             help_text = _(u'Cualquier otra información no clasificable en las casillas anteriores.'))
-
-    map_source = models.ForeignKey(MapSource, related_name = 'entities', null = True, blank = False,
-            on_delete = models.PROTECT,
-            verbose_name = _(u'Fuente'),
-            help_text = _('Colectivo encargado de crear y mantener los datos de esta entidad.'))
 
     class Meta(Entity.Meta):
         ordering = ['name']

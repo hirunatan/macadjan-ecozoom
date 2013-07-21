@@ -5,8 +5,9 @@ from django.shortcuts import get_object_or_404
 
 from macadjan.views import EntitiesText, EntitiesList, Entity
 from macadjan.views import EntitiesKml, EntitiesGeoRSS
+from macadjan.models import MapSource
 
-from .models import EcozoomEntity, MapSource
+from .models import EcozoomEntity
 
 class EcozoomEntitiesText(EntitiesText):
     model = EcozoomEntity

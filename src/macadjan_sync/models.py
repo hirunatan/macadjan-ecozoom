@@ -65,7 +65,7 @@ class DBLink(models.Model):
     other_db_name = models.CharField(max_length = 100, null = False, blank = False,
             verbose_name = _(u'Otra BD'),
             help_text = _(u'Nombre de la otra base de datos'))
-    map_source = models.ForeignKey(models_ecozoom.MapSource, related_name = 'db_links', null = False, blank = False,
+    map_source = models.ForeignKey('macadjan.MapSource', related_name = 'db_links', null = False, blank = False,
             verbose_name = _(u'Fuente'),
             help_text = _('Fuente de mapeo vinculada a esta base de datos'))
 

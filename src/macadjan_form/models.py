@@ -9,8 +9,8 @@ from django.conf import settings
 
 from datetime import datetime
 
-from macadjan.models import EntityType, Category, SubCategory
-from macadjan_ecozoom.models import EcozoomEntity, MapSource
+from macadjan.models import EntityType, Category, SubCategory, MapSource
+from macadjan_ecozoom.models import EcozoomEntity
 
 
 # TODO: rethink this so that it does not need a separate model, but use directly EcozoomEntity
