@@ -19,6 +19,11 @@ class EntityArchiveCSV(EntityArchive):
     To check for emtpy rows we use the name column. For this, before start reading you
     must give the labels of the columns with the name and category.
 
+    Upgrade: now any column except name may have multiple values: if there are more than
+    one, the value will be converted to a list. The special treatment for categories is
+    left as is, because it always converts them to list and so we maintain backwards
+    compatibility.
+
     Also, the text is converted to utf-8 format if it's plain text, and trailing spaces
     are stripped.
     '''
@@ -57,29 +62,36 @@ class EntityArchiveCSV(EntityArchive):
     def next(self):
         '''
         Return the next item of the archive. An item is a dictionary of
-        column name: values.
+        column name: values. Some values may be lists if they have multiple lines.
+        The value for category column is always a list.
         '''
         if not self.category_column_name or not self.name_column_name:
             raise ValueError(_(u'Debes configurar el archivo antes de empezar a leer'))
 
-        if not self._current_item[self.name_column_name] and \
-           not self._current_item[self.category_column_name]:
+        # If we reach a completely empty line, finish.
+        if not any(self._current_item.values()):
             raise StopIteration()
 
         item = self._current_item
         self._read_line()
 
-        # Convert the category in the item to a list of categories.
-        item[self.category_column_name] = [item[self.category_column_name],]
-
-        # Read additional categories, if any.
-        while not self._current_item[self.name_column_name] and \
-                  self._current_item[self.category_column_name]:
-            item[self.category_column_name].append(self._current_item[self.category_column_name])
+        # Read additional lines with multi values, if any, and convert values to lists.
+        while not self._current_item[self.name_column_name]:
+            columns_multi = [(name, value) for name, value in self._current_item.items() if value]
+            if not columns_multi:
+                break
+            for name, value in columns_multi:
+                if not isinstance(item[name], list):
+                    item[name] = [item[name]]
+                item[name].append(value)
             try:
                 self._read_line()
             except StopIteration:
                 break # if end of file is reached, still return the current item.
+
+        # Category column is always a list.
+        if not isinstance(item[self.category_column_name], list):
+            item[self.category_column_name] = [item[self.category_column_name]]
 
         return item
 

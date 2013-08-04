@@ -26,6 +26,7 @@ class EntityConverterDefault(EntityConverter):
             _(u'Resume / Resumen'),
             _(u'Tipo de entidade / entidad'),
             _(u'Categorías'),
+            _(u'Agrupada dentro de'),
             _(u'Enderezo (rúa e nº) / Dirección (calle y nº)'),
             _(u'Enderezo (resto) / Dirección (resto)'),
             _(u'C.P.'),
@@ -60,7 +61,8 @@ class EntityConverterDefault(EntityConverter):
         if not needed_columns.issubset(archive_columns):
             raise ValueError(_(u'El archivo no es un csv válido de Macadjan versión 03/04/2012, no se encuentran las siguientes columnas: %(missing_columns)s') %
                     {'missing_columns': ','.join(list(needed_columns.difference(archive_columns)))})
- 
+        self.tag_columns = list(archive_columns - needed_columns)
+
     def get_slug_from_item(self, item):
         '''
         Given an archive item, return the slug, to check if it exists or not
@@ -148,6 +150,8 @@ class EntityConverterDefault(EntityConverter):
         if not entity.creation_date:
             entity.creation_date = entity.modification_date
         type_name = item[_(u'Tipo de entidade / entidad')]
+        if len(type_name.strip()) == 0:
+            raise ValueError(_(u'El tipo de entidad es obligatorio'))
         try:
             entity.entity_type = models.EntityType.objects.get(name = type_name)
         except models.EntityType.DoesNotExist:
@@ -157,7 +161,12 @@ class EntityConverterDefault(EntityConverter):
 
         subcategories = []
         for cat_string in item[_(u'Categorías')]:
-            cat_name, subcat_name = cat_string.split(' - ')
+            if len(cat_string.strip()) == 0:
+                raise ValueError(_(u'Las categorías son obligatorias'))
+            cat_pieces = cat_string.replace(u'\u2013', '-').split(' - ')  # Sometimes Excel replaces ascii '-' with unicode '-'
+            if len(cat_pieces) != 2:
+                raise ValueError(_(u'Las categorías deben ser dos frases separadas por un guión "-"'))
+            cat_name, subcat_name = cat_pieces
             try:
                 subcat = models.SubCategory.objects.get(name = subcat_name, category__name = cat_name)
             except models.SubCategory.DoesNotExist:
@@ -167,5 +176,20 @@ class EntityConverterDefault(EntityConverter):
             if not entity.main_subcategory:
                 entity.main_subcategory = subcat
 
-        return (entity, {'subcategories': subcategories})
+        tags = []
+        for tag_column in self.tag_columns:
+            try:
+                tag_collection = models.TagCollection.objects.get(name = tag_column)
+            except models.TagCollection.DoesNotExist:
+                raise ValueError(_(u'No se encuentra la colección de etiquetas %(name)s') % {'name': tag_column})
+            tag_values = item[tag_column] if isinstance(item[tag_column], list) else [item[tag_column]]
+            for tag_value in tag_values:
+                if tag_value:
+                    try:
+                        entity_tag = models.EntityTag.objects.get(collection = tag_collection, name = tag_value)
+                    except models.EntityTag.DoesNotExist:
+                        raise ValueError(_(u'No se encuentra la etiqueta %(name)s') % {'name': tag_value})
+                    tags.append(entity_tag)
+
+        return (entity, {'subcategories': subcategories, 'tags': tags})
 

@@ -26,6 +26,7 @@ class EntityConverterDefault(EntityConverter):
             _(u'Resumen'),
             _(u'Tipo de entidad'),
             _(u'Categorías'),
+            _(u'Agrupada dentro de'),
             _(u'Dirección (calle y nº)'),
             _(u'Dirección (resto)'),
             _(u'C.P.'),
@@ -60,6 +61,7 @@ class EntityConverterDefault(EntityConverter):
         if not needed_columns.issubset(archive_columns):
             raise ValueError(_(u'El archivo no es un csv válido de Macadjan versión 03/04/2012, no se encuentran las siguientes columnas: %(missing_columns)s') %
                     {'missing_columns': ','.join(list(needed_columns.difference(archive_columns)))})
+        self.tag_columns = list(archive_columns - needed_columns)
 
     def get_slug_from_item(self, item):
         '''
@@ -174,5 +176,20 @@ class EntityConverterDefault(EntityConverter):
             if not entity.main_subcategory:
                 entity.main_subcategory = subcat
 
-        return (entity, {'subcategories': subcategories})
+        tags = []
+        for tag_column in self.tag_columns:
+            try:
+                tag_collection = models.TagCollection.objects.get(name = tag_column)
+            except models.TagCollection.DoesNotExist:
+                raise ValueError(_(u'No se encuentra la colección de etiquetas %(name)s') % {'name': tag_column})
+            tag_values = item[tag_column] if isinstance(item[tag_column], list) else [item[tag_column]]
+            for tag_value in tag_values:
+                if tag_value:
+                    try:
+                        entity_tag = models.EntityTag.objects.get(collection = tag_collection, name = tag_value)
+                    except models.EntityTag.DoesNotExist:
+                        raise ValueError(_(u'No se encuentra la etiqueta %(name)s') % {'name': tag_value})
+                    tags.append(entity_tag)
+
+        return (entity, {'subcategories': subcategories, 'tags': tags})
 

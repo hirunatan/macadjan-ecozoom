@@ -58,6 +58,8 @@ class EntityImporter:
         #    task__geolocalize_entity.delay(entity.pk)
         for subcategory in m2m['subcategories']:
             entity.subcategories.add(subcategory)
+        for tag in m2m['tags']:
+            entity.tags.add(tag)
         self.imported_items.append(entity)
 
     def process_exception(self, intro_message, exception):
