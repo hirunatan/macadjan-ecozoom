@@ -1,11 +1,8 @@
 Django>=1.4
 Fabric>=1.4.2
-PIL>=1.1.7
+Pillow>=2.1.0
 South>=0.7.3
 Whoosh>=2.3.2
-celery>=2.5.3
-distribute>=0.6.19
-django-celery>=2.5.5
 django-haystack>=2.0.0-beta
 django-rosetta>=0.6.2
 django-simple-captcha>=0.3.4
