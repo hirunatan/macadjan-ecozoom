@@ -38,6 +38,14 @@ class ImportPage15MpediaAsambleas(ImportPage):
             form = UploadCSVForm()
         else:
             form = UploadCSVForm(request.POST, request.FILES)
+
+        user = request.user
+        profile = MacadjanUserProfile.objects.get_for_user(user)
+        if profile and profile.map_source:
+            form.fields['map_source'].initial = profile.map_source
+            if not user.is_superuser:
+                form.fields['map_source'].widget = forms.HiddenInput()
+
         return form
 
     def process_form(self, request, form):

@@ -5,7 +5,7 @@ import os, tempfile
 from django import forms
 from django.utils.translation import ugettext as _
 
-from macadjan.models import MapSource
+from macadjan.models import MapSource, MacadjanUserProfile
 from .import_page_base import ImportPage
 from .archive_csv import EntityArchiveCSV
 from .converter_default import EntityConverterDefault
@@ -38,6 +38,14 @@ class ImportPageDefault(ImportPage):
             form = UploadCSVForm()
         else:
             form = UploadCSVForm(request.POST, request.FILES)
+
+        user = request.user
+        profile = MacadjanUserProfile.objects.get_for_user(user)
+        if profile and profile.map_source:
+            form.fields['map_source'].initial = profile.map_source
+            if not user.is_superuser:
+                form.fields['map_source'].widget = forms.HiddenInput()
+
         return form
 
     def process_form(self, request, form):
