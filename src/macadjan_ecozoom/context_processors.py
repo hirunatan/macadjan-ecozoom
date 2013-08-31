@@ -18,7 +18,7 @@ def current_site_info(request):
 def is_sync_installed(request):
     '''Checks if macadjan_sync application is installed.'''
     is_sync = 'macadjan_sync' in settings.INSTALLED_APPS
-    return {'IS_SYNC_INSTALLED': is_sync}
+    return {'IS_SYNC_INSTALLED': is_sync and request.user.is_superuser}
 
 
 def piwik_settings(request):
