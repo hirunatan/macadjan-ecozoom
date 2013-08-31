@@ -50,6 +50,9 @@ class EntityImporter:
         slug = self.converter.get_slug_from_item(item)
         try:
             entity = models.EcozoomEntity.objects.get(slug = slug)
+            if entity.map_source != self.converter.map_source:
+                raise ValueError(_(u'No se ha podido cargar "%(name)s" porque pertenece a otra fuente de mapeo: %(map_source)s') %
+                        {'name': entity.name, 'map_source': entity.map_source})
         except models.EcozoomEntity.DoesNotExist:
             entity = models.EcozoomEntity()
         (entity, m2m) = self.converter.load_entity_from_item(entity, item)
