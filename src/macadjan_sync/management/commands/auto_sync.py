@@ -23,7 +23,7 @@ class Command(BaseCommand):
 
         remote_db_name = args[0]
 
-        print u'Automatic sync with db {}'.format(remote_db_name)
+        print u'Automatic sync with db %s' % remote_db_name
         self.auto_sync(remote_db_name)
 
     def auto_sync(self, remote_db_name):
@@ -31,7 +31,7 @@ class Command(BaseCommand):
 
         (grouped_list, synced_entities, discarded_entities) = db_link.sync_entity_lists()
         for (subcategory_name, new_entities, modified_entities, conflict_entities) in grouped_list:
-            print u'Syncing {}'.format(subcategory_name)
+            print u'Syncing %s' % subcategory_name
             self.sync_new_entities(db_link, subcategory_name, new_entities)
             self.sync_modified_entities(db_link, subcategory_name, modified_entities)
             self.sync_modified_entities(db_link, subcategory_name, conflict_entities)
@@ -41,25 +41,25 @@ class Command(BaseCommand):
 
     def sync_new_entities(self, db_link, subcategory_name, new_entities):
         for new_entity in new_entities:
-            print u'  -> Creating {}'.format(new_entity.name)
+            print u'  -> Creating %s' % new_entity.name
             (other_entity_type, matching_entity_types) = db_link.get_matching_entity_types(new_entity)
             (other_subcategories, matching_subcategories) = db_link.get_matching_subcategories(new_entity)
 
             if len(matching_entity_types) == 0:
-                raise SyncException('Remote type {} does not have any matching type in this db'.format(other_entity_type))
+                raise SyncException('Remote type %s does not have any matching type in this db' % other_entity_type)
             new_entity_type = matching_entity_types[0]
 
             new_subcategories = []
             new_main_subcategory = None
             for other_subcategory, matching_subcategory in zip(other_subcategories, matching_subcategories):
                 if len(matching_subcategory) == 0:
-                    raise SyncException('Remote subcategory {} does not have any matching subcategory in this db'.format(other_subcategory))
+                    raise SyncException('Remote subcategory %s does not have any matching subcategory in this db' % other_subcategory)
                 new_subcategories.append(matching_subcategory[0])
                 if new_entity.main_subcategory == other_subcategory:
                     new_main_subcategory = matching_subcategory[0]
 
             if len(new_subcategories) == 0:
-                raise SyncException('Remote entity {} does not have any subcategory'.format(new_entity.name))
+                raise SyncException('Remote entity %s does not have any subcategory' % new_entity.name)
 
             if not new_main_subcategory:
                 new_main_subcategory = new_subcategories[0]
@@ -69,7 +69,7 @@ class Command(BaseCommand):
 
     def sync_modified_entities(self, db_link, subcategory_name, modified_entities):
         for entity_local, entity_other in modified_entities:
-            print u'  -> Updating {}'.format(entity_local.name)
+            print u'  -> Updating %s' % entity_local.name
             for field_name in entity_local._meta.get_all_field_names():
 
                 if field_name in ['id', 'ecozoomentity', 'change_proposals', 'sync_data', 'tags', 'contained_in']:
@@ -81,7 +81,7 @@ class Command(BaseCommand):
                 elif field_name == 'entity_type':
                     (other_entity_type, matching_entity_types) = db_link.get_matching_entity_types(entity_other)
                     if len(matching_entity_types) == 0:
-                        raise SyncException('Remote type {} does not have any matching type in this db'.format(other_entity_type))
+                        raise SyncException('Remote type %s does not have any matching type in this db' % other_entity_type)
                     other_value = matching_entity_types[0]
                 elif field_name == 'main_subcategory':
                     (other_subcategories, matching_subcategories) = db_link.get_matching_subcategories(entity_other)
@@ -90,7 +90,7 @@ class Command(BaseCommand):
                     new_main_subcategory = None
                     for other_subcategory, matching_subcategory in zip(other_subcategories, matching_subcategories):
                         if len(matching_subcategory) == 0:
-                            raise SyncException('Remote subcategory {} does not have any matching subcategory in this db'.format(other_subcategory))
+                            raise SyncException('Remote subcategory %s does not have any matching subcategory in this db' % other_subcategory)
                         new_subcategories.append(matching_subcategory[0])
                         if entity_other.main_subcategory == other_subcategory:
                             new_main_subcategory = matching_subcategory[0]
@@ -105,7 +105,7 @@ class Command(BaseCommand):
                 else:
                     other_value = getattr(entity_other, field_name)
 
-                #print u' [{}] <- "{}"'.format(field_name, unicode(other_value)[:100])
+                #print u' [{}] <- "%s"' % [field_name, unicode(other_value)[:100]]
                 setattr(entity_local, field_name, other_value)
 
             entity_local.save(update_dates = False)
