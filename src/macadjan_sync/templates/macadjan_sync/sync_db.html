@@ -17,7 +17,7 @@
     <h1>{% blocktrans with other_db_name=db_link.other_db_name %}Sincronización con la base de datos {{ other_db_name }}{% endblocktrans %}</h1>
 
     {% for name, new_entities, modified_entities, conflict_entities in grouped_list %}
-    
+
         <h2>{{ name }}</h2>
 
         {% if modified_entities %}

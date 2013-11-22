@@ -268,7 +268,7 @@ class DBLink(models.Model):
         Get the type of an entity of the other db, and get a list with the matching types in the local one
         '''
         other_entity_type = entity.entity_type
-        matches = EntityTypeMatch.objects.filter(other_entity_type_id=other_entity_type.id)
+        matches = EntityTypeMatch.objects.filter(db_link=self, other_entity_type_id=other_entity_type.id)
         match_types = [match.local_entity_type for match in matches.all()]
 
         return (other_entity_type, match_types)
@@ -282,7 +282,7 @@ class DBLink(models.Model):
         other_subcategories = entity.subcategories.all()
         match_subcategories = []
         for other_subcategory in other_subcategories:
-            matches = SubCategoryMatch.objects.filter(other_subcategory_slug=other_subcategory.slug)
+            matches = SubCategoryMatch.objects.filter(db_link=self, other_subcategory_slug=other_subcategory.slug)
             match_subcategories.append([match.local_subcategory for match in matches.all()])
 
         return (other_subcategories, match_subcategories)
