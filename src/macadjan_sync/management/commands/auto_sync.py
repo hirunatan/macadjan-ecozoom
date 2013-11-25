@@ -18,12 +18,12 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         if len(args) == 0:
-            print u'Usage: ./manage.py auto_sync <remote_db_name>'
+            print 'Usage: ./manage.py auto_sync <remote_db_name>'
             exit(1)
 
         remote_db_name = args[0]
 
-        print u'Automatic sync with db %s' % remote_db_name
+        print 'Automatic sync with db %s' % str(remote_db_name)
         self.auto_sync(remote_db_name)
 
     def auto_sync(self, remote_db_name):
@@ -31,7 +31,7 @@ class Command(BaseCommand):
 
         (grouped_list, synced_entities, discarded_entities) = db_link.sync_entity_lists()
         for (subcategory_name, new_entities, modified_entities, conflict_entities) in grouped_list:
-            print u'Syncing %s' % subcategory_name
+            print 'Syncing %s' % str(subcategory_name)
             self.sync_new_entities(db_link, subcategory_name, new_entities)
             self.sync_modified_entities(db_link, subcategory_name, modified_entities)
             self.sync_modified_entities(db_link, subcategory_name, conflict_entities)
@@ -41,7 +41,7 @@ class Command(BaseCommand):
 
     def sync_new_entities(self, db_link, subcategory_name, new_entities):
         for new_entity in new_entities:
-            print u'  -> Creating %s' % new_entity.name
+            print '  -> Creating %s' % str(new_entity.name)
             (other_entity_type, matching_entity_types) = db_link.get_matching_entity_types(new_entity)
             (other_subcategories, matching_subcategories) = db_link.get_matching_subcategories(new_entity)
 
@@ -69,7 +69,7 @@ class Command(BaseCommand):
 
     def sync_modified_entities(self, db_link, subcategory_name, modified_entities):
         for entity_local, entity_other in modified_entities:
-            print u'  -> Updating %s' % entity_local.name
+            print '  -> Updating %s' % str(entity_local.name)
             for field_name in entity_local._meta.get_all_field_names():
 
                 if field_name in ['id', 'ecozoomentity', 'change_proposals', 'sync_data', 'tags', 'contained_in']:
@@ -105,7 +105,7 @@ class Command(BaseCommand):
                 else:
                     other_value = getattr(entity_other, field_name)
 
-                #print u' [{}] <- "%s"' % [field_name, unicode(other_value)[:100]]
+                #print ' [{}] <- "%s"' % [field_name, unicode(other_value)[:100]]
                 setattr(entity_local, field_name, other_value)
 
             entity_local.save(update_dates = False)
