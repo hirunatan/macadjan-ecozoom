@@ -31,12 +31,13 @@
         <p>{{ site_info.change_proposal_text|safe }}</p>
     {% else %}
         {% blocktrans %}
-            <p>Asegúrate de ser la persona titular de esta información, o de contar con su autorización.</p>
+            <p>¡Muy importante! En este mapa sólo guardamos datos públicos de colectivos o entidades, no nos mandes
+            ningún dato personal individual de nadie. <a href="#privacidad">Ver por qué</a>.</p>
             <p>Las casillas con (*) son obligatorias, el resto son opcionales, pero cuanto más información nos des,
-            más útil será la ficha para los visitantes del mapa. Como mínimo procura rellenar la casilla Descripción
-            y algún dato de contacto (teléfono, web, email, etc.). Además deberás rellenar la dirección o bien las
-            casillas Latitud/Longitud si quieres salir en el mapa; de lo contrario la entidad aparecerá listada en
-            la pestaña "Entidades sin ubicación geográfica".</p>
+            más útil será la ficha para los visitantes del mapa. Como mínimo procura rellenar la casilla descripción
+            y algún dato de contacto (teléfono, web, email, etc.). Además deberás rellenar la dirección si quieres
+            salir en el mapa; de lo contrario la entidad aparecerá listada en la columna lateral pero no tendrá
+            punto en el mapa (también puedes rellenar latitud/longitud si las sabes).</p>
         {% endblocktrans %}
     {% endif %}
 
@@ -102,18 +103,28 @@
             <input type="submit" name="submit_form" value="{% trans 'Enviar' %}"/>
         </div>
         <div>
+            <a name="privacidad"></a>
             {% if site_info.proposal_bottom_text %}
                 <p>{{ site_info.proposal_bottom_text|safe }}</p>
 	    {% else %}
                 {% blocktrans %}
+                <h2>Ojo con la privacidad</h2>
                 <p>La información aquí enviada, en caso de ser aprobada, pasará a formar parte de la base de datos de
-                este mapa con el fin de ser mostrada públicamente en el mismo, o también posiblemente en otro de los
-                mapas de la red de mapeo de alternativas en la que este mapa está integrado.</p>
+                este mapa. Esta base de datos está publicada con una licencia libre, que otorga permiso a cualquiera
+                para consultarla, copiarla y redistribuirla como desee. En concreto, puede ser duplicada en los otros
+                mapas de la red Mapunto en la que este mapa está integrado.</p>
+                <p>Por eso sólo puede contener datos públicos de colectivos o entidades. Nos importa tu privacidad
+                y pensamos que tus datos personales deben estar siempre bajo tu control, no son adecuados para un
+                archivo que se pueda redifundir libremente. Así que <strong>no nos mandes nombres, apellidos, direcciones,
+                teléfonos o emails de ninguna persona individual</strong>. Si tu colectivo no tiene dirección o teléfono
+                a su nombre, recuerda que es muy fácil crear una cuenta gratuita en gmail o yahoo, o un blog en
+                wordpress.com. O si de verdad te preocupa tu privacidad, en sitios como <a href="http://n-1.cc">n-1</a>
+                o <a href="http://riseup.net">riseup.net</a>.</p>
                 <p>Una excepción son las casillas "Email de quien hace la propuesta" y "Comentarios de la propuesta",
                 que no se mostrarán nunca al público, y serán usadas exclusivamente para ponernos en contacto con esa
                 persona y notificar el estado de la propuesta, si es o no aceptada, y por qué.</p>
                 <p>En cualquier caso, quien hace la propuesta o la entidad en sí puede contactar con nosotros para
-                consultar, modificar o borrar cualquiera de los datos, consultando la sección de contacto de esta web.</p>
+                consultar, modificar o borrar cualquiera de los datos, desde el formulario que sale en la ficha.</p>
                 {% endblocktrans %}
 	    {% endif%}
         </div>
