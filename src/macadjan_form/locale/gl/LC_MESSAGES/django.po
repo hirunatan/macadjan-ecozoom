@@ -333,10 +333,6 @@ msgstr "Web 2"
 msgid "Se puede poner una segunda página web."
 msgstr "Pódese poñer unha segunda páxina web."
 
-#: models.py:148
-msgid "Persona contacto"
-msgstr "Persoa de contacto"
-
 #: models.py:149
 msgid "Nombre de al menos una persona por quien preguntar."
 msgstr "Nome de polo menos unha persoa por quen preguntar."

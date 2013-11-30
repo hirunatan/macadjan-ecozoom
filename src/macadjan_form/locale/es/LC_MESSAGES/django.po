@@ -312,10 +312,6 @@ msgstr ""
 msgid "Se puede poner una segunda página web."
 msgstr ""
 
-#: models.py:148
-msgid "Persona contacto"
-msgstr ""
-
 #: models.py:149
 msgid "Nombre de al menos una persona por quien preguntar."
 msgstr ""

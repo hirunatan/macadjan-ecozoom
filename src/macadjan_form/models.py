@@ -145,9 +145,6 @@ class EntityProposal(models.Model):
     web_2 = models.URLField(null = False, blank = True, default = '',
             verbose_name = _(u'Web 2'),
             help_text = _(u'Se puede poner una segunda página web.'))
-    contact_person = models.CharField(max_length = 100, null = False, blank = True, default = '',
-            verbose_name = _(u'Persona contacto'),
-            help_text = _(u'Nombre de al menos una persona por quien preguntar.'))
 
     # Detailed descriptive info
     creation_year = models.IntegerField(null = True, blank = True,
@@ -267,7 +264,6 @@ class EntityProposal(models.Model):
         self.email_2 = entity.email_2
         self.web = entity.web
         self.web_2 = entity.web_2
-        self.contact_person = entity.contact_person
         self.creation_year = entity.creation_year
         self.legal_form = entity.legal_form
         self.description = entity.description
@@ -315,7 +311,6 @@ class EntityProposal(models.Model):
                 email_2 = self.email_2,
                 web = self.web,
                 web_2 = self.web_2,
-                contact_person = self.contact_person,
                 creation_year = self.creation_year,
                 legal_form = self.legal_form,
                 description = self.description,
@@ -367,7 +362,6 @@ class EntityProposal(models.Model):
         self.existing_entity.email_2 = self.email_2
         self.existing_entity.web = self.web
         self.existing_entity.web_2 = self.web_2
-        self.existing_entity.contact_person = self.contact_person
         self.existing_entity.creation_year = self.creation_year
         self.existing_entity.legal_form = self.legal_form
         self.existing_entity.description = self.description

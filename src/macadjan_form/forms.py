@@ -75,7 +75,6 @@ class EntityProposalForm(forms.ModelForm):
             if not site_info.email_2_field_enabled: excluded_fields.append('email_2')
             if not site_info.web_field_enabled: excluded_fields.append('web')
             if not site_info.web_2_field_enabled: excluded_fields.append('web_2')
-            if not site_info.contact_person_field_enabled: excluded_fields.append('contact_person')
             if not site_info.creation_year_field_enabled: excluded_fields.append('creation_year')
             if not site_info.legal_form_field_enabled: excluded_fields.append('legal_form')
             if not site_info.description_field_enabled: excluded_fields.append('description')

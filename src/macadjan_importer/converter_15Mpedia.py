@@ -100,7 +100,6 @@ class EntityConverter15MpediaAsambleas(EntityConverter):
         entity.email_2 = u''
         entity.web = item[u'Sitio web']
         entity.web_2 = u'http://wiki.15m.cc/wiki/%s' % urllib.quote(item[u''].encode('utf-8'))
-        entity.contact_person = u''
         entity.creation_year = None
         entity.legal_form = u''
         entity.description = u''

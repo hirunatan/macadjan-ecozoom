@@ -310,10 +310,6 @@ msgstr ""
 msgid "Web 2:"
 msgstr ""
 
-#: templates/macadjan/entity-page.html:62
-msgid "Persona de contacto:"
-msgstr ""
-
 #: templates/macadjan/entity-page.html:66
 msgid "Año de creación:"
 msgstr ""

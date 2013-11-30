@@ -42,7 +42,6 @@ class EntityConverterDefault(EntityConverter):
             _(u'Correo electrónico 2'),
             _(u'Web 1'),
             _(u'Web 2'),
-            _(u'Persoa / Persona de contacto'),
             _(u'Ano / Año de creación'),
             _(u'Forma xurídica / jurídica'),
             _(u'Descrición xeral / Descripción general'),
@@ -116,7 +115,6 @@ class EntityConverterDefault(EntityConverter):
         entity.email_2 = item[_(u'Correo electrónico 2')]
         entity.web = item[_(u'Web 1')]
         entity.web_2 = item[_(u'Web 2')]
-        entity.contact_person = item[_(u'Persoa / Persona de contacto')]
         creation_year_str = item[_(u'Ano / Año de creación')]
         if creation_year_str:
             try:

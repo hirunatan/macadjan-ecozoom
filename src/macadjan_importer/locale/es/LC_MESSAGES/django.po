@@ -133,10 +133,6 @@ msgstr ""
 msgid "Web 2"
 msgstr ""
 
-#: converter_default.py:44 converter_default.py:117
-msgid "Persona de contacto"
-msgstr ""
-
 #: converter_default.py:45 converter_default.py:118
 msgid "Año de creación"
 msgstr ""
@@ -268,10 +264,6 @@ msgstr ""
 
 #: converter_default_gl.py:36 converter_default_gl.py:102
 msgid "Lonxitude / Longitud"
-msgstr ""
-
-#: converter_default_gl.py:44 converter_default_gl.py:117
-msgid "Persoa / Persona de contacto"
 msgstr ""
 
 #: converter_default_gl.py:45 converter_default_gl.py:118
