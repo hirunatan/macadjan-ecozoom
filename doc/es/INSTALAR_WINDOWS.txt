@@ -16,9 +16,10 @@ Descargar e instalar Git
     "Run Git from the Windows Command Prompt"
     "Checkout as-is, commit as-is"
 
-Descargar e instalar PIL
+Descargar e instalar Pillow
 
-  http://www.lfd.uci.edu/~gohlke/pythonlibs/zpgkb86p/PIL-fork-1.1.7.win32-py2.7.exe
+  http://www.lfd.uci.edu/~gohlke/pythonlibs/
+   (buscar archivo Pillow-2.3.0.win32-py2.7.exe)
 
 
 * Instalar las aplicaciones
@@ -34,7 +35,7 @@ Obtendremos en ese lugar las dos subcarpetas
   hirunatan-macadjan-xxxxxx
   hirunatan-macadjan-ecozoom-xxxx
 
-Entrar en ambas (en ese orden) y ejecutar install.bat
+Entrar en la segunda y ejecutar install.bat
 
 
 * Lanzar macadjan
