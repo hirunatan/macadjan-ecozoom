@@ -185,6 +185,7 @@ HAYSTACK_CONNECTIONS = {
     },
 }
 HAYSTACK_DEFAULT_OPERATOR = 'AND'
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
 
 # Piwik settings
 # If you want web traffic tracking with Piwik, redefine these settings in your specific file
