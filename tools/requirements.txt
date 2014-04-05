@@ -7,5 +7,5 @@ django-haystack==2.1.0
 django-rosetta==0.7.2
 django-simple-captcha==0.3.8
 django-superview==0.3.7
-django-treemenus==0.8.7
+django-treemenus==0.9.1
 -e git://github.com/kaleidos/kfabric-tools.git@9b7479de9d062b4ed21a8184204887f7193c56e8#egg=kfabric_tools-dev
