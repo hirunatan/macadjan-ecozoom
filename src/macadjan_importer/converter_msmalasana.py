@@ -251,7 +251,7 @@ class EntityConverterMSMalasana(EntityConverter):
             (
                 self.to_float(item[C_RECURSOS_EN_ENTIDAD_ETICA]),
                 u'Porcentaje de recursos económicos depositados en una entidad ética:',
-                False, u'%s%%' % ((self.to_float(item[C_RECURSOS_EN_ENTIDAD_ETICA]) * 100) if item[C_RECURSOS_EN_ENTIDAD_ETICA] else u'')
+                False, (u'%d%%' % (self.to_float(item[C_RECURSOS_EN_ENTIDAD_ETICA]) * 100)) if item[C_RECURSOS_EN_ENTIDAD_ETICA] else u''
             ),
             (
                 item[C_QUE_ENTIDAD_ETICA],
@@ -477,6 +477,7 @@ class EntityConverterMSMalasana(EntityConverter):
                 False, item[C_NUM_CLIENTES_ECONOMIA_ALTERNATIVA]
             ),
         ])
+        entity.modification_date = datetime.strptime(item[C_MARCA_TEMPORAL], '%m/%d/%Y %H:%M:%S')
         entity.entity_type = models.EntityType.objects.get(name = u'Empresa/autónomo')
         entity.main_subcategory = models.SubCategory.objects.get(slug = 'comercio-local')
 
