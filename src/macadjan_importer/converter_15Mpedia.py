@@ -167,7 +167,7 @@ class EntityConverter15MpediaAsambleas(EntityConverter):
         entity.entity_type = models.EntityType.objects.get(name = u'Asamblea')
         entity.main_subcategory = models.SubCategory.objects.get(slug = 'asamblea-popular')
 
-        return (entity, {'subcategories': []})
+        return (entity, {'subcategories': [], 'tags': []})
 
     def degrees_to_decimal(self, coords):
         '''

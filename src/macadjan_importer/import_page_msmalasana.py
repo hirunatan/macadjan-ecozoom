@@ -8,26 +8,26 @@ from django.utils.translation import ugettext as _
 from macadjan.models import MapSource, MacadjanUserProfile
 from .import_page_base import ImportPage
 from .archive_csv import EntityArchiveCSV
-from .converter_15Mpedia import EntityConverter15MpediaAsambleas
+from .converter_msmalasana import EntityConverterMSMalasana
 
 
-class ImportPage15MPediaAsambleas(ImportPage):
+class ImportPageMSMalasana(ImportPage):
     '''
-    Subclass of ImportPage that use EntityArchiveCSV and Converter15MPediaAsambleas to submit
-    a csv file exported from http://wiki.15m.cc/wiki/Lista_de_asambleas and load into the database.
+    Subclass of ImportPage that use EntityArchiveCSV and ConverterMSMalasana to submit
+    a csv file exported from MS Malasaña spreadsheet and load into the database.
     '''
     def title(self):
         '''
         Return a short string with the name of this importer.
         '''
-        return _(u'Importar desde un fichero csv de la lista de asambleas de #15Mpedia')
+        return _(u'Importar desde un fichero csv del Mercado Social Malasaña')
 
     def intro_text(self):
         '''
         Return a html text to display at the top of the import page.
         '''
         # Translator: don't remove or change the <p> and </p> markers.
-        return _(u'<p>Necesitas un fichero csv descargado de http://wiki.15m.cc/wiki/Lista_de_asambleas.</p>')
+        return _(u'<p>Necesitas un fichero csv generado a partir de la hoja de cálculo oficial del MS Malasaña.</p>')
 
     def make_form(self, request):
         '''
@@ -60,7 +60,7 @@ class ImportPage15MPediaAsambleas(ImportPage):
             temp_file.write(chunk)
         temp_file.close()
         archive = EntityArchiveCSV(temp_file.name)
-        converter = EntityConverter15MpediaAsambleas(map_source)
+        converter = EntityConverterMSMalasana(map_source)
         return (archive, converter)
 
     def dispose_archive(self, request, archive):
