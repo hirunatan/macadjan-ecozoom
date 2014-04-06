@@ -213,8 +213,6 @@ class EntityConverterMSMalasana(EntityConverter):
         entity.summary = item[C_AMBITO_ACTIVIDAD]
         entity.is_container = False
         entity.contained_in = None
-        entity.latitude = None
-        entity.longitude = None
         entity.address_1 = item[C_DIRECCION_CALLE_NUM]
         entity.address_2 = item[C_DIRECCION_RESTO]
         entity.zipcode = item[C_CP]
