@@ -251,7 +251,7 @@ class EntityConverterMSMalasana(EntityConverter):
             (
                 self.to_float(item[C_RECURSOS_EN_ENTIDAD_ETICA]),
                 u'Porcentaje de recursos económicos depositados en una entidad ética:',
-                False, u'{}%'.format(self.to_float(item[C_RECURSOS_EN_ENTIDAD_ETICA]) * 100) if item[C_RECURSOS_EN_ENTIDAD_ETICA] else u''
+                False, u'%s%%' % ((self.to_float(item[C_RECURSOS_EN_ENTIDAD_ETICA]) * 100) if item[C_RECURSOS_EN_ENTIDAD_ETICA] else u'')
             ),
             (
                 item[C_QUE_ENTIDAD_ETICA],
@@ -490,13 +490,13 @@ class EntityConverterMSMalasana(EntityConverter):
             if condition and condition <> '0' and condition <> 'No':
                 result_list.append(
                     u'<li>' +
-                    u'<strong>{}</strong>'.format(title) +
-                    (u'\n{}'.format(content) if content and new_line else u'') +
-                    (u' {}'.format(content) if content and not new_line else u'') +
+                    (u'<strong>%s</strong>' % title) +
+                    (u'\n%s' % content if content and new_line else u'') +
+                    (u' %s' % content if content and not new_line else u'') +
                     u'</li>'
                 )
         if result_list:
-            return u'<ul>{}</ul>'.format(''.join(result_list))
+            return u'<ul>%s</ul>' % (''.join(result_list))
         else:
             return u''
 
