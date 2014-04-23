@@ -1,5 +1,5 @@
 @echo off
 cd tools
-pip install -r requirements.txt
+pip install -r tools/requirements.txt
 pause
 
