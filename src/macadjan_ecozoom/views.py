@@ -2,6 +2,7 @@
 
 from django.views.generic import TemplateView
 from django.shortcuts import get_object_or_404
+from django.http import HttpResponse
 
 from macadjan.views import EntitiesText, EntitiesList, Entity
 from macadjan.views import EntitiesKml, EntitiesGeoRSS, Entities
@@ -28,7 +29,7 @@ class UTF8Writer:
         self.writer = csv.writer(stream, *args, **kwargs)
 
     def writerow(self, row):
-        self.writer.writerow([s.encode('utf-8') for s in row])
+        self.writer.writerow([unicode(s).encode('utf-8') for s in row])
 
 class EcozoomEntitiesCSV(Entities):
     '''Get entities in csv format with all columns.'''
@@ -42,50 +43,49 @@ class EcozoomEntitiesCSV(Entities):
         string_buffer = cStringIO.StringIO()
 
         writer = UTF8Writer(string_buffer, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-        encoder = codecs.getincrementalencoder('utf-8')
 
         writer.writerow([
-            _(u'Nombre'),
-            _(u'Resumen'),
-            _(u'Tipo de entidad'),
-            _(u'Categorías'),
-            _(u'Dirección (calle y nº)'),
-            _(u'Dirección (resto)'),
-            _(u'C.P.'),
-            _(u'Población'),
-            _(u'Provincia'),
-            _(u'Zona'),
-            _(u'Latitud'),
-            _(u'Longitud'),
-            _(u'Teléfono 1'),
-            _(u'Teléfono 2'),
-            _(u'Fax'),
-            _(u'Correo electrónico 1'),
-            _(u'Correo electrónico 2'),
-            _(u'Web 1'),
-            _(u'Web 2'),
-            _(u'Año de creación'),
-            _(u'Forma jurídica'),
-            _(u'Descripción general'),
-            _(u'Objetivo como entidad'),
-            _(u'Finanzas'),
-            _(u'Valores sociales y medioambientales'),
-            _(u'Forma de acceso'),
-            _(u'Redes de las que forma parte'),
-            _(u'Otras entidades con las que colabora'),
-            _(u'Proyectos en marcha'),
-            _(u'Necesidades'),
-            _(u'Ofrecimientos'),
-            _(u'Información adicional'),
-            _(u'Fecha última actualización'),
+            u'Nombre',
+            u'Resumen',
+            u'Tipo de entidad',
+            u'Categorías',
+            u'Dirección (calle y nº',
+            u'Dirección (resto)',
+            u'C.P.',
+            u'Población',
+            u'Provincia',
+            u'Zona',
+            u'Latitud',
+            u'Longitud',
+            u'Teléfono 1',
+            u'Teléfono 2',
+            u'Fax',
+            u'Correo electrónico 1',
+            u'Correo electrónico 2',
+            u'Web 1',
+            u'Web 2',
+            u'Año de creación',
+            u'Forma jurídica',
+            u'Descripción general',
+            u'Objetivo como entidad',
+            u'Finanzas',
+            u'Valores sociales y medioambientales',
+            u'Forma de acceso',
+            u'Redes de las que forma parte',
+            u'Otras entidades con las que colabora',
+            u'Proyectos en marcha',
+            u'Necesidades',
+            u'Ofrecimientos',
+            u'Información adicional',
+            u'Fecha última actualización',
         ])
 
         for entity in entities_list:
             writer.writerow([
                 entity.name,
                 entity.summary,
-                '{}'.format(entity.entity_type.name),
-                '{} - {}'.format(entity.main_subcategory.category.name, entity.main_subcategory.name),
+                u'{}'.format(entity.entity_type.name),
+                u'{} - {}'.format(entity.main_subcategory.category.name, entity.main_subcategory.name),
                 entity.address_1,
                 entity.address_2,
                 entity.zipcode,
