@@ -118,7 +118,9 @@ class EcozoomEntitiesCSV(Entities):
                 entity.modification_date,
             ])
 
-        return HttpResponse(string_buffer.getvalue(), content_type='text/csv')
+        response = HttpResponse(string_buffer.getvalue(), content_type='text/csv')
+        response['Content-disposition'] = 'attachment; filename="entities.csv"'
+        return response
 
 class EcozoomEntity(Entity):
     model = EcozoomEntity
