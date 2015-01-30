@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Create your views here.
 
 from django.views.generic import TemplateView
@@ -49,7 +50,7 @@ class EcozoomEntitiesCSV(Entities):
             u'Resumen',
             u'Tipo de entidad',
             u'Categorías',
-            u'Dirección (calle y nº',
+            u'Dirección (calle y nº)',
             u'Dirección (resto)',
             u'C.P.',
             u'Población',
