@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <link rel="stylesheet" href="http://openlayers.org/en/v3.6.0/css/ol.css" type="text/css">
+    <style>
+      .map {
+        height: 800px;
+        width: 800px;
+      }
+      .map-popup {
+        position: absolute;
+        background-color: white;
+        -webkit-filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
+        filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
+        padding: 15px;
+        border-radius: 10px;
+        border: 1px solid #cccccc;
+        bottom: 12px;
+        left: -50px;
+        min-width: 300px;
+      }
+      .map-popup-closer {
+        text-decoration: none;
+        position: absolute;
+        top: 2px;
+        right: 8px;
+      }
+      .map-popup-closer:after {
+        content: "x";
+      }
+    </style>
+    <script src="http://openlayers.org/en/v3.6.0/build/ol.js" type="text/javascript"></script>
+    <title>Ejemplo OpenLayers 3</title>
+  </head>
+  <body>
+    <h2>Mi mapa</h2>
+    <div id="map" class="map"></div>
+    <div id="map-popup" class="map-popup">
+      <a href="#" id="map-popup-closer" class="map-popup-closer"></a>
+      <div id="map-popup-content"></div>
+    </div>
+    <script type="text/javascript">
+      var popupContainer = document.getElementById('map-popup');
+      var popupContent = document.getElementById('map-popup-content');
+      var popupCloser = document.getElementById('map-popup-closer');
+
+      var popupOverlay = new ol.Overlay({
+        element: popupContainer,
+        autoPan: true,
+        autoPanAnimation: {duration: 250}
+      });
+
+      var map = new ol.Map({
+        target: 'map',
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM({layer: 'osm'})
+          }),
+          new ol.layer.Vector({
+            source: new ol.source.Vector({
+              //url: 'http://semantic-mediawiki.org/wiki/Special:Ask/-5B-5BHas-20coordinates::%2B-5D-5D/-3FHas-20coordinates/-5B-5BHas-20coordinates::%2B-5D-5D/-3FHas-20coordinates/mainlabel%3D/offset%3D0/limit%3D50/format%3Dkml/linkabsolute%3Dyes/pagelinktext%3DView-20page-20-241',
+              //url: 'http://oromar.net/cosas/export-15mpedia.kml',
+              //url: 'bdt.kml',
+              url: 'http://15mpedia.org/bdt.kml',
+              format: new ol.format.KML()
+            })
+          })
+        ],
+        overlays: [popupOverlay],
+        view: new ol.View({
+          center: ol.proj.transform([-3, 40], 'EPSG:4326', 'EPSG:3857'),
+          zoom: 6
+        })
+      });
+
+      var closePopup = function() {
+        popupOverlay.setPosition(undefined);
+        popupCloser.blur();
+        return false;
+      };
+
+      var displayInfo = function(pixel, coordinate) {
+        var features = [];
+        map.forEachFeatureAtPixel(pixel, function(feature, layer) {
+          features.push(feature);
+        });
+        console.log(features.length);
+        if (features.length === 0) {
+          closePopup();
+        } else {
+          popupContent.innerHTML = features[0].get('description');
+          popupOverlay.setPosition(coordinate);
+        }
+      }
+
+      popupCloser.onclick = closePopup;
+      map.on('singleclick', function(evt) {
+        displayInfo(evt.pixel, evt.coordinate);
+      });
+    </script>
+  </body>
+</html>
