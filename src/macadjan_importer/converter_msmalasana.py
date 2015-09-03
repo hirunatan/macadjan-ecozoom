@@ -28,10 +28,10 @@ C_FORMA_JURIDICA = u'Forma jurídica'
 C_AMBITO_ACTIVIDAD = u'Ámbito de actividad'
 C_TIPO_DE_PRODUCTOS = u'Descripción del tipo de productos/servicios que ofrece'
 C_FORTALEZAS = u'Fortalezas'
-C_DIRECCION_CALLE_NUM = u'Dirección( Calle, Número)'
+C_DIRECCION_CALLE_NUM = u'Dirección (Calle, Número)'
 C_DIRECCION_RESTO = u'Dirección Resto'
-C_CP = u'C.P'
-C_TELEFONO = u'TeléfoNo'
+C_CP = u'C.P.'
+C_TELEFONO = u'Teléfono'
 C_CORREO_ELECTRONICO = u'Correo electrónico'
 C_REDES_SOCIALES = u'Redes sociales'
 C_NUM_PERSONAS_PARTE = u'Número total de personas que forman parte del comercio'
@@ -42,24 +42,24 @@ C_PREOCUPA_IMPACTO_AMBIENTAL = u'¿Os preocupa el impacto medioambiental que pue
 C_HACE_RECICLAJE_PAPEL = u'¿Se hace reciclaje de papel?'
 C_HACE_RECICLAJE_VIDRIO = u'¿Se hace reciclaje de vidrio?'
 C_HACE_RECICLAJE_PLASTICO = u'¿Se hace reciclaje de plástico?'
-C_HACE_RECICLAJE_TONER = u'¿Se hace reciclaje de tóners?'
+C_HACE_RECICLAJE_TONER = u'¿Se hace reciclaje de tóneres?'
 C_HACE_RECICLAJE_OTROS = u'¿Se recicla otros elementos? (pilas, aceite, electrodomésticos,...)?'
 C_TIENE_EN_CUENTA_CONSUMO_ENERGETICO = u'¿Se tiene en cuenta el consumo energético en el negocio?'
-C_ESTRATEGIAS_CONSUMO_ENERGETICO = u'Sí se utilizan estrategias para reducir el consumo energético del establecimiento, especifica cuáles'
+C_ESTRATEGIAS_CONSUMO_ENERGETICO = u'Si se utilizan estrategias para reducir el consumo energético del establecimiento, especifica cuáles'
 C_CONOCE_PROVEEDOR_ENERGIA = u'¿Sabéis cuál es vuestro proveedor de energía eléctrica?'
-C_CONOCE_ALTERNATIVAS = u'¿CoNocéis otras alternativas?'
-C_CONOCE_ORIGEN_PRODUCTOS = u'¿CoNocéis el origen de los productos que vendéis/transformáis/consumís en vuestra actividad?'
-C_CONSIDERA_PROVEEDORES_CERCANOS = u'¿Habéis conSíderado recurrir a otros proveedores más cercaNos?'
+C_CONOCE_ALTERNATIVAS = u'¿Conocéis otras alternativas?'
+C_CONOCE_ORIGEN_PRODUCTOS = u'¿Conocéis el origen de los productos que vendéis/transformáis/consumís en vuestra actividad?'
+C_CONSIDERA_PROVEEDORES_CERCANOS = u'¿Habéis considerado recurrir a otros proveedores más cercanos?'
 C_RAZONES_PROVEEDORES_CERCANOS = u'En caso de responder Sí a la pregunta anterior, razones de la respuesta'
 C_TIENE_EN_CUENTA_IMPACTO_TRANSPORTE = u'¿Se tiene en cuenta el impacto medioambiental de los medios de transporte?'
 C_IMPACTOS_CONSIDERADOS = u'En caso de responder Sí a la pregunta anterior, indica cuáles'
 C_ACCIONES_MEJORA_AMBIENTAL = u'¿Qué acciones de mejora medioambiental ha hecho el establecimiento durante el último año?'
-C_COLABORA_CON_OTRA_ORGANIZACION = u'Sí se colabora o participa con alguna asociación, ONG, asamblea de barrio u otra iniciativa social, enumera cuáles y de qué forma se concreta esa labor'
-C_TIENE_EN_CUENTA_NECESIDADES_VECINDARIO = u'Sí se tienen en cuenta neceSídades del vecindario, describe de qué manera se tienen en cuenta'
-C_TIENE_EN_CUENTA_IMPACTO_ENTORNO = u'Sí se tienen en cuenta impactos en el entorNo, describe cuáles y de qué manera se tienen en cuenta.'
+C_COLABORA_CON_OTRA_ORGANIZACION = u'Si se colabora o participa con alguna asociación, ONG, asamblea de barrio u otra iniciativa social, enumera cuáles y de qué forma se concreta esa labor'
+C_TIENE_EN_CUENTA_NECESIDADES_VECINDARIO = u'Si se tienen en cuenta necesidades del vecindario, describe de qué manera se tienen en cuenta'
+C_TIENE_EN_CUENTA_IMPACTO_ENTORNO = u'Si se tienen en cuenta impactos en el entorno, describe cuáles y de qué manera se tienen en cuenta.'
 C_ESTRUCTURA_ORGANIZATIVA = u'¿Cuál es la estructura organizativa del establecimiento?'
 C_PERSONAS_TRABAJADORAS_RECIBEN_FORMACION = u'¿Las personas trabajadoras reciben algún tipo de formación o curso?'
-C_PERSONAS_TRABAJADORAS_ACCIONES_FORMATIVAS = u'Sí las personas trabajadoras reciben formación, indica las actuaciones formativas (en horario laboral o financiadas por el negocio) del último año en las que hayan participado alguna/s de las personas de la entidad'
+C_PERSONAS_TRABAJADORAS_ACCIONES_FORMATIVAS = u'Si las personas trabajadoras reciben formación, indica las actuaciones formativas (en horario laboral o financiadas por el negocio) del último año en las que hayan participado alguna/s de las personas de la entidad'
 C_TIPOS_DE_CONTRATO = u'¿Qué tipo/s de contrato/s utilizáis con las personas que trabajan en el establecimiento? Indica tipo de contrato, personas contratadas y horas de contrato.'
 C_JORNADAS_LABORALES = u'¿Cómo se organizan las jornadas laborales de las personas trabajadoras? ¿Se permiten flexibilidad de horarios y lugares de trabajo? ¿Se tienen en cuenta las circunstancias personales y familiares a la hora de organizar los horarios?'
 C_MECANISMOS_DE_SELECCION = u'¿Qué mecanismo de selección de personal se utilizan?'
@@ -68,32 +68,32 @@ C_ESTRATEGIAS_INCENTIVAR_PERSONAS_TRABAJADORAS = u'¿Qué estrategias se utiliza
 C_NUM_TRABAJADORES_HOMBRES = u'Número total de trabajadores hombres'
 C_NUM_TRABAJADORES_HOMBRES_DISCAPACIDAD = u'Número de trabajadoras con discapacidad'
 C_NUM_TRABAJADORES_HOMBRES_INMIGRANTES = u'Número de trabajadores inmigrantes'
-C_NUM_TRABAJADORES_HOMBRES_MINORIAS = u'Número de trabajadores pertenecientes a miNorías étnicas'
-C_NUM_TRABAJADORES_HOMBRES_EXCLUSION = u'Número de trabajadores en riesgo de excluSíón social o en Sítuación de neceSídad'
+C_NUM_TRABAJADORES_HOMBRES_MINORIAS = u'Número de trabajadores pertenecientes a minorías étnicas'
+C_NUM_TRABAJADORES_HOMBRES_EXCLUSION = u'Número de trabajadores en riesgo de exclusión social o en situación de necesidad'
 C_NUM_TRABAJADORES_MUJERES = u'Número total de trabajadoras mujeres'
 C_NUM_TRABAJADORES_MUJERES_DISCAPACIDAD = u'Número de trabajadores con discapacidad'
-C_NUM_TRABAJADORES_MUJERES_INMIGRANTES = u'Número de trabajadoras pertenecientes a miNorías étnicas'
-C_NUM_TRABAJADORES_MUJERES_MINORIAS= u'Número de trabajadoras en riesgo de excluSíón social o en Sítuación de neceSídad'
+C_NUM_TRABAJADORES_MUJERES_INMIGRANTES = u'Número de trabajadoras pertenecientes a minorías étnicas'
+C_NUM_TRABAJADORES_MUJERES_MINORIAS= u'Número de trabajadoras en riesgo de exclusión social o en situación de necesidad'
 C_NUM_TRABAJADORES_MUJERES_EXCLUSION = u'Número de trabajadoras inmigrantes'
 C_HAY_POLITICA_IGUALDAD = u'¿Hay alguna política de igualdad en el establecimiento?'
-C_DESCRIPCION_POLITICA_IGUALDAD = u'Sí la respuesta a la pregunta anterior es "Sí", explica cuáles. Sí la respuesta a la pregunta anterior es "No", explica por qué.'
+C_DESCRIPCION_POLITICA_IGUALDAD = u'Si la respuesta a la pregunta anterior es "Sí", explica cuáles. Si la respuesta a la pregunta anterior es "No", explica por qué.'
 C_REPRESENTACION_PERSONAS_TRABAJADORAS = u'¿Existe algún mecanismo de representación de las personas trabajadoras?'
-C_PARTICIPA_CLIENTELA_O_PROVEEDORES = u'¿Participa o puede participar la clientela del barrio o sus proveedores en alguna deciSíón del establecimiento?'
-C_PARTICIPAN_PERSONAS_TRABAJADORAS = u'¿Participa o pueden participar las personas trabajadoras en alguna deciSíón del establecimiento?'
+C_PARTICIPA_CLIENTELA_O_PROVEEDORES = u'¿Participa o puede participar la clientela del barrio o sus proveedores en alguna decisión del establecimiento?'
+C_PARTICIPAN_PERSONAS_TRABAJADORAS = u'¿Participa o pueden participar las personas trabajadoras en alguna decisión del establecimiento?'
 C_SENTIDO_Y_FINALIDAD = u'¿Cuál es el sentido y finalidad del negocio?'
-C_QUE_TRATA_DE_APORTAR = u'¿Qué trata de aportar este establecimiento al barrio, a los veciNos/as,...?'
+C_QUE_TRATA_DE_APORTAR = u'¿Qué trata de aportar este establecimiento al barrio, a los vecinos/as,...?'
 C_LE_GUSTARIA_MARCARSE_OBJETIVOS = u'¿Al establecimiento le gustaría y estaría dispuesto a marcarse objetivos para mejorar la vida de las personas del barrio?'
 C_CUALES_OBJETIVOS = u'En caso de responder "Sí" a la pregunta anterior, ¿cuáles serían estos objetivos?'
-C_PARTICIPA_CON_OTROS_ESTABLECIMIENTOS = u'¿El establecimiento participa o colabora en proyectos o iniciativas con otros establecimientos Símilares?'
-C_CUALES_OTROS_ESTABLECIMIENTOS = u'Sí la respuesta anterior es Sí, ¿cuáles y de qué manera?'
+C_PARTICIPA_CON_OTROS_ESTABLECIMIENTOS = u'¿El establecimiento participa o colabora en proyectos o iniciativas con otros establecimientos similares?'
+C_CUALES_OTROS_ESTABLECIMIENTOS = u'Si la respuesta anterior es Sí, ¿cuáles y de qué manera?'
 C_CUESTIONARIO_PUBLICO = u'¿El establecimiento está dispuesto a hacer públicos los resultados de este cuestionario?'
-C_POR_QUE_NO_PUBLICO = u'Sí responde "No" a la pregunta anterior, explica porqué.'
+C_POR_QUE_NO_PUBLICO = u'Si responde "No" a la pregunta anterior, explica porqué.'
 C_NUM_PROVEEDORES = u'¿De cuántos/as proveedores/as dispone aproximadamente?'
-C_NUM_PROVEEDORES_ECONOMIA_ALTERNATIVA = u'¿Cuántos/as de ellos/as pertenecen a la ecoNomía alternativa y solidaria?'
+C_NUM_PROVEEDORES_ECONOMIA_ALTERNATIVA = u'¿Cuántos/as de ellos/as pertenecen a la economía alternativa y solidaria?'
 C_NUM_CLIENTES = u'¿De cuántos/as clientes/as disponéis aproximadamente?'
-C_NUM_CLIENTES_ECONOMIA_ALTERNATIVA = u'¿Cuántos/as de ellos/as pertenecen a la ecoNomía alternativa y solidaria?'
-C_RECURSOS_EN_ENTIDAD_ETICA = u'¿Qué porcentaje de los recursos económicos del establecimiento están depoSítados en una entidad ética?'
-C_QUE_ENTIDAD_ETICA = u'En caso de depoSítar recursos económicos en entidades éticas, indica cuál/es'
+C_NUM_CLIENTES_ECONOMIA_ALTERNATIVA = u'¿Cuántos/as de ellos/as pertenecen a la economía alternativa y solidaria?'
+C_RECURSOS_EN_ENTIDAD_ETICA = u'¿Qué porcentaje de los recursos económicos del establecimiento están depositados en una entidad ética?'
+C_QUE_ENTIDAD_ETICA = u'En caso de depositar recursos económicos en entidades éticas, indica cuál/es'
 C_USA_SOFTWARE_LIBRE = u'¿Utiliza la entidad software libre en sus equipos informáticos?'
 C_USA_LICENCIAS_LIBRES = u'¿Utiliza el establecimiento licencias libres (copyleft)?'
 
@@ -477,11 +477,27 @@ class EntityConverterMSMalasana(EntityConverter):
         ])
         entity.modification_date = datetime.strptime(item[C_MARCA_TEMPORAL], '%m/%d/%Y %H:%M:%S')
         entity.entity_type = models.EntityType.objects.get(name = u'Empresa/autónomo')
-        entity.main_subcategory = models.SubCategory.objects.get(slug = 'comercio-local')
+
+        subcategories = []
+        for cat_string in item[_(C_CATEGORIA)]:
+            if len(cat_string.strip()) == 0:
+                raise ValueError(_(u'Las categorías son obligatorias'))
+            cat_pieces = cat_string.replace(u'\u2013', '-').split(' - ')  # Sometimes Excel replaces ascii '-' with unicode '-'
+            if len(cat_pieces) != 2:
+                raise ValueError(_(u'Las categorías deben ser dos frases separadas por un guión "-"'))
+            cat_name, subcat_name = cat_pieces
+            try:
+                subcat = models.SubCategory.objects.get(name = subcat_name, category__name = cat_name)
+            except models.SubCategory.DoesNotExist:
+                raise ValueError(_(u'No se encuentra la categoría %(cat)s - %(subcat)s') %
+                                  {'cat': cat_name, 'subcat': subcat_name})
+            subcategories.append(subcat)
+            if not entity.main_subcategory:
+                entity.main_subcategory = subcat
 
         entity.is_active = True
 
-        return (entity, {'subcategories': [], 'tags': []})
+        return (entity, {'subcategories': subcategories, 'tags': []})
 
     def compose_list(self, content_list):
         result_list = []
